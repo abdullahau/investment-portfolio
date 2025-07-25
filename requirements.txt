@@ -1,0 +1,7 @@
+pandas
+numpy
+yfinance
+matplotlib
+scipy
+tabula
+PyMuPDF
