@@ -3,5 +3,5 @@ numpy
 yfinance
 matplotlib
 scipy
-tabula
 PyMuPDF
+pdfplumber
