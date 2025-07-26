@@ -5,341 +5,351 @@
                 "Symbol": "*Cash",
                 "Description": "USD",
                 "Quantity": null,
-                "Market\nPrice": null,
-                "Market\nValue": "$2.06",
-                "Cost\nPrice": null,
+                "Market Price": null,
+                "Market Value": 2.06,
+                "Cost Price": null,
                 "Unrealized": null,
-                "TD Cost\nBasis": null
+                "TD Cost Basis": null
             },
             {
                 "Symbol": "219RGT073",
                 "Description": "Cornerstone Strategic Investment Fund, Inc. Rights (underlying symbol CLM; Expiration\n05/16/25)",
                 "Quantity": 2.816941083,
-                "Market\nPrice": null,
-                "Market\nValue": null,
-                "Cost\nPrice": null,
+                "Market Price": null,
+                "Market Value": null,
+                "Cost Price": null,
                 "Unrealized": null,
-                "TD Cost\nBasis": null
+                "TD Cost Basis": null
             },
             {
                 "Symbol": "AMZN",
                 "Description": "AMAZON COM INC COM",
                 "Quantity": 0.149979775,
-                "Market\nPrice": "$184.42",
-                "Market\nValue": "$27.66",
-                "Cost\nPrice": "$148.15",
+                "Market Price": 184.42,
+                "Market Value": 27.66,
+                "Cost Price": 148.15,
                 "Unrealized": 5.44,
-                "TD Cost\nBasis": "$22.22"
+                "TD Cost Basis": 22.22
             },
             {
                 "Symbol": "APO",
                 "Description": "APOLLO GLOBAL MGMT INC COM",
                 "Quantity": 0.273328857,
-                "Market\nPrice": "$136.48",
-                "Market\nValue": "$37.30",
-                "Cost\nPrice": "$125.12",
+                "Market Price": 136.48,
+                "Market Value": 37.3,
+                "Cost Price": 125.12,
                 "Unrealized": 3.1,
-                "TD Cost\nBasis": "$34.20"
+                "TD Cost Basis": 34.2
             },
             {
                 "Symbol": "ARM",
                 "Description": "ARM HOLDINGS PLC SPONSORED ADS",
                 "Quantity": 0.080825933,
-                "Market\nPrice": "$114.05",
-                "Market\nValue": "$9.22",
-                "Cost\nPrice": "$185.58",
+                "Market Price": 114.05,
+                "Market Value": 9.22,
+                "Cost Price": 185.58,
                 "Unrealized": -5.78,
-                "TD Cost\nBasis": "$15.00"
+                "TD Cost Basis": 15.0
             },
             {
                 "Symbol": "BRW",
                 "Description": "SABA CAPITAL INCOME & OPRNT FD SHS NEW",
                 "Quantity": 4.707717967,
-                "Market\nPrice": "$7.68",
-                "Market\nValue": "$36.16",
-                "Cost\nPrice": "$7.43",
+                "Market Price": 7.68,
+                "Market Value": 36.16,
+                "Cost Price": 7.43,
                 "Unrealized": 1.16,
-                "TD Cost\nBasis": "$35.00"
+                "TD Cost Basis": 35.0
             },
             {
                 "Symbol": "CEFS",
                 "Description": "EXCHANGE LISTED FDS TR SABA INT RATE",
                 "Quantity": 1.114267148,
-                "Market\nPrice": "$21.03",
-                "Market\nValue": "$23.43",
-                "Cost\nPrice": "$17.95",
+                "Market Price": 21.03,
+                "Market Value": 23.43,
+                "Cost Price": 17.95,
                 "Unrealized": 3.43,
-                "TD Cost\nBasis": "$20.00"
+                "TD Cost Basis": 20.0
             },
             {
                 "Symbol": "CLM",
                 "Description": "CORNERSTONE STRATEGIC INVESTME COM",
                 "Quantity": 2.816941083,
-                "Market\nPrice": "$6.93",
-                "Market\nValue": "$19.52",
-                "Cost\nPrice": "$7.10",
+                "Market Price": 6.93,
+                "Market Value": 19.52,
+                "Cost Price": 7.1,
                 "Unrealized": -0.48,
-                "TD Cost\nBasis": "$20.00"
+                "TD Cost Basis": 20.0
             },
             {
                 "Symbol": "GOF",
                 "Description": "GUGGENHEIM STRATEGIC OPPORTUN COM SBI",
                 "Quantity": 3.0,
-                "Market\nPrice": "$14.46",
-                "Market\nValue": "$43.38",
-                "Cost\nPrice": "$13.42",
+                "Market Price": 14.46,
+                "Market Value": 43.38,
+                "Cost Price": 13.42,
                 "Unrealized": 3.11,
-                "TD Cost\nBasis": "$40.27"
+                "TD Cost Basis": 40.27
             },
             {
                 "Symbol": "GSBD",
                 "Description": "GOLDMAN SACHS BDC INC SHS",
                 "Quantity": 2.436460888,
-                "Market\nPrice": "$10.61",
-                "Market\nValue": "$25.85",
-                "Cost\nPrice": "$14.37",
+                "Market Price": 10.61,
+                "Market Value": 25.85,
+                "Cost Price": 14.37,
                 "Unrealized": -9.15,
-                "TD Cost\nBasis": "$35.00"
+                "TD Cost Basis": 35.0
             },
             {
                 "Symbol": "IBB",
                 "Description": "ISHARES TR ISHARES BIOTECH",
                 "Quantity": 0.047021696,
-                "Market\nPrice": "$126.58",
-                "Market\nValue": "$5.95",
-                "Cost\nPrice": "$126.75",
+                "Market Price": 126.58,
+                "Market Value": 5.95,
+                "Cost Price": 126.75,
                 "Unrealized": -0.01,
-                "TD Cost\nBasis": "$5.96"
+                "TD Cost Basis": 5.96
             },
             {
                 "Symbol": "IJR",
                 "Description": "ISHARES TR CORE S&P SCP ETF",
                 "Quantity": 0.22721489,
-                "Market\nPrice": "$100.13",
-                "Market\nValue": "$22.75",
-                "Cost\nPrice": "$110.03",
+                "Market Price": 100.13,
+                "Market Value": 22.75,
+                "Cost Price": 110.03,
                 "Unrealized": -2.25,
-                "TD Cost\nBasis": "$25.00"
+                "TD Cost Basis": 25.0
             },
             {
                 "Symbol": "INDA",
                 "Description": "ISHARES TR MSCI INDIA ETF",
                 "Quantity": 0.877661151,
-                "Market\nPrice": "$53.57",
-                "Market\nValue": "$47.02",
-                "Cost\nPrice": "$52.79",
+                "Market Price": 53.57,
+                "Market Value": 47.02,
+                "Cost Price": 52.79,
                 "Unrealized": 0.69,
-                "TD Cost\nBasis": "$46.33"
+                "TD Cost Basis": 46.33
             },
             {
                 "Symbol": "IPO",
                 "Description": "RENAISSANCE CAP GREENWICH FDS IPO ETF",
                 "Quantity": 1.288475687,
-                "Market\nPrice": "$38.36",
-                "Market\nValue": "$49.43",
-                "Cost\nPrice": "$40.97",
+                "Market Price": 38.36,
+                "Market Value": 49.43,
+                "Cost Price": 40.97,
                 "Unrealized": -3.36,
-                "TD Cost\nBasis": "$52.79"
+                "TD Cost Basis": 52.79
             },
             {
                 "Symbol": "JPMB",
                 "Description": "J P MORGAN EXCHANGE TRADED FD USD EMRNG MKT",
                 "Quantity": 1.688699255,
-                "Market\nPrice": "$38.01",
-                "Market\nValue": "$64.19",
-                "Cost\nPrice": "$40.55",
+                "Market Price": 38.01,
+                "Market Value": 64.19,
+                "Cost Price": 40.55,
                 "Unrealized": -4.28,
-                "TD Cost\nBasis": "$68.47"
+                "TD Cost Basis": 68.47
             },
             {
                 "Symbol": "KKR",
                 "Description": "KKR & CO INC COM",
                 "Quantity": 0.378201587,
-                "Market\nPrice": "$114.27",
-                "Market\nValue": "$43.22",
-                "Cost\nPrice": "$140.14",
+                "Market Price": 114.27,
+                "Market Value": 43.22,
+                "Cost Price": 140.14,
                 "Unrealized": -9.78,
-                "TD Cost\nBasis": "$53.00"
+                "TD Cost Basis": 53.0
             },
             {
                 "Symbol": "LLY",
                 "Description": "ELI LILLY & CO COM",
                 "Quantity": 0.062060405,
-                "Market\nPrice": "$898.95",
-                "Market\nValue": "$55.79",
-                "Cost\nPrice": "$604.25",
+                "Market Price": 898.95,
+                "Market Value": 55.79,
+                "Cost Price": 604.25,
                 "Unrealized": 18.29,
-                "TD Cost\nBasis": "$37.50"
+                "TD Cost Basis": 37.5
             },
             {
                 "Symbol": "LUX",
                 "Description": "TEMA ETF TRUST LUXURY ETF",
                 "Quantity": 2.0,
-                "Market\nPrice": "$21.15",
-                "Market\nValue": "$42.30",
-                "Cost\nPrice": "$22.73",
+                "Market Price": 21.15,
+                "Market Value": 42.3,
+                "Cost Price": 22.73,
                 "Unrealized": -3.15,
-                "TD Cost\nBasis": "$45.45"
+                "TD Cost Basis": 45.45
             },
             {
                 "Symbol": "META",
                 "Description": "META PLATFORMS INC CL A",
                 "Quantity": 0.138582491,
-                "Market\nPrice": "$549.00",
-                "Market\nValue": "$76.08",
-                "Cost\nPrice": "$305.52",
+                "Market Price": 549.0,
+                "Market Value": 76.08,
+                "Cost Price": 305.52,
                 "Unrealized": 33.74,
-                "TD Cost\nBasis": "$42.34"
+                "TD Cost Basis": 42.34
             },
             {
                 "Symbol": "MOAT",
                 "Description": "VANECK ETF TRUST MRNGSTR WDE MOAT",
                 "Quantity": 1.399620641,
-                "Market\nPrice": "$86.07",
-                "Market\nValue": "$120.47",
-                "Cost\nPrice": "$92.88",
+                "Market Price": 86.07,
+                "Market Value": 120.47,
+                "Cost Price": 92.88,
                 "Unrealized": -9.53,
-                "TD Cost\nBasis": "$130.00"
+                "TD Cost Basis": 130.0
             },
             {
                 "Symbol": "MSFT",
                 "Description": "MICROSOFT CORP COM",
                 "Quantity": 0.255834079,
-                "Market\nPrice": "$395.26",
-                "Market\nValue": "$101.12",
-                "Cost\nPrice": "$378.64",
+                "Market Price": 395.26,
+                "Market Value": 101.12,
+                "Cost Price": 378.64,
                 "Unrealized": 4.25,
-                "TD Cost\nBasis": "$96.87"
+                "TD Cost Basis": 96.87
             },
             {
                 "Symbol": "NVDA",
                 "Description": "NVIDIA CORPORATION COM",
                 "Quantity": 0.250397111,
-                "Market\nPrice": "$108.92",
-                "Market\nValue": "$27.27",
-                "Cost\nPrice": "$138.50",
+                "Market Price": 108.92,
+                "Market Value": 27.27,
+                "Cost Price": 138.5,
                 "Unrealized": -7.41,
-                "TD Cost\nBasis": "$34.68"
+                "TD Cost Basis": 34.68
             },
             {
                 "Symbol": "OCSL",
                 "Description": "OAKTREE SPECIALTY LENDING CORP COM",
                 "Quantity": 1.042268639,
-                "Market\nPrice": "$14.40",
-                "Market\nValue": "$15.01",
-                "Cost\nPrice": "$19.53",
+                "Market Price": 14.4,
+                "Market Value": 15.01,
+                "Cost Price": 19.53,
                 "Unrealized": -5.35,
-                "TD Cost\nBasis": "$20.36"
+                "TD Cost Basis": 20.36
             },
             {
                 "Symbol": "RYAAY",
                 "Description": "RYANAIR HOLDINGS PLC SPONSORED ADR",
                 "Quantity": 0.315592808,
-                "Market\nPrice": "$47.86",
-                "Market\nValue": "$15.10",
-                "Cost\nPrice": "$47.53",
+                "Market Price": 47.86,
+                "Market Value": 15.1,
+                "Cost Price": 47.53,
                 "Unrealized": 0.1,
-                "TD Cost\nBasis": "$15.00"
+                "TD Cost Basis": 15.0
             },
             {
                 "Symbol": "SMOT",
                 "Description": "VANECK ETF TRUST MORNINGSTAR SMID",
                 "Quantity": 0.718432093,
-                "Market\nPrice": "$31.71",
-                "Market\nValue": "$22.78",
-                "Cost\nPrice": "$34.80",
+                "Market Price": 31.71,
+                "Market Value": 22.78,
+                "Cost Price": 34.8,
                 "Unrealized": -2.22,
-                "TD Cost\nBasis": "$25.00"
+                "TD Cost Basis": 25.0
             },
             {
                 "Symbol": "SPY",
                 "Description": "SPDR S&P 500 ETF TR TR UNIT",
                 "Quantity": 0.177676073,
-                "Market\nPrice": "$554.54",
-                "Market\nValue": "$98.53",
-                "Cost\nPrice": "$436.36",
+                "Market Price": 554.54,
+                "Market Value": 98.53,
+                "Cost Price": 436.36,
                 "Unrealized": 21.0,
-                "TD Cost\nBasis": "$77.53"
+                "TD Cost Basis": 77.53
             },
             {
                 "Symbol": "TPVG",
                 "Description": "TRIPLEPOINT VENTURE GROWTH BDC COM",
                 "Quantity": 4.0,
-                "Market\nPrice": "$6.07",
-                "Market\nValue": "$24.28",
-                "Cost\nPrice": "$10.23",
+                "Market Price": 6.07,
+                "Market Value": 24.28,
+                "Cost Price": 10.23,
                 "Unrealized": -16.65,
-                "TD Cost\nBasis": "$40.93"
+                "TD Cost Basis": 40.93
             },
             {
                 "Symbol": "USRT",
                 "Description": "ISHARES TR CRE U S REIT ETF",
                 "Quantity": 0.167590075,
-                "Market\nPrice": "$55.94",
-                "Market\nValue": "$9.37",
-                "Cost\nPrice": "$50.36",
+                "Market Price": 55.94,
+                "Market Value": 9.37,
+                "Cost Price": 50.36,
                 "Unrealized": 0.93,
-                "TD Cost\nBasis": "$8.44"
+                "TD Cost Basis": 8.44
+            },
+            {
+                "Symbol": "Symbol",
+                "Description": "Description",
+                "Quantity": null,
+                "Market Price": null,
+                "Market Value": null,
+                "Cost Price": null,
+                "Unrealized": null,
+                "TD Cost Basis": null
             },
             {
                 "Symbol": "VOO",
                 "Description": "VANGUARD INDEX FDS S&P 500 ETF SHS",
                 "Quantity": 1.552063265,
-                "Market\nPrice": "$509.74",
-                "Market\nValue": "$791.15",
-                "Cost\nPrice": "$500.23",
+                "Market Price": 509.74,
+                "Market Value": 791.15,
+                "Cost Price": 500.23,
                 "Unrealized": 14.76,
-                "TD Cost\nBasis": "$776.39"
+                "TD Cost Basis": 776.39
             },
             {
                 "Symbol": "VOOG",
                 "Description": "VANGUARD ADMIRAL FDS INC 500 GRTH IDX F",
                 "Quantity": 0.478496531,
-                "Market\nPrice": "$340.75",
-                "Market\nValue": "$163.05",
-                "Cost\nPrice": "$294.10",
+                "Market Price": 340.75,
+                "Market Value": 163.05,
+                "Cost Price": 294.1,
                 "Unrealized": 22.32,
-                "TD Cost\nBasis": "$140.73"
+                "TD Cost Basis": 140.73
             },
             {
                 "Symbol": "VXUS",
                 "Description": "VANGUARD STAR FDS VG TL INTL STK F",
                 "Quantity": 0.716810028,
-                "Market\nPrice": "$63.86",
-                "Market\nValue": "$45.78",
-                "Cost\nPrice": "$59.99",
+                "Market Price": 63.86,
+                "Market Value": 45.78,
+                "Cost Price": 59.99,
                 "Unrealized": 2.78,
-                "TD Cost\nBasis": "$43.00"
+                "TD Cost Basis": 43.0
             },
             {
                 "Symbol": "XLF",
                 "Description": "SELECT SECTOR SPDR TR FINANCIAL",
                 "Quantity": 1.309463788,
-                "Market\nPrice": "$48.76",
-                "Market\nValue": "$63.85",
-                "Cost\nPrice": "$44.28",
+                "Market Price": 48.76,
+                "Market Value": 63.85,
+                "Cost Price": 44.28,
                 "Unrealized": 5.87,
-                "TD Cost\nBasis": "$57.98"
+                "TD Cost Basis": 57.98
             },
             {
                 "Symbol": "XLK",
                 "Description": "SELECT SECTOR SPDR TR TECHNOLOGY",
                 "Quantity": 1.223873376,
-                "Market\nPrice": "$209.97",
-                "Market\nValue": "$256.98",
-                "Cost\nPrice": "$204.96",
+                "Market Price": 209.97,
+                "Market Value": 256.98,
+                "Cost Price": 204.96,
                 "Unrealized": 6.13,
-                "TD Cost\nBasis": "$250.84"
+                "TD Cost Basis": 250.84
             },
             {
                 "Symbol": "XLV",
                 "Description": "SELECT SECTOR SPDR TR SBI HEALTHCARE",
                 "Quantity": 0.28918907,
-                "Market\nPrice": "$140.47",
-                "Market\nValue": "$40.62",
-                "Cost\nPrice": "$136.66",
+                "Market Price": 140.47,
+                "Market Value": 40.62,
+                "Cost Price": 136.66,
                 "Unrealized": 1.1,
-                "TD Cost\nBasis": "$39.52"
+                "TD Cost Basis": 39.52
             }
         ],
         "Income": [
@@ -12628,7 +12638,7 @@
                 "Description": null,
                 "Quantity": 0.581936685,
                 "Price": 171.84,
-                "Amount": null,
+                "Amount": -100.0,
                 "Commission": null
             }
         ]

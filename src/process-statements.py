@@ -1,4 +1,3 @@
-import os
 import re
 import json
 import pandas as pd
@@ -16,6 +15,9 @@ def extract_period_from_text(text):
         return f"{year}-{month}"
     return None
 
+def clean_header(header):
+    # Removes \n, trims spaces, and joins words cleanly
+    return [col.replace("\n", " ").strip() for col in header]
 
 def process_single_statement(file_path):
     """
@@ -65,7 +67,7 @@ def process_single_statement(file_path):
     for name, rows in data_collector.items():
         if not rows:
             continue
-        header = rows[0]
+        header = clean_header(rows[0])
         data = [row for row in rows[1:] if row != header]
         if not data:
             continue
@@ -79,6 +81,8 @@ def process_single_statement(file_path):
                 df[col] = pd.to_numeric(
                     df[col]
                     .astype(str)
+                    .str.replace("\n", "", regex=False)
+                    .str.replace(" ", "", regex=False)
                     .str.replace("$", "", regex=False)
                     .str.replace(",", "", regex=False)
                     .str.replace("(", "-", regex=False)
