@@ -74,7 +74,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                         "Description": record.get(mapping.get("Description")),
                         "Type": type_val,
                         "Currency": "USD",
-                        "Source": "Brokerage Statement",
+                        "Source": "Sarwa Trade",
                     }
                     all_transactions.append(tx)
 
@@ -90,7 +90,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Amount": row["Amount"],
                 "Type": row["Type"],
                 "Currency": "USD",
-                "Source": "Crypto CSV",
+                "Source": "Sarwa Crypto",
             }
             all_transactions.append(tx)
 
@@ -108,7 +108,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Commission": row["Commission"],
                 "Description": row["Description"],
                 "Currency": "USD",
-                "Source": "Interim CSV",
+                "Source": "Sarwa Trade - Interim",
             }
             all_transactions.append(tx)
 
@@ -181,5 +181,5 @@ if __name__ == "__main__":
         json_path=config.RAW_DATA_DIR / "brokerage_data.json",
         crypto_path=config.RAW_DATA_DIR / "crypto_transactions.csv",
         interim_path=config.RAW_DATA_DIR / "interim_transactions.csv",
-        output_path=config.RAW_DATA_DIR / "master_transaction_log.csv",
+        output_path=config.INPUT_DATA_DIR / "us_mkt_transactions.csv",
     )

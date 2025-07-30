@@ -21,13 +21,14 @@ portfolio-analyzer/
 ├── data/
 │   ├── cache/            # Cache for API calls
 │   └── input/
-│       ├── usd_transactions.csv
-│       └── aed_transactions.csv
+│       ├── us_mkt_transactions.csv
+│       └── exus_mkt_transactions.csv
 │
 ├── notebooks/
 │   └── main_analysis.ipynb # Your primary notebook for running analysis and plots
 │
-├── scripts/                  
+├── tools/ 
+|   ├── raw-data     
 │   ├── prepare_pdf_statements.py
 │   ├── statement_to_json.py
 │   └── create_transaction_log.py
@@ -152,13 +153,14 @@ portfolio-analyzer/
 ├── data/
 │   ├── cache/            # Cache for API calls
 │   └── input/
-│       ├── usd_transactions.csv
-│       └── aed_transactions.csv
+│       ├── us_mkt_transactions.csv
+│       └── exus_mkt_transactions.csv
 │
 ├── notebooks/
 │   └── main_analysis.ipynb # Your primary notebook for running analysis and plots
 │
-├── tools/                  
+├── tools/ 
+|   ├── raw-data     
 │   ├── prepare_pdf_statements.py
 │   ├── statement_to_json.py
 │   └── create_transaction_log.py
