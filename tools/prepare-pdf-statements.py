@@ -1,3 +1,5 @@
+# tools/prepare-pdf-statements.py
+
 import os
 import fitz  # PyMuPDF
 import sys

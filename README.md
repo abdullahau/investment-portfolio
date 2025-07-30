@@ -36,7 +36,8 @@ portfolio-analyzer/
 └── src/
     ├── data_ingestion.py   # Module to load and merge transaction logs
     ├── data_providers.py   # All third-party API functions (yf, Twelve Data, ETFDB)
-    └── portfolio.py        # Core logic for benchmark and holdings analysis
+    ├── benchmark.py        # Logic for the benchmark simulation
+    └── portfolio.py        # Logic for your personal portfolio holdings and value
 ```
 
 -----

@@ -12,8 +12,8 @@ import config
 
 def create_master_log(json_path, crypto_path, interim_path, output_path):
     """
-    Consolidates data from the brokerage JSON, crypto CSV, and interim CSV
-    into a single, clean master transaction log with currency information.
+    Consolidates data from the Sarwa Trade JSON, crypto CSV, and interim CSV
+    into a single, clean US market transaction log with currency and market information.
     """
     all_transactions = []
 
@@ -74,6 +74,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                         "Description": record.get(mapping.get("Description")),
                         "Type": type_val,
                         "Currency": "USD",
+                        "Market": "US Market",
                         "Source": "Sarwa Trade",
                     }
                     all_transactions.append(tx)
@@ -90,6 +91,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Amount": row["Amount"],
                 "Type": row["Type"],
                 "Currency": "USD",
+                "Market": "US Market",
                 "Source": "Sarwa Crypto",
             }
             all_transactions.append(tx)
@@ -108,6 +110,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Commission": row["Commission"],
                 "Description": row["Description"],
                 "Currency": "USD",
+                "Market": "US Market",
                 "Source": "Sarwa Trade - Interim",
             }
             all_transactions.append(tx)
@@ -147,6 +150,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
         "Commission",
         "Currency",
         "Description",
+        "Market",
         "Source",
     ]
     master_log = master_log[final_cols]
@@ -178,7 +182,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
 
 if __name__ == "__main__":
     create_master_log(
-        json_path=config.RAW_DATA_DIR / "brokerage_data.json",
+        json_path=config.RAW_DATA_DIR / "sarwa_trade.json",
         crypto_path=config.RAW_DATA_DIR / "crypto_transactions.csv",
         interim_path=config.RAW_DATA_DIR / "interim_transactions.csv",
         output_path=config.INPUT_DATA_DIR / "us_mkt_transactions.csv",

@@ -1,26 +1,26 @@
-﻿Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Source
-2023-11-08,Net Deposit,,,,1000,0,AED,Incoming Fund Transfer From Client ID 27190,Intl Securities
-2023-11-08,buy,ALDAR,10,5.6,-56,0.01,AED,Buy Securities of ALDAR Invoice No: 592844,Intl Securities
-2023-11-09,buy,EMAAR.AE,10,6.81,-68.1,10.68,AED,Buy Securities of EMAAR Invoice No: 593449,Intl Securities
-2023-11-09,buy,CHADX15,77,3.23,-248.71,0.06,AED,Buy Securities of CHADX15 Invoice No: 593935,Intl Securities
-2023-11-09,buy,BURJEEL,15,3.03,-45.45,0.01,AED,Buy Securities of BURJEEL Invoice No: 593936,Intl Securities
-2023-11-09,buy,MULTIPLY,12,3.69,-44.28,0.01,AED,Buy Securities of MULTIPLY Invoice No: 593940,Intl Securities
-2023-11-09,buy,IHC,1,399.8,-399.8,0.11,AED,Buy Securities of IHC Invoice No: 593944,Intl Securities
-2023-11-09,buy,CHADX15,18,3.23,-58.14,0.01,AED,Buy Securities of CHADX15 Invoice No: 593935,Intl Securities
-2023-11-10,buy,AMR,5,3.33,-16.65,0,AED,Buy Securities of AMR Invoice No: 594509,Intl Securities
-2023-11-10,buy,ASM,2,7.77,-15.54,0,AED,Buy Securities of ASM Invoice No: 595043,Intl Securities
-2023-11-14,buy,CHADX15,9,3.25,-29.25,0.01,AED,Buy Securities of CHADX15 Invoice No: 596614,Intl Securities
-2023-11-14,buy,CHADX15,2,3.25,-6.5,0,AED,Buy Securities of CHADX15 Invoice No: 596614,Intl Securities
-2024-07-16,sell,IHC,-1,409.9,409.9,0.11,AED,Sell Securities of IHC Invoice No: 780212,Intl Securities
-2024-07-16,sell,ALDAR,-10,6.6,66,0.02,AED,Sell Securities of ALDAR Invoice No: 780232,Intl Securities
-2024-07-18,Net Deposit,,,,-476.45,0,AED,Payment Transfer to Client ID 027190 Request ID 58352,Intl Securities
-2024-05-02,Net Dividend,EMAAR.AE,,,5,,AED,"EMAAR Dividend 2023, 50 %",Intl Securities
-2025-04-04,Net Dividend,EMAAR.AE,,,10,,AED,"EMAAR Dividend 2024, 100 Fills",Intl Securities
-2025-07-22,Net Dividend,CHADX15,,,3.96,,AED,"Chimera Ftse Adx 15 Etf Class B Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 1.02%",Intl Securities
-2025-05-28,Net Dividend,AMR,,,0.27,,AED,"Americana Restaurants International Plc, Entitled Shares: 5, Decl. Dividend % on F.V.: 79.33%",Intl Securities
-2025-05-13,Net Dividend,BURJEEL,,,0.48,,AED,"Burjeel Holdings Plc, Entitled Shares: 15, Decl. Dividend % on F.V.: 32.66%",Intl Securities
-2025-01-10,Net Dividend,CHADX15,,,0.59,,AED,"Chimera Ftse Adx 15 Etf Class B  Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 0.15%",Intl Securities
-2024-07-10,Net Dividend,CHADX15,,,3.82,,AED,"Chimera Ftse Adx 15 Etf Class B  Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 0.98%",Intl Securities
-2024-05-20,Net Dividend,AMR,,,0.39,,AED,"Americana Restaurants International Plc, Entitled Shares: 5, Decl. Dividend % on F.V.: 107.53%",Intl Securities
-2024-05-03,Net Dividend,BURJEEL,,,0.18,,AED,"Burjeel Holdings Plc, Entitled Shares: 15, Decl. Dividend % on F.V.: 12.50%",Intl Securities
-2024-04-17,Net Dividend,ALDAR,,,1.7,,AED,"Al Dar Properties, Entitled Shares: 10, Decl. Dividend % on F.V.: 17.00%",Intl Securities
+﻿Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Market,Source
+2023-11-08,Net Deposit,,,,1000,0,AED,Incoming Fund Transfer From Client ID 27190,UAE Market,Intl Securities
+2023-11-08,buy,ALDAR,10,5.6,-56,0.01,AED,Buy Securities of ALDAR Invoice No: 592844,ADX,Intl Securities
+2023-11-09,buy,EMAR,10,6.81,-68.1,10.68,AED,Buy Securities of EMAAR Invoice No: 593449,DFM,Intl Securities
+2023-11-09,buy,CHADX15,77,3.23,-248.71,0.06,AED,Buy Securities of CHADX15 Invoice No: 593935,ADX,Intl Securities
+2023-11-09,buy,BURJEEL,15,3.03,-45.45,0.01,AED,Buy Securities of BURJEEL Invoice No: 593936,ADX,Intl Securities
+2023-11-09,buy,MULTIPLY,12,3.69,-44.28,0.01,AED,Buy Securities of MULTIPLY Invoice No: 593940,ADX,Intl Securities
+2023-11-09,buy,IHC,1,399.8,-399.8,0.11,AED,Buy Securities of IHC Invoice No: 593944,ADX,Intl Securities
+2023-11-09,buy,CHADX15,18,3.23,-58.14,0.01,AED,Buy Securities of CHADX15 Invoice No: 593935,ADX,Intl Securities
+2023-11-10,buy,AMR,5,3.33,-16.65,0,AED,Buy Securities of AMR Invoice No: 594509,ADX,Intl Securities
+2023-11-10,buy,ASM,2,7.77,-15.54,0,AED,Buy Securities of ASM Invoice No: 595043,ADX,Intl Securities
+2023-11-14,buy,CHADX15,9,3.25,-29.25,0.01,AED,Buy Securities of CHADX15 Invoice No: 596614,ADX,Intl Securities
+2023-11-14,buy,CHADX15,2,3.25,-6.5,0,AED,Buy Securities of CHADX15 Invoice No: 596614,ADX,Intl Securities
+2024-07-16,sell,IHC,-1,409.9,409.9,0.11,AED,Sell Securities of IHC Invoice No: 780212,ADX,Intl Securities
+2024-07-16,sell,ALDAR,-10,6.6,66,0.02,AED,Sell Securities of ALDAR Invoice No: 780232,ADX,Intl Securities
+2024-07-18,Net Deposit,,,,-476.45,0,AED,Payment Transfer to Client ID 027190 Request ID 58352,UAE Market,Intl Securities
+2024-05-02,Net Dividend,EMAR,,,5,,AED,"EMAAR Dividend 2023, 50 %",DFM,Intl Securities
+2025-04-04,Net Dividend,EMAR,,,10,,AED,"EMAAR Dividend 2024, 100 Fills",DFM,Intl Securities
+2025-07-22,Net Dividend,CHADX15,,,3.96,,AED,"Chimera Ftse Adx 15 Etf Class B Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 1.02%",ADX,Intl Securities
+2025-05-28,Net Dividend,AMR,,,0.27,,AED,"Americana Restaurants International Plc, Entitled Shares: 5, Decl. Dividend % on F.V.: 79.33%",ADX,Intl Securities
+2025-05-13,Net Dividend,BURJEEL,,,0.48,,AED,"Burjeel Holdings Plc, Entitled Shares: 15, Decl. Dividend % on F.V.: 32.66%",ADX,Intl Securities
+2025-01-10,Net Dividend,CHADX15,,,0.59,,AED,"Chimera Ftse Adx 15 Etf Class B  Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 0.15%",ADX,Intl Securities
+2024-07-10,Net Dividend,CHADX15,,,3.82,,AED,"Chimera Ftse Adx 15 Etf Class B  Income, Entitled Shares: 106, Decl. Dividend % on F.V.: 0.98%",ADX,Intl Securities
+2024-05-20,Net Dividend,AMR,,,0.39,,AED,"Americana Restaurants International Plc, Entitled Shares: 5, Decl. Dividend % on F.V.: 107.53%",ADX,Intl Securities
+2024-05-03,Net Dividend,BURJEEL,,,0.18,,AED,"Burjeel Holdings Plc, Entitled Shares: 15, Decl. Dividend % on F.V.: 12.50%",ADX,Intl Securities
+2024-04-17,Net Dividend,ALDAR,,,1.7,,AED,"Al Dar Properties, Entitled Shares: 10, Decl. Dividend % on F.V.: 17.00%",ADX,Intl Securities
