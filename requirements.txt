@@ -1,0 +1,9 @@
+dotenv
+pandas
+numpy
+yfinance
+matplotlib
+plotly
+scipy
+PyMuPDF
+pdfplumber

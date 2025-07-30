@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "gwth",
+        "mgmt"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
+    "python-envs.pythonProjects": [
+        {
+            "path": "/Users/rehabnaeem/Developer/.venv",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
+}
