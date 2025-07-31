@@ -29,9 +29,10 @@ portfolio-analyzer/
 │
 ├── tools/ 
 |   ├── raw-data     
-│   ├── prepare_pdf_statements.py
-│   ├── statement_to_json.py
-│   └── create_transaction_log.py
+│   ├── prepare-pdf-statements.py
+│   ├── statement-to-json.py
+│   ├── create-transaction-log.py
+│   └── fetch-UAE-market-date.ipynb
 │
 └── src/
     ├── data_ingestion.py   # Module to load and merge transaction logs
