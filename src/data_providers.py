@@ -22,9 +22,57 @@ def _load_json_cache(file_path):
 def _save_json_cache(file_path, data):
     """Generic helper function to save data to a JSON cache file."""
     with open(file_path, 'w') as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4)        
 
-def assess_symbols_with_cache(symbols):
+def _create_or_update_template(symbols_to_process, master_log):
+    """
+    Internal helper to create or update the user metadata template for a list of symbols.
+    """
+    if not symbols_to_process:
+        return
+
+    os.makedirs(config.USER_DATA_DIR, exist_ok=True)
+    metadata_template = _load_json_cache(config.USER_METADATA)
+
+    symbol_info = master_log.dropna(subset=['Symbol', 'Exchange', 'Currency'])
+    symbol_info = symbol_info.drop_duplicates(subset=['Symbol'], keep='first').set_index('Symbol')
+
+    symbols_added = []
+    for symbol in symbols_to_process:
+        if symbol in metadata_template and metadata_template[symbol].get("Name") is not None:
+            continue  
+
+        try:
+            exchange = symbol_info.loc[symbol, 'Exchange']
+            currency = symbol_info.loc[symbol, 'Currency']
+            metadata_template[symbol] = {
+                "Name": None, 
+                "Exchange": exchange, 
+                "Currency": currency,
+                "Type": None, 
+                "DataProvider": "user_defined",
+                "Industry": None, 
+                "Sector": None
+            }
+            symbols_added.append(symbol)
+        except KeyError:
+            metadata_template[symbol] = {
+                "Name": None, 
+                "Exchange": None, 
+                "Currency": None, 
+                "Type": None,
+                "DataProvider": "user_defined", 
+                "Industry": None, 
+                "Sector": None
+            }
+            symbols_added.append(symbol)
+
+    if symbols_added:
+        _save_json_cache(config.USER_METADATA, metadata_template)
+        print(f"📝 User metadata template created/updated for: {symbols_added}.")
+        print(f"Please fill in the details in: {config.USER_METADATA}")
+
+def assess_symbols(symbols, master_log):
     """
     Checks symbols against a local cache first, then yfinance.
     """
@@ -71,6 +119,7 @@ def assess_symbols_with_cache(symbols):
 
         else:
             cache[symbol] = {'DataProvider': 'missing'}
+            _create_or_update_template([symbol], master_log)
             
     _save_json_cache(config.METADATA_CACHE, cache)
     _save_json_cache(config.FULL_METADATA_CACHE, full_metadata_cache)
@@ -80,12 +129,13 @@ def assess_symbols_with_cache(symbols):
     
     found_df = pd.DataFrame.from_dict(found_symbols, orient='index')
     if not found_df.empty:
+        found_df.index.name = 'Symbol'
         cols_order = ['Name', 'Type', 'Exchange', 'Currency', 'Industry', 'Sector', 'DataProvider']
         found_df = found_df[[col for col in cols_order if col in found_df.columns]]
 
     return found_df, missing_symbols
 
-def mark_symbols_as_user_defined(symbols_to_update):
+def mark_symbols_as_user_defined(symbols_to_update, master_log):
     """
     Updates the cache to mark specified symbols as requiring user-provided data.
     """
@@ -99,56 +149,35 @@ def mark_symbols_as_user_defined(symbols_to_update):
     
     _save_json_cache(config.METADATA_CACHE, cache)
     print("Cache updated successfully.")
+    _create_or_update_template(symbols_to_update, master_log)
 
-def create_user_metadata_template(master_log, symbols_to_process):
+
+def complete_symbol_df():
     """
-    Creates or updates a metadata.json template for symbols that need
-    user-provided data. It pre-fills details from the transaction log.
+    Creates a single, unified DataFrame of symbol metadata by loading and
+    combining the yfinance cache and the user-provided metadata file.
     """
-    if not symbols_to_process:
-        print("No symbols require user-defined metadata.")
-        return
+    main_cache = _load_json_cache(config.METADATA_CACHE)
+    
+    yfinance_data = {s: d for s, d in main_cache.items() if d.get('DataProvider') == 'yfinance'}
+    yfinance_df = pd.DataFrame.from_dict(yfinance_data, orient='index')
+    if not yfinance_df.empty:
+        yfinance_df.index.name = 'Symbol'
 
-    os.makedirs(config.USER_DATA_DIR, exist_ok=True)
-
-    metadata_template = _load_json_cache(config.USER_METADATA)
-
-    symbol_info = master_log.dropna(subset=['Symbol', 'Exchange', 'Currency'])
-    symbol_info = symbol_info.drop_duplicates(subset=['Symbol'], keep='first').set_index('Symbol')
-
-    symbols_added = []
-    for symbol in symbols_to_process:
-        if symbol in metadata_template:
-            continue
-
-        try:
-            exchange = symbol_info.loc[symbol, 'Exchange']
-            currency = symbol_info.loc[symbol, 'Currency']
-
-            metadata_template[symbol] = {
-                "Name": None,
-                "Exchange": exchange,
-                "Currency": currency,
-                "Type": None,
-                "DataProvider": "user_defined",
-                "Industry": None,
-                "Sector": None
-            }
-            symbols_added.append(symbol)
-        except KeyError:
-            print(f"Warning: Could not find Exchange/Currency for '{symbol}' in the log. Creating a blank template.")
-            metadata_template[symbol] = {
-                "Name": None, "Exchange": None, "Currency": None, "Type": None,
-                "DataProvider": "user_defined", "Industry": None, "Sector": None
-            }
-            symbols_added.append(symbol)
-
-    if symbols_added:
-        _save_json_cache(config.USER_METADATA, metadata_template)
-        print(f"Created/updated metadata template for: {symbols_added}")
-        print(f"Please fill in the details in the file: {config.USER_METADATA}")
+    if os.path.exists(config.USER_METADATA):
+        print("User-defined metadata file found. Merging with yfinance data...")
+        
+        user_metadata = _load_json_cache(config.USER_METADATA)
+        user_df = pd.DataFrame.from_dict(user_metadata, orient='index')
+        user_df.index.name = 'Symbol'
+        
+        symbol_df = pd.concat([yfinance_df, user_df])
     else:
-        print("User metadata template is already up to date.")
+        print("No user-defined metadata file found. Proceeding with yfinance data only.")
+        symbol_df = yfinance_df
+        
+    print("\nSuccessfully created unified symbols DataFrame.")
+    return symbol_df
 
 # --- Yahoo Finance ---
 def yf_hist(ticker_symbol, start_date, last_market_day):
