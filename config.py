@@ -14,17 +14,22 @@ ACCOUNT_NUM = os.getenv("ACCOUNT_NUM")
 ACCOUNT_NAME = os.getenv("ACCOUNT_NAME")
 
 # --- Path Management ---
-# Absolute path to the project's root directory
+# Root directory
 ROOT_DIR = Path(__file__).resolve().parent
-# Important directories relative to the root
+# Directories relative to the root
 SRC_DIR = ROOT_DIR / "src"
 DATA_DIR = ROOT_DIR / "data"
 INPUT_DATA_DIR = DATA_DIR / "input"
 CACHE_DIR = DATA_DIR / "cache"
+USER_DATA_DIR = DATA_DIR / "user-data"
 TOOLS_DIR = ROOT_DIR / "tools"
 DOCS_DIR = ROOT_DIR / "docs"
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 RAW_DATA_DIR = TOOLS_DIR / "raw-data"
+METADATA_CACHE = CACHE_DIR / "metadata.json"
+FULL_METADATA_CACHE = CACHE_DIR / "full_metadata.json"
+USER_METADATA = USER_DATA_DIR / "metadata.json"
+
 
 # --- User-Defined Settings ---
 BENCHMARK_INDEX = 'VOO'

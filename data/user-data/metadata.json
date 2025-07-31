@@ -1,0 +1,74 @@
+{
+    "ALDAR": {
+        "Name": "Al Dar Properties",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Real Estate - Development",
+        "Sector": "Real Estate"
+    },
+    "BURJEEL": {
+        "Name": "Burjeel Holdings PLC",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Medical Care Facilities",
+        "Sector": "Healthcare"
+    },
+    "CHADX15": {
+        "Name": "Chimera FTSE ADX 15 ETF – Class B – Income",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "etf",
+        "DataProvider": "user_defined",
+        "Industry": null,
+        "Sector": null
+    },
+    "IHC": {
+        "Name": "International Holding Company PJSC",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Industrials",
+        "Sector": "Conglomerates"
+    },
+    "EMAAR": {
+        "Name": "Emaar Properties PJSC",
+        "Exchange": "DFM",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Real Estate - Development",
+        "Sector": "Real Estate"
+    },
+    "MULTIPLY": {
+        "Name": null,
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Financials",
+        "Sector": "Asset Management"
+    },
+    "ASM": {
+        "Name": "Al Seer Marine Supplies & Equipment Company P.J.S.C",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Industrials",
+        "Sector": "Marine Shipping"
+    },
+    "AMR": {
+        "Name": "Americana Restaurants International PLC",
+        "Exchange": "ADX",
+        "Currency": "AED",
+        "Type": "equity",
+        "DataProvider": "user_defined",
+        "Industry": "Consumer Cyclical",
+        "Sector": "Restaurants"
+    }
+}
