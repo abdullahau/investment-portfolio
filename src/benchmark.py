@@ -8,9 +8,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import config
+from src import data_providers
 
 # --- Fee Calculation Logic ---
-def simulate_buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
+def buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
     if cash_to_invest <= FLAT_FEE:
         return 0.0, 0.0
 
@@ -24,7 +25,7 @@ def simulate_buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RAT
 
     return net_investment, commission
 
-def simulate_sell_order(cash_needed, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
+def sell_order(cash_needed, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
     if cash_needed <= 0:
         return 0.0, 0.0
 
@@ -42,8 +43,10 @@ def simulate_sell_order(cash_needed, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE)
 
 def run_benchmark_simulation(benchmark_df, master_log):
     # ...your main benchmark loop that calls buy_order() and sell_order()...
-    return benchmark_df
+    # return benchmark_df
+    pass
 
 def calculate_holdings(trade_log, split_data):
     # ...your main holdings calculation loop...
-    return holdings_df
+    # return holdings_df
+    pass
