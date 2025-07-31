@@ -113,7 +113,7 @@ def create_user_metadata_template(master_log, symbols_to_process):
 
     metadata_template = _load_json_cache(config.USER_METADATA)
 
-    symbol_info = master_log.dropna(subset=['Symbol', 'Market', 'Currency'])
+    symbol_info = master_log.dropna(subset=['Symbol', 'Exchange', 'Currency'])
     symbol_info = symbol_info.drop_duplicates(subset=['Symbol'], keep='first').set_index('Symbol')
 
     symbols_added = []
@@ -122,12 +122,12 @@ def create_user_metadata_template(master_log, symbols_to_process):
             continue
 
         try:
-            market = symbol_info.loc[symbol, 'Market']
+            exchange = symbol_info.loc[symbol, 'Exchange']
             currency = symbol_info.loc[symbol, 'Currency']
 
             metadata_template[symbol] = {
                 "Name": None,
-                "Exchange": market,
+                "Exchange": exchange,
                 "Currency": currency,
                 "Type": None,
                 "DataProvider": "user_defined",
@@ -136,7 +136,7 @@ def create_user_metadata_template(master_log, symbols_to_process):
             }
             symbols_added.append(symbol)
         except KeyError:
-            print(f"Warning: Could not find Market/Currency for '{symbol}' in the log. Creating a blank template.")
+            print(f"Warning: Could not find Exchange/Currency for '{symbol}' in the log. Creating a blank template.")
             metadata_template[symbol] = {
                 "Name": None, "Exchange": None, "Currency": None, "Type": None,
                 "DataProvider": "user_defined", "Industry": None, "Sector": None

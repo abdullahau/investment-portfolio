@@ -143,7 +143,7 @@ if __name__ == "__main__":
     # Process Statements & Store as JSON
     process_all_statements(
         input_folder= config.RAW_DATA_DIR / "monthly-statements-pdf",
-        output_file= config.RAW_DATA_DIR / "brokerage_data.json",
+        output_file= config.RAW_DATA_DIR / "sarwa_trade.json",
     )
 
     # # Example Code: Read & Load JSON

@@ -74,7 +74,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                         "Description": record.get(mapping.get("Description")),
                         "Type": type_val,
                         "Currency": "USD",
-                        "Market": "US Market",
+                        "Exchange": "US Market",
                         "Source": "Sarwa Trade",
                     }
                     all_transactions.append(tx)
@@ -91,7 +91,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Amount": row["Amount"],
                 "Type": row["Type"],
                 "Currency": "USD",
-                "Market": "US Market",
+                "Exchange": "US Market",
                 "Source": "Sarwa Crypto",
             }
             all_transactions.append(tx)
@@ -110,7 +110,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Commission": row["Commission"],
                 "Description": row["Description"],
                 "Currency": "USD",
-                "Market": "US Market",
+                "Exchange": "US Market",
                 "Source": "Sarwa Trade - Interim",
             }
             all_transactions.append(tx)
@@ -150,7 +150,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
         "Commission",
         "Currency",
         "Description",
-        "Market",
+        "Exchange",
         "Source",
     ]
     master_log = master_log[final_cols]

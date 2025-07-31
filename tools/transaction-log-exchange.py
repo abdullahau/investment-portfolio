@@ -21,8 +21,8 @@ def main():
         if "Exchange" in data
     }
 
-    # 4. Use .map() to update the 'Market' column
-    transaction_log['Market'] = transaction_log['Symbol'].map(market_mapping).fillna('US Market')
+    # 4. Use .map() to update the 'Exchange' column
+    transaction_log['Exchange'] = transaction_log['Symbol'].map(market_mapping).fillna('US Market')
 
     # 5. Write to us_mkt_transactions.csv
     transaction_log.to_csv(config.INPUT_DATA_DIR / "us_mkt_transactions.csv", index=False)

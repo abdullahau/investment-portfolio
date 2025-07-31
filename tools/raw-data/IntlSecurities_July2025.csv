@@ -1,4 +1,4 @@
-﻿Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Market,Source
+﻿Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Exchange,Source
 2023-11-08,Net Deposit,,,,1000,0,AED,Incoming Fund Transfer From Client ID 27190,UAE Market,Intl Securities
 2023-11-08,buy,ALDAR,10,5.6,-56,0.01,AED,Buy Securities of ALDAR Invoice No: 592844,ADX,Intl Securities
 2023-11-09,buy,EMAAR,10,6.81,-68.1,10.68,AED,Buy Securities of EMAAR Invoice No: 593449,DFM,Intl Securities
