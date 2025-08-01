@@ -360,12 +360,12 @@
         "DataProvider": "missing"
     },
     "ASM": {
-        "DataProvider": "user_defined",
-        "Type": "user_defined"
+        "DataProvider": "user_provided",
+        "Type": "user_provided"
     },
     "AMR": {
-        "DataProvider": "user_defined",
-        "Type": "user_defined"
+        "DataProvider": "user_provided",
+        "Type": "user_provided"
     },
     "AMZN": {
         "Name": "Amazon.com, Inc.",
