@@ -65,7 +65,7 @@ class MarketData:
             A DataFrame with standardized columns, or an empty DataFrame if no data is found.
             Ensure data returned is a DataFrame with a 'Close' and optional 'StockSplits' column
         """
-        cache_file = config.CACHE_DIR / f"{symbol}.csv"
+        cache_file = config.PRICE_CACHE / f"{symbol}.csv"
         if os.path.exists(cache_file):
             cached_data = pd.read_csv(cache_file, index_col="Date", parse_dates=True)
             if (
@@ -84,7 +84,7 @@ class MarketData:
 
         return hist
 
-    def get_fx_rate_history(self, currency_pairs, start_date, last_market_day):
+    def get_fx_rates(self, currency_pairs, start_date, last_market_day):
         """
         Fetches historical FX rates for a list of currency pairs.
         Handles the provider-specific ticker format (e.g., 'AEDUSD=X').

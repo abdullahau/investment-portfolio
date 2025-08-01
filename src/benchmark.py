@@ -11,6 +11,8 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 from src import data_providers
 
+class Benchmark:
+    pass
 
 # --- Fee Calculation Logic ---
 def buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):

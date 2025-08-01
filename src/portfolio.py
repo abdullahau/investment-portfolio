@@ -2,10 +2,8 @@
 
 import pandas as pd
 import numpy as np
-
 import sys
 from pathlib import Path
-
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 from src.market_data import MarketData
@@ -65,7 +63,7 @@ class Portfolio:
                     symbol, self.date_range.min(), self.last_market_day
                 )
             elif provider_name == config.MANUAL_DATA_ENTRY:
-                price_file = config.MANUAL_DATA_DIR / f"prices/{symbol}.csv"
+                price_file = config.USER_PRICE_CACHE / f"{symbol}.csv"
                 if price_file.exists():
                     hist = pd.read_csv(price_file, index_col="Date", parse_dates=True)
                 else:
@@ -100,7 +98,7 @@ class Portfolio:
             (currency, self.base_currency) for currency in unique_currencies
         ]
 
-        fx_rates = self.data_provider.get_forex_rates(
+        fx_rates = self.data_provider.get_fx_rates(
             currency_pairs, self.date_range.min(), self.last_market_day
         )
 

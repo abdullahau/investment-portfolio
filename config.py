@@ -21,14 +21,15 @@ SRC_DIR = ROOT_DIR / "src"
 DATA_DIR = ROOT_DIR / "data"
 INPUT_DATA_DIR = DATA_DIR / "input"
 CACHE_DIR = DATA_DIR / "cache"
+PRICE_CACHE = CACHE_DIR / "prices"
+METADATA_CACHE = CACHE_DIR / "metadata/metadata.json"
 MANUAL_DATA_DIR = DATA_DIR / "manual-source"
+USER_PRICE_CACHE = MANUAL_DATA_DIR / "prices"
+USER_METADATA = MANUAL_DATA_DIR / "metadata/metadata.json"
 TOOLS_DIR = ROOT_DIR / "tools"
 DOCS_DIR = ROOT_DIR / "docs"
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 RAW_DATA_DIR = TOOLS_DIR / "raw-data"
-METADATA_CACHE = CACHE_DIR / "metadata.json"
-USER_METADATA = MANUAL_DATA_DIR / "metadata.json"
-
 
 # --- User-Defined Settings ---
 BENCHMARK_INDEX = "VOO"
