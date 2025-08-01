@@ -14,7 +14,9 @@ import config
 
 # --- Yahoo Finance ---
 def yf_hist(ticker_symbol, start_date, last_market_day):
-
+    """
+    Fetches historical data from yfinance, using a local cache.
+    """
     cache_file = config.CACHE_DIR / f"{ticker_symbol}.csv"
 
     if os.path.exists(cache_file):

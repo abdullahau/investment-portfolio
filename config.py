@@ -21,14 +21,13 @@ SRC_DIR = ROOT_DIR / "src"
 DATA_DIR = ROOT_DIR / "data"
 INPUT_DATA_DIR = DATA_DIR / "input"
 CACHE_DIR = DATA_DIR / "cache"
-USER_DATA_DIR = DATA_DIR / "user-data"
+MANUAL_DATA_DIR = DATA_DIR / "manual-source"
 TOOLS_DIR = ROOT_DIR / "tools"
 DOCS_DIR = ROOT_DIR / "docs"
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 RAW_DATA_DIR = TOOLS_DIR / "raw-data"
 METADATA_CACHE = CACHE_DIR / "metadata.json"
-FULL_METADATA_CACHE = CACHE_DIR / "full_metadata.json"
-USER_METADATA = USER_DATA_DIR / "metadata.json"
+USER_METADATA = MANUAL_DATA_DIR / "metadata.json"
 
 
 # --- User-Defined Settings ---

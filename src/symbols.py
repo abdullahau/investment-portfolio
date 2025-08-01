@@ -112,7 +112,7 @@ class Symbols:
         if not symbols_to_process:
             return
 
-        os.makedirs(config.USER_DATA_DIR, exist_ok=True)
+        os.makedirs(config.MANUAL_DATA_DIR, exist_ok=True)
         symbol_info = self.trans_log.dropna(subset=['Symbol', 'Exchange', 'Currency'])
         symbol_info = symbol_info.drop_duplicates(subset=['Symbol'], keep='first').set_index('Symbol')
 
