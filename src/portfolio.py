@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 from src.market_data import MarketData
+from src.transaction_processor import TransactionProcessor
 
 
 class Portfolio:
@@ -29,6 +30,7 @@ class Portfolio:
         self.data_provider = data_provider
         self.base_currency = base_currency
         self.symbols = trans_log["Symbol"].dropna().unique()
+        self.processor = TransactionProcessor(trans_log)
 
         # Initialize the holdings dictionary to store all DataFrames
         self.holdings = {}
@@ -42,11 +44,10 @@ class Portfolio:
     def _prepare_trade_log(self):
         """Populates the trade DataFrame from the transaction log."""
         print("Preparing trade log...")
+        trade_log = self.processor.get_log_for_action('trade')
         self.holdings["trade"].update(
-            self.trans_log[self.trans_log["Type"].isin(["buy", "sell"])]
-            .groupby(["Date", "Symbol"])["Quantity"]
-            .sum()
-            .unstack(fill_value=0)
+            trade_log.groupby(["Date", "Symbol"])["Quantity"]
+            .sum().unstack(fill_value=0)
         )
 
     def _fetch_price_data(self):
@@ -207,4 +208,36 @@ The schematic idea is:
     d) geographic concentration (note that this metadata has not yet been added to `Symbols` and will be considered later.
     e) I would also like to look at total deposits and total return (gains/earnings) over the investment period.
     f) Then consider ways to evaluate returns that factor in cash outflows, inflows and unrealized earnings that accounts for time value of money
+    
+There are a few important facts to keep in mind about information inside the transaction/master logs
+
+Firstly it is mandatory to structure all transaction logs with the following headers:
+
+Date, Type, Symbol, Quantity, Price, Amount, Commission, Currency, Description, Exchange, Source
+
+There are quite a few variations we can expect in "Type" of transactions. One this is for sure, this cannot be an empty field.
+
+In my case, for example, I have the following Types: 'Net Deposit', 'buy', 'Net Dividend', 'sell', 'Qualified interest income reallocation for 2023', 'Credit/Margin Interest', 'Merger/Acquisition', 'Stock Split', 'High-Yield Cash Sweep'.
+
+I have a small custom script to clean up data and removing useless entries like warrants and inter-account transfer of funds between equity and crypto.
+
+But generally, I would like to enforce the following for all users:
+1) Deposits and withdrawals should be Net deposits. If cash was deposited, ensure it is positive `Amount`. If cash was withdrawn, ensure it is negative `Amount`.
+2) All dividend income should be net of taxes.
+3)  `Credit/Margin Interest` income should be net of taxes too.
+4) `buy`, `sell` should be separated for purchase Amount spent and commission paid.
+
+Everything else is a bit of an accounting standard employed in the preperation.
+
+My transactions log has two entries for a Stock Split event for any stock that has been split. On the same date there is a negative of quantity and positive of quantity to reflect the update in holdings. While this can be ignored entirely if the symbol has a prop data provider like yfinance or others where `get_history` call will return a price, dividend, and stock split history. But this may not be true for manually entered price histories. 
+
+In my transaction log, I also have two entries of a single symbol of type 'Merger/Acquisition'. This is where the one symbol was acquired so one entry shows a reduction in the quantity of that symbol and another entry showing an inflow of 'Amount'. While this isn't "income", it is capital returned (either with some gain or with some loss), how should this amount be treated? Does it affect how we simulate benchmark? Or should it be ignored in benchmark simulation? How do we show gains and losses?
+
+'High-Yield Cash Sweep' entries are just inflows and outflows of funds from cash account to a FIDIC insured cash pool.
+
+'Qualified interest income reallocation for 2023' is just an accounting anomaly that can be ignored for all intents and purposes of this analysis. 
+
+How can I work with a broad diversity of entry types? Can we abstract away and categorize entry types into ones that affect holdings, cash-flow, and income or some combination of the three?
+
+Because these entry names won't be consistent, how can I also allow the user to categorize their unique entry names (or different cases) to what the basic operation needs to be taken while preparing the trade log or performing functions with this log?
 """

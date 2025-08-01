@@ -16,20 +16,24 @@ ACCOUNT_NAME = os.getenv("ACCOUNT_NAME")
 # --- Path Management ---
 # Root directory
 ROOT_DIR = Path(__file__).resolve().parent
-# Directories relative to the root
+# Folders
 SRC_DIR = ROOT_DIR / "src"
 DATA_DIR = ROOT_DIR / "data"
-TRANS_LOG_DIR = DATA_DIR / "transaction-log"
 CACHE_DIR = DATA_DIR / "cache"
-PRICE_CACHE = CACHE_DIR / "prices"
-METADATA_CACHE = CACHE_DIR / "metadata/metadata.json"
+TRANS_LOG_DIR = DATA_DIR / "transaction-log"
 MANUAL_DATA_DIR = DATA_DIR / "manual-source"
-USER_PRICE_CACHE = MANUAL_DATA_DIR / "prices"
-USER_METADATA = MANUAL_DATA_DIR / "metadata/metadata.json"
 TOOLS_DIR = ROOT_DIR / "tools"
 DOCS_DIR = ROOT_DIR / "docs"
 NOTEBOOKS_DIR = ROOT_DIR / "notebooks"
 RAW_DATA_DIR = TOOLS_DIR / "raw-data"
+# Cache
+PRICE_CACHE = CACHE_DIR / "prices"
+USER_PRICE_CACHE = MANUAL_DATA_DIR / "prices"
+# Metadata
+METADATA_CACHE = CACHE_DIR / "metadata/metadata.json"
+USER_METADATA = MANUAL_DATA_DIR / "metadata/metadata.json"
+# Transaction Mapping
+TRANSACTION_MAP_FILE = TRANS_LOG_DIR / "transaction_map.json"
 
 # --- User-Defined Settings ---
 BENCHMARK_INDEX = "VOO"

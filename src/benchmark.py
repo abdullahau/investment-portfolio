@@ -9,7 +9,6 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import config
-from src import data_providers
 
 class Benchmark:
     pass

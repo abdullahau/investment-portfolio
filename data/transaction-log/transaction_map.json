@@ -1,0 +1,11 @@
+{
+  "buy": { "action": "trade" },
+  "sell": { "action": "trade" },
+  "Net Deposit": { "action": "cash_flow" },
+  "Net Dividend": { "action": "income" },
+  "Credit/Margin Interest": { "action": "income" },
+  "High-Yield Cash Sweep": { "action": "ignore" },
+  "Merger/Acquisition": { "action": "trade" },
+  "Stock Split": { "action": "corporate_action" },
+  "Qualified interest income reallocation for 2023": { "action": "ignore" }
+}
