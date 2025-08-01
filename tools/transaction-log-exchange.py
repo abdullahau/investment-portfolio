@@ -10,7 +10,7 @@ import config
 
 def main():
     # 1. Load Sarwa transaction log
-    transaction_log = pd.read_csv(config.INPUT_DATA_DIR / "us_mkt_transactions.csv")
+    transaction_log = pd.read_csv(config.TRANS_LOG_DIR / "us_mkt_transactions.csv")
 
     # 2. Load metadata
     with open(config.METADATA_CACHE, "r") as f:
@@ -30,7 +30,7 @@ def main():
 
     # 5. Write to us_mkt_transactions.csv
     transaction_log.to_csv(
-        config.INPUT_DATA_DIR / "us_mkt_transactions.csv", index=False
+        config.TRANS_LOG_DIR / "us_mkt_transactions.csv", index=False
     )
 
     return transaction_log

@@ -19,7 +19,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 # Directories relative to the root
 SRC_DIR = ROOT_DIR / "src"
 DATA_DIR = ROOT_DIR / "data"
-INPUT_DATA_DIR = DATA_DIR / "input"
+TRANS_LOG_DIR = DATA_DIR / "transaction-log"
 CACHE_DIR = DATA_DIR / "cache"
 PRICE_CACHE = CACHE_DIR / "prices"
 METADATA_CACHE = CACHE_DIR / "metadata/metadata.json"
@@ -48,7 +48,7 @@ def project_dates(log_dates):
     today = pd.Timestamp.today().normalize()
     end_date = today - pd.Timedelta(days=1)
 
-    date_range = pd.date_range(start=start_date, end=end_date, freq="D")
+    date_range = pd.Series(pd.date_range(start=start_date, end=end_date, freq='D'), name='Date')
 
     hist_recent = yf.Ticker(BENCHMARK_INDEX).history(period="10d")
     hist_recent.index = hist_recent.index.tz_localize(None).normalize()

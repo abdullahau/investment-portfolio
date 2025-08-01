@@ -189,5 +189,5 @@ if __name__ == "__main__":
         json_path=config.RAW_DATA_DIR / "sarwa_trade.json",
         crypto_path=config.RAW_DATA_DIR / "crypto_transactions.csv",
         interim_path=config.RAW_DATA_DIR / "interim_transactions.csv",
-        output_path=config.INPUT_DATA_DIR / "us_mkt_transactions.csv",
+        output_path=config.TRANS_LOG_DIR / "us_mkt_transactions.csv",
     )
