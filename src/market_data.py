@@ -35,9 +35,9 @@ class MarketData:
                 
                 metadata = {
                     'Name': info.get('longName'),
-                    'Exchange': info.gexet('fullExchangeName'),
+                    'Exchange': info.get('fullExchangeName'),
                     'Currency': info.get('currency'),
-                    'Type': quote_type.lower() if quote_type else 'N/A',
+                    'Type': quote_type.lower() if quote_type else None,
                     'Country': info.get('country'),
                     'Industry': info.get('industry') if quote_type == 'EQUITY' else None,
                     'Sector': info.get('sector') if quote_type == 'EQUITY' else None,

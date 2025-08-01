@@ -4,71 +4,79 @@
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",        
         "Industry": "Real Estate - Development",
-        "Sector": "Real Estate"
+        "Sector": "Real Estate",        
+        "DataProvider": "manual"
     },
     "BURJEEL": {
         "Name": "Burjeel Holdings PLC",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",   
         "Industry": "Medical Care Facilities",
-        "Sector": "Healthcare"
+        "Sector": "Healthcare",        
+        "DataProvider": "manual"
     },
     "CHADX15": {
         "Name": "Chimera FTSE ADX 15 ETF – Class B – Income",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "etf",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",   
         "Industry": null,
-        "Sector": null
+        "Sector": null,        
+        "DataProvider": "manual"
     },
     "IHC": {
         "Name": "International Holding Company PJSC",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",   
         "Industry": "Industrials",
-        "Sector": "Conglomerates"
+        "Sector": "Conglomerates",        
+        "DataProvider": "manual"
     },
     "EMAAR": {
         "Name": "Emaar Properties PJSC",
         "Exchange": "DFM",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",   
         "Industry": "Real Estate - Development",
-        "Sector": "Real Estate"
+        "Sector": "Real Estate",        
+        "DataProvider": "manual"
     },
     "MULTIPLY": {
         "Name": "Multiply Group PJSC",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",
         "Industry": "Financials",
-        "Sector": "Asset Management"
+        "Sector": "Asset Management",        
+        "DataProvider": "manual"
     },
     "ASM": {
         "Name": "Al Seer Marine Supplies & Equipment Company P.J.S.C",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",
         "Industry": "Industrials",
-        "Sector": "Marine Shipping"
+        "Sector": "Marine Shipping",        
+        "DataProvider": "manual"
     },
     "AMR": {
         "Name": "Americana Restaurants International PLC",
         "Exchange": "ADX",
         "Currency": "AED",
         "Type": "equity",
-        "DataProvider": "user_defined",
+        "Country": "United Arab Emirates",
         "Industry": "Consumer Cyclical",
-        "Sector": "Restaurants"
+        "Sector": "Restaurants",        
+        "DataProvider": "manual"
     }
 }

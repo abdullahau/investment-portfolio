@@ -4,342 +4,380 @@
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "Israel",
         "Industry": "Internet Content & Information",
-        "Sector": "Communication Services"
+        "Sector": "Communication Services",
+        "DataProvider": "yfinance"
     },
     "TSLA": {
         "Name": "Tesla, Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Auto Manufacturers",
-        "Sector": "Consumer Cyclical"
+        "Sector": "Consumer Cyclical",
+        "DataProvider": "yfinance"
     },
     "VOO": {
         "Name": "Vanguard S&P 500 ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "UAE": {
         "Name": "iShares MSCI UAE ETF",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "XLK": {
         "Name": "The Technology Select Sector SPDR Fund",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "BTC-USD": {
         "Name": "Bitcoin USD",
         "Exchange": "CCC",
         "Currency": "USD",
         "Type": "cryptocurrency",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "VOOG": {
         "Name": "Vanguard S&P 500 Growth Index Fund ETF Shares",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "NOBL": {
         "Name": "ProShares S&P 500 Dividend Aristocrats ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "SPY": {
         "Name": "SPDR S&P 500 ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "VHT": {
         "Name": "Vanguard Health Care Index Fund ETF Shares",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "NVDA": {
         "Name": "NVIDIA Corporation",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Semiconductors",
-        "Sector": "Technology"
+        "Sector": "Technology",
+        "DataProvider": "yfinance"
     },
     "SHOP": {
         "Name": "Shopify Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "Canada",
         "Industry": "Software - Application",
-        "Sector": "Technology"
+        "Sector": "Technology",
+        "DataProvider": "yfinance"
     },
     "LUX": {
         "Name": "Tema ETF Trust - Tema Luxury ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "META": {
         "Name": "Meta Platforms, Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Internet Content & Information",
-        "Sector": "Communication Services"
+        "Sector": "Communication Services",
+        "DataProvider": "yfinance"
     },
     "MSFT": {
         "Name": "Microsoft Corporation",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Software - Infrastructure",
-        "Sector": "Technology"
+        "Sector": "Technology",
+        "DataProvider": "yfinance"
     },
     "IBB": {
         "Name": "iShares Biotechnology ETF",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "SPHY": {
         "Name": "SPDR Portfolio High Yield Bond ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "STIP": {
         "Name": "iShares 0-5 Year TIPS Bond ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "USRT": {
         "Name": "iShares Core U.S. REIT ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "BA": {
         "Name": "The Boeing Company",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Aerospace & Defense",
-        "Sector": "Industrials"
+        "Sector": "Industrials",
+        "DataProvider": "yfinance"
     },
     "ADBE": {
         "Name": "Adobe Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Software - Application",
-        "Sector": "Technology"
+        "Sector": "Technology",
+        "DataProvider": "yfinance"
     },
     "BKNG": {
         "Name": "Booking Holdings Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Travel Services",
-        "Sector": "Consumer Cyclical"
+        "Sector": "Consumer Cyclical",
+        "DataProvider": "yfinance"
     },
     "CAT": {
         "Name": "Caterpillar Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Farm & Heavy Construction Machinery",
-        "Sector": "Industrials"
+        "Sector": "Industrials",
+        "DataProvider": "yfinance"
     },
     "EL": {
         "Name": "The Est\u00e9e Lauder Companies Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Household & Personal Products",
-        "Sector": "Consumer Defensive"
+        "Sector": "Consumer Defensive",
+        "DataProvider": "yfinance"
     },
     "DE": {
         "Name": "Deere & Company",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Farm & Heavy Construction Machinery",
-        "Sector": "Industrials"
+        "Sector": "Industrials",
+        "DataProvider": "yfinance"
     },
     "COIN": {
         "Name": "Coinbase Global, Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Financial Data & Stock Exchanges",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "OCSL": {
         "Name": "Oaktree Specialty Lending Corporation",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "TPVG": {
         "Name": "TriplePoint Venture Growth BDC Corp.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "GSBD": {
         "Name": "Goldman Sachs BDC, Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "LLY": {
         "Name": "Eli Lilly and Company",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Drug Manufacturers - General",
-        "Sector": "Healthcare"
+        "Sector": "Healthcare",
+        "DataProvider": "yfinance"
     },
     "NVO": {
         "Name": "Novo Nordisk A/S",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "Denmark",
         "Industry": "Drug Manufacturers - General",
-        "Sector": "Healthcare"
+        "Sector": "Healthcare",
+        "DataProvider": "yfinance"
     },
     "CLM": {
         "Name": "Cornerstone Strategic Investment Fund, Inc.",
         "Exchange": "NYSE American",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "CEFS": {
         "Name": "Saba Closed-End Funds ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "GOF": {
         "Name": "Guggenheim Strategic Opportunities Fund",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "SPXL": {
         "Name": "Direxion Daily S&P500 Bull 3X Shares",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "TQQQ": {
         "Name": "ProShares UltraPro QQQ",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "BRW": {
         "Name": "Saba Capital Income & Opportunities Fund",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "MOAT": {
         "Name": "VanEck Morningstar Wide Moat ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "ALDAR": {
         "DataProvider": "missing"
@@ -360,227 +398,251 @@
         "DataProvider": "missing"
     },
     "ASM": {
-        "DataProvider": "user_provided",
-        "Type": "user_provided"
+        "DataProvider": "manual",
+        "Type": "manual"
     },
     "AMR": {
-        "DataProvider": "user_provided",
-        "Type": "user_provided"
+        "DataProvider": "manual",
+        "Type": "manual"
     },
     "AMZN": {
         "Name": "Amazon.com, Inc.",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Internet Retail",
-        "Sector": "Consumer Cyclical"
+        "Sector": "Consumer Cyclical",
+        "DataProvider": "yfinance"
     },
     "INDA": {
         "Name": "iShares MSCI India ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "KSA": {
         "Name": "iShares MSCI Saudi Arabia ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "SPSM": {
         "Name": "SPDR Portfolio S&P 600 Small Cap ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "VBK": {
         "Name": "Vanguard Small-Cap Growth Index Fund ETF Shares",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "IJR": {
         "Name": "iShares Core S&P Small-Cap ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "PAK": {
         "Name": "Global X MSCI Pakistan ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "MCHI": {
         "Name": "iShares MSCI China ETF",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "EWJ": {
         "Name": "iShares MSCI Japan ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "MBB": {
         "Name": "iShares MBS ETF",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "ARKK": {
         "Name": "ARK Innovation ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "IPO": {
         "Name": "Renaissance IPO ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "VXUS": {
         "Name": "Vanguard Total International Stock Index Fund ETF Shares",
         "Exchange": "NasdaqGM",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "XLF": {
         "Name": "The Financial Select Sector SPDR Fund",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "ARM": {
         "Name": "Arm Holdings plc",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United Kingdom",
         "Industry": "Semiconductors",
-        "Sector": "Technology"
+        "Sector": "Technology",
+        "DataProvider": "yfinance"
     },
     "ROM": {
         "Name": "ProShares Ultra Technology",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "RYAAY": {
         "Name": "Ryanair Holdings plc",
         "Exchange": "NasdaqGS",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "Ireland",
         "Industry": "Airlines",
-        "Sector": "Industrials"
+        "Sector": "Industrials",
+        "DataProvider": "yfinance"
     },
     "APO": {
         "Name": "Apollo Global Management, Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "KKR": {
         "Name": "KKR & Co. Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "JPMB": {
         "Name": "JPMorgan USD Emerging Markets Sovereign Bond ETF",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "SMOT": {
         "Name": "VanEck Morningstar SMID Moat ETF",
         "Exchange": "Cboe US",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "XLV": {
         "Name": "The Health Care Select Sector SPDR Fund",
         "Exchange": "NYSEArca",
         "Currency": "USD",
         "Type": "etf",
-        "DataProvider": "yfinance",
+        "Country": null,
         "Industry": null,
-        "Sector": null
+        "Sector": null,
+        "DataProvider": "yfinance"
     },
     "BX": {
         "Name": "Blackstone Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Asset Management",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     },
     "BRK-B": {
         "Name": "Berkshire Hathaway Inc.",
         "Exchange": "NYSE",
         "Currency": "USD",
         "Type": "equity",
-        "DataProvider": "yfinance",
+        "Country": "United States",
         "Industry": "Insurance - Diversified",
-        "Sector": "Financial Services"
+        "Sector": "Financial Services",
+        "DataProvider": "yfinance"
     }
 }
