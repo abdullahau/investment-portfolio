@@ -31,6 +31,7 @@ class Portfolio:
         self.base_currency = base_currency
         self.symbols = trans_log["Symbol"].dropna().unique()
         self.processor = TransactionProcessor(trans_log)
+        self.fx_rates = None
 
         # Initialize the holdings dictionary to store all DataFrames
         self.holdings = {}
@@ -102,6 +103,7 @@ class Portfolio:
         fx_rates = self.data_provider.get_fx_rates(
             currency_pairs, self.date_range.min(), self.last_market_day
         )
+        self.fx_rates = fx_rates
 
         for symbol, row in non_base_symbols.iterrows():
             currency = row["Currency"]
