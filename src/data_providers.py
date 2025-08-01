@@ -8,9 +8,11 @@ import numpy as np
 
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import config
+
 
 # --- Yahoo Finance ---
 def yf_hist(ticker_symbol, start_date, last_market_day):
@@ -29,7 +31,7 @@ def yf_hist(ticker_symbol, start_date, last_market_day):
 
     ticker = yf.Ticker(ticker_symbol)
     end_date_for_api = last_market_day + pd.Timedelta(days=1)
-    hist = ticker.history(start=start_date, end=end_date_for_api)    
+    hist = ticker.history(start=start_date, end=end_date_for_api)
 
     if not hist.empty:
         hist.index = hist.index.tz_localize(None)
@@ -39,9 +41,8 @@ def yf_hist(ticker_symbol, start_date, last_market_day):
 
 
 def yf_info(ticker_symbol):
-    
     cache_file = config.CACHE_DIR / "ticker_info_cache.json"
-    
+
     if os.path.exists(cache_file):
         with open(cache_file, "r") as f:
             info_cache = json.load(f)

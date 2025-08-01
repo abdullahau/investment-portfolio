@@ -3,8 +3,10 @@ import pandas as pd
 
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
+
 
 def main():
     # 1. Load Sarwa transaction log
@@ -22,12 +24,17 @@ def main():
     }
 
     # 4. Use .map() to update the 'Exchange' column
-    transaction_log['Exchange'] = transaction_log['Symbol'].map(market_mapping).fillna('US Market')
+    transaction_log["Exchange"] = (
+        transaction_log["Symbol"].map(market_mapping).fillna("US Market")
+    )
 
     # 5. Write to us_mkt_transactions.csv
-    transaction_log.to_csv(config.INPUT_DATA_DIR / "us_mkt_transactions.csv", index=False)
-    
+    transaction_log.to_csv(
+        config.INPUT_DATA_DIR / "us_mkt_transactions.csv", index=False
+    )
+
     return transaction_log
+
 
 if __name__ == "__main__":
     main()

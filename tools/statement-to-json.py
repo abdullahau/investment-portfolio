@@ -7,6 +7,7 @@ import pdfplumber
 from collections import defaultdict
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 
@@ -142,8 +143,8 @@ def process_all_statements(input_folder, output_file):
 if __name__ == "__main__":
     # Process Statements & Store as JSON
     process_all_statements(
-        input_folder= config.RAW_DATA_DIR / "monthly-statements-pdf",
-        output_file= config.RAW_DATA_DIR / "sarwa_trade.json",
+        input_folder=config.RAW_DATA_DIR / "monthly-statements-pdf",
+        output_file=config.RAW_DATA_DIR / "sarwa_trade.json",
     )
 
     # # Example Code: Read & Load JSON

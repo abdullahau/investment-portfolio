@@ -7,8 +7,10 @@ import numpy as np
 
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
+
 
 def create_master_log(json_path, crypto_path, interim_path, output_path):
     """
@@ -116,14 +118,14 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
             all_transactions.append(tx)
 
     master_log = pd.DataFrame(all_transactions)
-    
+
     # Ensure all numerical columns are consistently typed as float64
-    numerical_cols = ['Quantity', 'Price', 'Amount', 'Commission']
+    numerical_cols = ["Quantity", "Price", "Amount", "Commission"]
     for col in numerical_cols:
         if col in master_log.columns:
-            master_log[col] = pd.to_numeric(master_log[col], errors='coerce')
-            master_log[col] = master_log[col].astype('float64')
-    
+            master_log[col] = pd.to_numeric(master_log[col], errors="coerce")
+            master_log[col] = master_log[col].astype("float64")
+
     master_log.sort_values(by="Date", inplace=True, ignore_index=True)
 
     # 4. Apply Cleaning Rules and Caveats
@@ -166,7 +168,9 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
     }
     agg_rules["Amount"] = "sum"
     aggregated_divs = div_rows_sorted.groupby(group_keys, as_index=False).agg(agg_rules)
-    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(12) # Numerical stability
+    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(
+        12
+    )  # Numerical stability
     aggregated_divs["Type"] = "Net Dividend"
 
     master_log = (

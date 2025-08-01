@@ -12,15 +12,7 @@ from src.market_data import MarketData
 
 
 class Portfolio:
-    def __init__(
-        self,
-        trans_log,
-        symbol_manager,
-        date_range,
-        last_market_day,
-        base_currency=config.BASE_CURRENCY,
-        data_provider=MarketData(),
-    ):
+    def __init__(self, trans_log, symbol_manager, date_range, last_market_day):
         """
         Initializes the Portfolio analysis engine.
         """
@@ -28,8 +20,6 @@ class Portfolio:
         self.symbol_manager = symbol_manager
         self.date_range = date_range
         self.last_market_day = last_market_day
-        self.data_provider = data_provider
-        self.base_currency = base_currency
         self.symbols = trans_log["Symbol"].dropna().unique()
 
         # Initialize the holdings dictionary to store all DataFrames
@@ -57,15 +47,15 @@ class Portfolio:
         symbol_df = self.symbol_manager.get_unified_df()
 
         for symbol, row in symbol_df.iterrows():
-            provider_name = row["DataProvider"]
+            data_provider = row["DataProvider"]
             hist = None
 
-            if provider_name == self.data_provider.get_provider_name():
-                hist = self.data_provider.get_history(
+            if data_provider == "yfinance":
+                hist = data_provider.yf_hist(
                     symbol, self.date_range.min(), self.last_market_day
                 )
-            elif provider_name == config.MANUAL_DATA_ENTRY:
-                price_file = config.MANUAL_DATA_DIR / f"prices/{symbol}.csv"
+            elif data_provider == "user_provided":
+                price_file = config.MANUAL_DATA_DIR / f"{symbol}.csv"
                 if price_file.exists():
                     hist = pd.read_csv(price_file, index_col="Date", parse_dates=True)
                 else:
@@ -76,49 +66,35 @@ class Portfolio:
                 self.holdings["price"][symbol] = (
                     hist["Close"].reindex(self.date_range).ffill()
                 )
-                if "StockSplits" in hist.columns:
-                    self.holdings["raw_splits"][symbol] = hist["StockSplits"].reindex(
+                # Assume user-provided data might not have splits
+                if "Stock Splits" in hist.columns:
+                    self.holdings["raw_splits"][symbol] = hist["Stock Splits"].reindex(
                         self.date_range
                     )
 
         self.holdings["raw_splits"] = self.holdings["raw_splits"].fillna(0.0)
 
-    def _convert_prices_to_base_currency(self):
-        """
-        Converts all non-base currency asset prices using the data provider.
-        """
-        print(f"Converting prices to base currency ({self.base_currency})...")
+    def _convert_prices_to_usd(self):
+        """Converts all non-USD asset prices to USD using daily FX rates."""
+        print("Converting prices to base currency (USD)...")
         symbol_df = self.symbol_manager.get_unified_df()
-        non_base_symbols = symbol_df[symbol_df["Currency"] != self.base_currency]
+        non_usd_symbols = symbol_df[symbol_df["Currency"] != "USD"]
 
-        unique_currencies = non_base_symbols["Currency"].dropna().unique()
-        if len(unique_currencies) == 0:
-            return
-
-        # Create a list of currency pairs to fetch, e.g., [('AED', 'USD')]
-        currency_pairs = [
-            (currency, self.base_currency) for currency in unique_currencies
+        # Fetch FX rates only if needed
+        fx_tickers = [
+            f"{currency}USD=X" for currency in non_usd_symbols["Currency"].unique()
         ]
+        fx_rates = {}
+        for fx_ticker in fx_tickers:
+            fx_hist = data_providers.yf_hist(
+                fx_ticker, self.date_range.min(), self.last_market_day
+            )
+            fx_rates[fx_ticker[:3]] = fx_hist["Close"].reindex(self.date_range).ffill()
 
-        fx_rates = self.data_provider.get_forex_rates(
-            currency_pairs, self.date_range.min(), self.last_market_day
-        )
-
-        for symbol, row in non_base_symbols.iterrows():
+        for symbol, row in non_usd_symbols.iterrows():
             currency = row["Currency"]
-            pair = (currency, self.base_currency)
-            if pair in fx_rates:
-                self.holdings["price"][symbol] *= (
-                    fx_rates[pair].reindex(self.date_range).ffill()
-                )
-
-    def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
-        """
-        Computes cumulative split factors for retroactive holding adjustment.
-        """
-        factors = split_series.replace(0, 1)
-        cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
-        return cumulative.fillna(1.0)
+            if currency in fx_rates:
+                self.holdings["price"][symbol] *= fx_rates[currency]
 
     def calculate_holdings_and_value(self):
         """
@@ -127,7 +103,7 @@ class Portfolio:
         """
         self._prepare_trade_log()
         self._fetch_price_data()
-        self._convert_prices_to_base_currency()
+        self._convert_prices_to_usd()
 
         print("Calculating daily holdings and value...")
         for symbol in self.symbols:
@@ -146,25 +122,8 @@ class Portfolio:
                     i, self.holdings["holding"].columns.get_loc(symbol)
                 ] = final_holding
 
-        print("Calculating split-adjusted holdings and market value...")
-        self.holdings["adj holding"] = self.holdings["holding"].copy()
-        self.holdings["cumulative splits"] = pd.DataFrame(
-            1.0, index=self.date_range, columns=self.symbols
-        )
-
-        for symbol in self.symbols:
-            split_factors = self._cumulative_split_factors(
-                self.holdings["raw_splits"][symbol]
-            )
-            self.holdings["cumulative splits"][symbol] = split_factors
-
-            self.holdings["adj holding"][symbol] = (
-                self.holdings["holding"][symbol] * split_factors
-            )
-
-        self.holdings["value"] = self.holdings["adj holding"] * self.holdings["price"]
+        self.holdings["value"] = self.holdings["holding"] * self.holdings["price"]
         self.holdings["Total Portfolio Value"] = self.holdings["value"].sum(axis=1)
-
         print("Calculations complete.")
 
     def get_current_holdings(self):

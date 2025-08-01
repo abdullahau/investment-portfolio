@@ -4,10 +4,11 @@ import os
 import fitz  # PyMuPDF
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 
-input_folder = config.RAW_DATA_DIR / "sarwa-statements"  
+input_folder = config.RAW_DATA_DIR / "sarwa-statements"
 output_folder = config.RAW_DATA_DIR / "monthly-statements-pdf"
 texts_to_remove = [config.ACCOUNT_NAME, config.ACCOUNT_NUM]
 

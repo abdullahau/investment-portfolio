@@ -10,17 +10,20 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 from src.market_data import MarketData
 
+
 def _load_json_cache(file_path):
     """Generic helper function to load a JSON cache file."""
     if os.path.exists(file_path):
-        with open(file_path, 'r') as f:
+        with open(file_path, "r") as f:
             return json.load(f)
     return {}
 
+
 def _save_json_cache(file_path, data):
     """Generic helper function to save data to a JSON cache file."""
-    with open(file_path, 'w') as f:
+    with open(file_path, "w") as f:
         json.dump(data, f, indent=4)
+
 
 class Symbols:
     def __init__(self, trans_log, data_provider=MarketData()) -> None:
@@ -28,7 +31,7 @@ class Symbols:
         Initializes the Symbols manager and loads all relevant data sources ONCE.
         """
         self.trans_log = trans_log
-        self.symbols = trans_log['Symbol'].dropna().unique()
+        self.symbols = trans_log["Symbol"].dropna().unique()
         self.data_provider = data_provider
         self.provider_name = self.data_provider.get_provider_name()
         self.cache = _load_json_cache(config.METADATA_CACHE)
@@ -43,37 +46,40 @@ class Symbols:
         for symbol in self.symbols:
             if symbol in self.cache:
                 continue
-            
+
             symbols_changed = True
             print(f"Checking new symbol '{symbol}' with {self.provider_name}...")
 
             metadata = self.data_provider.get_metadata(symbol)
 
             if metadata:
-                metadata['DataProvider'] = self.provider_name
+                metadata["DataProvider"] = self.provider_name
                 self.cache[symbol] = metadata
             else:
-                self.cache[symbol] = {'DataProvider': 'missing'}
+                self.cache[symbol] = {"DataProvider": "missing"}
                 self._user_metadata_template([symbol])
-        
+
         if symbols_changed:
             _save_json_cache(config.METADATA_CACHE, self.cache)
 
     def mark_as_manual(self, symbols_to_update):
         """
-        Updates caches and templates for symbols the user marks as incorrect 
+        Updates caches and templates for symbols the user marks as incorrect
         and which requires manual entry for metadata and price history.
         """
         if not symbols_to_update:
             return
-        
+
         print(f"Updating cache for incorrectly identified symbols: {symbols_to_update}")
         for symbol in symbols_to_update:
-            self.cache[symbol] = {'DataProvider': config.MANUAL_DATA_ENTRY, 'Type': config.MANUAL_DATA_ENTRY}
-        
+            self.cache[symbol] = {
+                "DataProvider": config.MANUAL_DATA_ENTRY,
+                "Type": config.MANUAL_DATA_ENTRY,
+            }
+
         _save_json_cache(config.METADATA_CACHE, self.cache)
         print("Caches updated successfully.")
-        
+
         self._user_metadata_template(symbols_to_update)
 
     def _user_metadata_template(self, symbols_to_process):
@@ -84,37 +90,42 @@ class Symbols:
             return
 
         os.makedirs(config.MANUAL_DATA_DIR, exist_ok=True)
-        symbol_info = self.trans_log.dropna(subset=['Symbol', 'Exchange', 'Currency'])
-        symbol_info = symbol_info.drop_duplicates(subset=['Symbol'], keep='first').set_index('Symbol')
+        symbol_info = self.trans_log.dropna(subset=["Symbol", "Exchange", "Currency"])
+        symbol_info = symbol_info.drop_duplicates(
+            subset=["Symbol"], keep="first"
+        ).set_index("Symbol")
 
         symbols_added = []
         for symbol in symbols_to_process:
-            if symbol in self.user_metadata and self.user_metadata[symbol].get("Name") is not None:
-                continue 
+            if (
+                symbol in self.user_metadata
+                and self.user_metadata[symbol].get("Name") is not None
+            ):
+                continue
 
             try:
-                exchange = symbol_info.loc[symbol, 'Exchange']
-                currency = symbol_info.loc[symbol, 'Currency']
+                exchange = symbol_info.loc[symbol, "Exchange"]
+                currency = symbol_info.loc[symbol, "Currency"]
                 self.user_metadata[symbol] = {
-                    "Name": None, 
-                    "Exchange": exchange, 
+                    "Name": None,
+                    "Exchange": exchange,
                     "Currency": currency,
                     "Type": None,
                     "Country": None,
                     "Industry": None,
-                    "Sector": None,                    
+                    "Sector": None,
                     "DataProvider": config.MANUAL_DATA_ENTRY,
                 }
                 symbols_added.append(symbol)
             except KeyError:
                 self.user_metadata[symbol] = {
-                    "Name": None, 
-                    "Exchange": None, 
-                    "Currency": None, 
+                    "Name": None,
+                    "Exchange": None,
+                    "Currency": None,
                     "Type": None,
                     "Country": None,
                     "Industry": None,
-                    "Sector": None,                    
+                    "Sector": None,
                     "DataProvider": config.MANUAL_DATA_ENTRY,
                 }
                 symbols_added.append(symbol)
@@ -128,10 +139,14 @@ class Symbols:
         """
         Builds the unified symbol DataFrame from the class's IN-MEMORY data attributes.
         """
-        tp_data = {s: d for s, d in self.cache.items() if d.get('DataProvider') == self.provider_name}
-        tp_df = pd.DataFrame.from_dict(tp_data, orient='index')
+        tp_data = {
+            s: d
+            for s, d in self.cache.items()
+            if d.get("DataProvider") == self.provider_name
+        }
+        tp_df = pd.DataFrame.from_dict(tp_data, orient="index")
 
-        user_df = pd.DataFrame.from_dict(self.user_metadata, orient='index')
+        user_df = pd.DataFrame.from_dict(self.user_metadata, orient="index")
 
         if not user_df.empty:
             self.unified_df = pd.concat([tp_df, user_df])
@@ -139,8 +154,17 @@ class Symbols:
             self.unified_df = tp_df
 
         if not self.unified_df.empty:
-            self.unified_df.index.name = 'Symbol'
-            cols_order = ['Name', 'Type', 'Exchange', 'Currency', 'Industry', 'Sector', 'Country', 'DataProvider']
+            self.unified_df.index.name = "Symbol"
+            cols_order = [
+                "Name",
+                "Type",
+                "Exchange",
+                "Currency",
+                "Industry",
+                "Sector",
+                "Country",
+                "DataProvider",
+            ]
             self.unified_df = self.unified_df.reindex(columns=cols_order)
 
         print("Successfully created unified symbols DataFrame.")
@@ -152,7 +176,7 @@ class Symbols:
         """
         print("Reloading user-provided metadata from disk...")
         self.user_metadata = _load_json_cache(config.USER_METADATA)
-        print("User metadata reloaded successfully.")        
+        print("User metadata reloaded successfully.")
 
     def get_unified_df(self):
         """
@@ -160,21 +184,34 @@ class Symbols:
         """
         self._build_unified_df()
         return self.unified_df
-        
+
     def get_found(self):
         """
         Returns a DataFrame of symbols successfully found on third-party.
         """
-        found_symbols = {s: d for s, d in self.cache.items() if d['DataProvider'] == self.provider_name}
-        found_df = pd.DataFrame.from_dict(found_symbols, orient='index')
+        found_symbols = {
+            s: d
+            for s, d in self.cache.items()
+            if d["DataProvider"] == self.provider_name
+        }
+        found_df = pd.DataFrame.from_dict(found_symbols, orient="index")
         if not found_df.empty:
-            found_df.index.name = 'Symbol'
-            cols_order = ['Name', 'Type', 'Exchange', 'Currency', 'Industry', 'Sector', 'Country', 'DataProvider']
+            found_df.index.name = "Symbol"
+            cols_order = [
+                "Name",
+                "Type",
+                "Exchange",
+                "Currency",
+                "Industry",
+                "Sector",
+                "Country",
+                "DataProvider",
+            ]
             found_df = found_df[[col for col in cols_order if col in found_df.columns]]
         return found_df
-    
+
     def get_missing(self):
         """
         Returns a list of symbols not found on third-party market data provider.
         """
-        return [s for s, d in self.cache.items() if d['DataProvider'] == 'missing']
+        return [s for s, d in self.cache.items() if d["DataProvider"] == "missing"]

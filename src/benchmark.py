@@ -5,10 +5,12 @@ import numpy as np
 
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import config
 from src import data_providers
+
 
 # --- Fee Calculation Logic ---
 def buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
@@ -24,6 +26,7 @@ def buy_order(cash_to_invest, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
         net_investment = cash_to_invest - commission
 
     return net_investment, commission
+
 
 def sell_order(cash_needed, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
     if cash_needed <= 0:
@@ -41,10 +44,12 @@ def sell_order(cash_needed, FLAT_FEE=config.FLAT_FEE, RATE=config.RATE):
 
 # --- Main Simulation and Analysis Functions ---
 
+
 def run_benchmark_simulation(benchmark_df, master_log):
     # ...your main benchmark loop that calls buy_order() and sell_order()...
     # return benchmark_df
     pass
+
 
 def calculate_holdings(trade_log, split_data):
     # ...your main holdings calculation loop...
