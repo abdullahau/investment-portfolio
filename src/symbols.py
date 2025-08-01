@@ -3,7 +3,6 @@
 import os
 import json
 import sys
-import yfinance as yf
 import pandas as pd
 from pathlib import Path
 
@@ -70,7 +69,7 @@ class Symbols:
         
         print(f"Updating cache for incorrectly identified symbols: {symbols_to_update}")
         for symbol in symbols_to_update:
-            self.cache[symbol] = {'DataProvider': 'manual', 'Type': 'manual'}
+            self.cache[symbol] = {'DataProvider': config.MANUAL_DATA_ENTRY, 'Type': config.MANUAL_DATA_ENTRY}
         
         _save_json_cache(config.METADATA_CACHE, self.cache)
         print("Caches updated successfully.")
@@ -104,7 +103,7 @@ class Symbols:
                     "Country": None,
                     "Industry": None,
                     "Sector": None,                    
-                    "DataProvider": "manual",
+                    "DataProvider": config.MANUAL_DATA_ENTRY,
                 }
                 symbols_added.append(symbol)
             except KeyError:
@@ -116,7 +115,7 @@ class Symbols:
                     "Country": None,
                     "Industry": None,
                     "Sector": None,                    
-                    "DataProvider": "manual",
+                    "DataProvider": config.MANUAL_DATA_ENTRY,
                 }
                 symbols_added.append(symbol)
 

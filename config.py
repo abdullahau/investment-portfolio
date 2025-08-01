@@ -36,6 +36,7 @@ TAX_RATE = 0.30
 # Fees for the benchmark simulation
 FLAT_FEE = 1.0
 RATE = 0.0025
+MANUAL_DATA_ENTRY = "manual"
 
 # --- Function to Compute Derived Variables ---
 def project_dates(log_dates):
