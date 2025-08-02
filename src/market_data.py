@@ -78,7 +78,9 @@ class MarketData:
                 return cached_data
 
         end_date_for_api = last_market_day + pd.Timedelta(days=1)
-        hist = yf.Ticker(symbol).history(start=start_date, end=end_date_for_api, auto_adjust=True)
+        hist = yf.Ticker(symbol).history(
+            start=start_date, end=end_date_for_api, auto_adjust=True
+        )
 
         if not hist.empty:
             hist.index = hist.index.tz_localize(None)

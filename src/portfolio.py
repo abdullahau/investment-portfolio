@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
 from src.market_data import MarketData
@@ -45,10 +46,11 @@ class Portfolio:
     def _prepare_trade_log(self):
         """Populates the trade DataFrame from the transaction log."""
         print("Preparing trade log...")
-        trade_log = self.processor.get_log_for_action('trade')
+        trade_log = self.processor.get_log_for_action("trade")
         self.holdings["trade"].update(
             trade_log.groupby(["Date", "Symbol"])["Quantity"]
-            .sum().unstack(fill_value=0)
+            .sum()
+            .unstack(fill_value=0)
         )
 
     def _fetch_price_data(self):
@@ -184,10 +186,12 @@ class Portfolio:
         Returns the 'Total Portfolio Value' time series.
         This is the primary output for performance charting.
         """
-        if 'Total Portfolio Value' in self.holdings:
-            return self.holdings['Total Portfolio Value']
+        if "Total Portfolio Value" in self.holdings:
+            return self.holdings["Total Portfolio Value"]
         else:
-            print("⚠️ Warning: Total Portfolio Value has not been calculated yet. Run calculate_holdings_and_value() first.")
+            print(
+                "⚠️ Warning: Total Portfolio Value has not been calculated yet. Run calculate_holdings_and_value() first."
+            )
             return None
 
     def get_holdings_dict(self):
@@ -195,7 +199,7 @@ class Portfolio:
         Returns the entire dictionary of holdings DataFrames.
         Useful for deeper, custom analysis.
         """
-        return self.holdings    
+        return self.holdings
 
     # You can continue to add methods for your other analysis points (b through f) here.
     # For example:

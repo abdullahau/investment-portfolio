@@ -52,7 +52,9 @@ def project_dates(log_dates):
     today = pd.Timestamp.today().normalize()
     end_date = today - pd.Timedelta(days=1)
 
-    date_range = pd.Series(pd.date_range(start=start_date, end=end_date, freq='D'), name='Date')
+    date_range = pd.Series(
+        pd.date_range(start=start_date, end=end_date, freq="D"), name="Date"
+    )
 
     hist_recent = yf.Ticker(BENCHMARK_INDEX).history(period="10d")
     hist_recent.index = hist_recent.index.tz_localize(None).normalize()
