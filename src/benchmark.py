@@ -232,3 +232,11 @@ class Benchmark:
     def get_results(self):
         """Returns the completed simulation DataFrame."""
         return self.simulation_df
+
+    def get_income(self):
+        """Returns a time series of total income for the benchmark."""
+        return self.simulation_df['NetDividend']
+
+    def get_monthly_income(self):
+        """Returns a time series of total monthly income for the benchmark."""
+        return self.simulation_df['NetDividend'].resample('ME').sum()

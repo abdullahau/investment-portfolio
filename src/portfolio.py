@@ -36,7 +36,7 @@ class Portfolio:
 
         # Initialize the holdings dictionary to store all DataFrames
         self.holdings = {}
-        for name in ["trade", "price", "raw_splits", "holding", "value"]:
+        for name in ["trade", "price", "raw_splits", "holding", "value", "income"]:
             self.holdings[name] = pd.DataFrame(
                 0.0, index=self.date_range, columns=self.symbols
             )
@@ -122,6 +122,30 @@ class Portfolio:
         factors = split_series.replace(0, 1)
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
+    
+    def _calculate_income(self):
+        """
+        Calculates and aggregates all income transactions from the log,
+        converting them to the base currency.
+        """
+        print("Calculating portfolio income...")
+        income_log = self.processor.get_log_for_action('income').copy()
+        
+        non_base_currencies = income_log[income_log['Currency'] != self.base_currency]['Currency'].dropna().unique()
+        if len(non_base_currencies) > 0:
+            currency_pairs = [(currency, self.base_currency) for currency in non_base_currencies]
+            fx_rates = self.data_provider.get_fx_rates(
+                currency_pairs, self.date_range.min(), self.last_market_day
+            )
+            for currency in non_base_currencies:
+                pair = (currency, self.base_currency)
+                if pair in fx_rates:
+                    is_currency = income_log['Currency'] == currency
+                    conversion_rates = fx_rates[pair].reindex(income_log.loc[is_currency].index, method='ffill')
+                    income_log.loc[is_currency, 'Amount'] *= conversion_rates
+        
+        income_pivot = income_log.groupby(['Date', 'Symbol'])['Amount'].sum().unstack(fill_value=0)
+        self.holdings['income'].update(income_pivot)
 
     def calculate_holdings_and_value(self):
         """
@@ -131,6 +155,7 @@ class Portfolio:
         self._prepare_trade_log()
         self._fetch_price_data()
         self._convert_prices_to_base_currency()
+        self._calculate_income()
 
         print("Calculating daily holdings and value...")
         for symbol in self.symbols:
@@ -169,6 +194,18 @@ class Portfolio:
         self.holdings["Total Portfolio Value"] = self.holdings["value"].sum(axis=1)
 
         print("Calculations complete.")
+
+    def get_income(self):
+        """Returns a time series of total income for the portfolio."""
+        return self.holdings['income'].sum(axis=1)
+
+    def get_monthly_income(self):
+        """Returns a time series of total monthly income for the portfolio."""
+        return self.holdings['income'].sum(axis=1).resample('ME').sum()
+
+    def get_individual_value_history(self):
+        """Returns a DataFrame of the daily market value for each individual holding."""
+        return self.holdings['value']
 
     def get_current_holdings(self):
         """Returns a DataFrame of the most recent holdings and their market value."""

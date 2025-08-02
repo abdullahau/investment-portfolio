@@ -98,7 +98,7 @@ Inside the `data/transaction-log/` directory, edit the `transaction_map.json` fi
 
 - `trade`: A transaction that changes the quantity of a symbol held (e.g., buy, sell, merger).
 - `cash_flow`: A transaction that changes the cash balance but not holdings (e.g., deposit, withdrawal).
-- `income`: Cash received from an asset you own (e.g., dividends, interest).
+- `income`: Cash received (net of taxes) from an asset you own (e.g., dividends, interest).
 - `corporate_action`: A non-cash event affecting holdings (e.g., stock split).
 - `ignore`: For transaction types to be completely disregarded.
 
