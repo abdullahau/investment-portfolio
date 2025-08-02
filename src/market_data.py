@@ -64,6 +64,7 @@ class MarketData:
         Returns:
             A DataFrame with standardized columns, or an empty DataFrame if no data is found.
             Ensure data returned is a DataFrame with a 'Close' and optional 'StockSplits' column
+            and ensure all `Close` prices are split-adjusted.
         """
         cache_file = config.PRICE_CACHE / f"{symbol}.csv"
         if os.path.exists(cache_file):
@@ -75,7 +76,7 @@ class MarketData:
                 return cached_data
 
         end_date_for_api = last_market_day + pd.Timedelta(days=1)
-        hist = yf.Ticker(symbol).history(start=start_date, end=end_date_for_api)
+        hist = yf.Ticker(symbol).history(start=start_date, end=end_date_for_api, auto_adjust=True)
 
         if not hist.empty:
             hist.index = hist.index.tz_localize(None)
