@@ -179,6 +179,24 @@ class Portfolio:
         )
         return summary[summary["Shares"] > 0]
 
+    def get_total_value_history(self):
+        """
+        Returns the 'Total Portfolio Value' time series.
+        This is the primary output for performance charting.
+        """
+        if 'Total Portfolio Value' in self.holdings:
+            return self.holdings['Total Portfolio Value']
+        else:
+            print("⚠️ Warning: Total Portfolio Value has not been calculated yet. Run calculate_holdings_and_value() first.")
+            return None
+
+    def get_holdings_dict(self):
+        """
+        Returns the entire dictionary of holdings DataFrames.
+        Useful for deeper, custom analysis.
+        """
+        return self.holdings    
+
     # You can continue to add methods for your other analysis points (b through f) here.
     # For example:
     def get_concentration(self, by="Sector"):
