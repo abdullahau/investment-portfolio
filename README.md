@@ -1,4 +1,4 @@
-# Investment Portfolio Analyzer
+# Investment Portfolio Dashboard
 
 This project provides a simple toolkit for analyzing personal investment portfolios. It is designed to be flexible and extensible, allowing users to track their performance against a benchmark, analyze portfolio composition, and handle transactions from multiple brokerages and in multiple currencies.
 
