@@ -50,6 +50,157 @@ How can I work with a broad diversity of entry types? Can we abstract away and c
 Because these entry names won't be consistent, how can I also allow the user to categorize their unique entry names (or different cases) to what the basic operation needs to be taken while preparing the trade log or performing functions with this log?
 
 
+### Portfolio performance analysis with irregular cash flows, realized/unrealized gains/losses, and income
+
+*multi-period, cash-flow-adjusted performance attribution*
+
+---
+
+## ✅ **Key Performance Metrics for Your Portfolio**
+
+With sporadic cash flows and a mix of realized/unrealized performance, here are the **main ways to analyze performance**:
+
+---
+
+### 🔹 1. **Money-Weighted Return (MWR) / Internal Rate of Return (IRR)**
+
+* **Best for:** Your personal investment performance, accounting for cash flow timing.
+* **Definition:** The discount rate that sets the net present value (NPV) of your portfolio’s cash flows to zero.
+* **Takes into account:** Your deposits, withdrawals, dividends, and timing of them.
+
+#### Formula (conceptually):
+
+$$
+\text{NPV} = \sum_{t=0}^{n} \frac{C_t}{(1 + \text{MWR})^t} = 0
+$$
+
+* $C_t$: Net cash flow at time $t$, including deposits (negative), withdrawals (positive), and ending value (positive final cash flow).
+
+---
+
+### 🔹 2. **Time-Weighted Return (TWR)**
+
+* **Best for:** Evaluating your portfolio’s performance independent of your deposit/withdrawal decisions.
+* **Definition:** Chain-linked geometric return between periods where cash flows occur.
+* **Use case:** Good for comparing your return to a benchmark or fund.
+
+---
+
+### 🔹 3. **Cumulative and Annualized Return**
+
+* Cumulative return: total return over the entire investment period.
+* Annualized return: geometric mean return per year.
+
+---
+
+### 🔹 4. **Realized vs Unrealized Gains**
+
+* Track both:
+
+  * **Realized:** Income from sales and distributions.
+  * **Unrealized:** Gains/losses from still-held assets.
+* Helps you know how much of your performance is booked vs paper-only.
+
+---
+
+### 🔹 5. **Cash-Flow Adjusted Performance Breakdown**
+
+This includes:
+
+* Total Contributions (deposits)
+* Total Withdrawals
+* Total Return (Ending Value - Net Contributions)
+* Percentage Gain/Loss relative to money invested
+
+---
+
+## ✅ **Attribution: How Did Each Symbol Contribute?**
+
+This is more nuanced when there's buying, selling, and dividends, so we use **attribution analysis**.
+
+Here are your options:
+
+---
+
+### 🔹 1. **Approximate Contribution by Modified Dietz**
+
+You can apply a modified Dietz calculation per asset:
+
+$$
+R_i = \frac{V_{i,\text{end}} - V_{i,\text{begin}} - C_i}{V_{i,\text{begin}} + \sum w_t \cdot C_{i,t}}
+$$
+
+Then, you calculate:
+
+$$
+\text{Contribution}_i = \frac{\text{Average capital in } i}{\text{Average total capital}} \times R_i
+$$
+
+It’s not perfect, but close enough for personal finance.
+
+---
+
+### 🔹 2. **Transaction-Level Attribution (Exact but More Complex)**
+
+You can track:
+
+* **For each symbol**:
+
+  * Amount invested (including buys/sells over time)
+  * Dividends/income earned
+  * Realized capital gains/losses
+  * Unrealized gains/losses
+
+Then:
+
+* Compute each symbol's **total return** over your holding period.
+* **Allocate total portfolio return** based on time-weighted invested capital or average market value per symbol.
+
+---
+
+### 🔹 3. **Brinson Attribution (Advanced)**
+
+If you're comparing to a benchmark or doing professional-level analysis:
+
+* Decompose return into:
+
+  * **Allocation effect** (Did I put money in the right sectors?)
+  * **Selection effect** (Did I pick the right stocks?)
+  * **Interaction effect** (combination of both)
+* Requires a benchmark and consistent sector/asset categorization.
+
+---
+
+## 🧮 Implementation Tips
+
+You’ll likely want to use **Python** or **Excel** for this. Here’s a basic idea for a structure:
+
+| Date       | Symbol | Type (Buy/Sell/Div/Deposit/W) | Amount | Price | Market Value | Cash Flow |
+| ---------- | ------ | ----------------------------- | ------ | ----- | ------------ | --------- |
+| 2024-01-05 | AAPL   | Buy                           | 5      | 160   | 800          | -800      |
+| 2024-02-01 | CASH   | Deposit                       |        |       |              | -5000     |
+| 2024-04-03 | AAPL   | Dividend                      |        |       |              | +40       |
+| 2024-06-10 | AAPL   | Sell                          | 5      | 180   | 900          | +900      |
+
+You can then:
+
+* Use the **XIRR** function in Excel or `np.irr()` or `pyxirr` in Python to compute money-weighted returns
+* Sum all cash flows and ending value to calculate total return
+* Group by symbol and run sub-analyses
+
+---
+
+## ✅ Summary Table of Methods
+
+| Analysis Goal                        | Method                           | Handles Cash Flow | Tracks Per-Symbol    |
+| ------------------------------------ | -------------------------------- | ----------------- | -------------------- |
+| Total portfolio return               | Money-Weighted Return (MWR/IRR)  | ✅                 | ❌ (unless broken up) |
+| Portfolio performance, time-neutral  | Time-Weighted Return (TWR)       | ✅                 | ❌                    |
+| Contribution to return (approximate) | Modified Dietz / Weighted Return | ✅ (approximate)   | ✅                    |
+| Symbol-level attribution             | Transaction-level calc           | ✅                 | ✅                    |
+
+---
+
 ## Working with Realized and Unrealized gains
 
 ### ✅ **1. How are realized and unrealized gains tracked over time?**

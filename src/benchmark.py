@@ -13,7 +13,7 @@ from src.transaction_processor import TransactionProcessor
 
 class Benchmark:
     def __init__(
-        self, trans_log, date_range, last_market_day, data_provider=MarketData()
+        self, trans_log, date_range, last_market_day, benchmark_symbol=config.BENCHMARK_INDEX, data_provider=MarketData()
     ):
         """
         Initializes the Benchmark simulation engine.
@@ -22,6 +22,7 @@ class Benchmark:
         self.date_range = date_range
         self.last_market_day = last_market_day
         self.data_provider = data_provider
+        self.benchmark_symbol = benchmark_symbol        # TODO: Add feature to allow manual/user provided benchmark price data
         self.processor = TransactionProcessor(trans_log)
 
         self.simulation_df = pd.DataFrame(index=self.date_range)
@@ -57,9 +58,9 @@ class Benchmark:
         """
         Fetches and correctly prepares the historical data for the benchmark index.
         """
-        print(f"Fetching market data for benchmark: {config.BENCHMARK_INDEX}...")
+        print(f"Fetching market data for benchmark: {self.benchmark_symbol}...")
         hist = self.data_provider.get_history(
-            config.BENCHMARK_INDEX, self.date_range.min(), self.last_market_day
+            self.benchmark_symbol, self.date_range.min(), self.last_market_day
         )
 
         # Assign historical data, creating NaNs on non-trading days

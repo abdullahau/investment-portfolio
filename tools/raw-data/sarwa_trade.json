@@ -3235,6 +3235,591 @@
             }
         ]
     },
+    "2025-July": {
+        "Holdings": [
+            {
+                "Symbol": "*Cash",
+                "Description": "USD",
+                "Quantity": null,
+                "Market Price": null,
+                "Market Value": 2.07,
+                "Cost Price": null,
+                "Unrealized": null,
+                "TD Cost Basis": null
+            },
+            {
+                "Symbol": "AMZN",
+                "Description": "AMAZON COM INC COM",
+                "Quantity": 0.149979775,
+                "Market Price": 234.11,
+                "Market Value": 35.11,
+                "Cost Price": 148.15,
+                "Unrealized": 12.89,
+                "TD Cost Basis": 22.22
+            },
+            {
+                "Symbol": "APO",
+                "Description": "APOLLO GLOBAL MGMT INC COM",
+                "Quantity": 0.534681356,
+                "Market Price": 145.32,
+                "Market Value": 77.7,
+                "Cost Price": 138.77,
+                "Unrealized": 3.5,
+                "TD Cost Basis": 74.2
+            },
+            {
+                "Symbol": "ARM",
+                "Description": "ARM HOLDINGS PLC SPONSORED ADS",
+                "Quantity": 0.080825933,
+                "Market Price": 141.38,
+                "Market Value": 11.43,
+                "Cost Price": 185.58,
+                "Unrealized": -3.57,
+                "TD Cost Basis": 15.0
+            },
+            {
+                "Symbol": "BRK-B",
+                "Description": "BERKSHIRE HATHAWAY INC DEL CL B NEW",
+                "Quantity": 0.123973114,
+                "Market Price": 471.88,
+                "Market Value": 58.5,
+                "Cost Price": 482.04,
+                "Unrealized": -1.26,
+                "TD Cost Basis": 59.76
+            },
+            {
+                "Symbol": "BRW",
+                "Description": "SABA CAPITAL INCOME & OPRNT FD SHS NEW",
+                "Quantity": 4.707717967,
+                "Market Price": 8.41,
+                "Market Value": 39.59,
+                "Cost Price": 7.43,
+                "Unrealized": 4.59,
+                "TD Cost Basis": 35.0
+            },
+            {
+                "Symbol": "BX",
+                "Description": "BLACKSTONE INC COM",
+                "Quantity": 0.325842696,
+                "Market Price": 172.96,
+                "Market Value": 56.36,
+                "Cost Price": 178.0,
+                "Unrealized": -1.64,
+                "TD Cost Basis": 58.0
+            },
+            {
+                "Symbol": "CEFS",
+                "Description": "EXCHANGE LISTED FDS TR SABA INT RATE",
+                "Quantity": 1.114267148,
+                "Market Price": 22.36,
+                "Market Value": 24.92,
+                "Cost Price": 17.95,
+                "Unrealized": 4.92,
+                "TD Cost Basis": 20.0
+            },
+            {
+                "Symbol": "CLM",
+                "Description": "CORNERSTONE STRATEGIC INVESTME COM",
+                "Quantity": 2.816941083,
+                "Market Price": 8.09,
+                "Market Value": 22.79,
+                "Cost Price": 7.1,
+                "Unrealized": 2.79,
+                "TD Cost Basis": 20.0
+            },
+            {
+                "Symbol": "GOF",
+                "Description": "GUGGENHEIM STRATEGIC OPPORTUN COM SBI",
+                "Quantity": 3.0,
+                "Market Price": 14.88,
+                "Market Value": 44.64,
+                "Cost Price": 13.42,
+                "Unrealized": 4.37,
+                "TD Cost Basis": 40.27
+            },
+            {
+                "Symbol": "GSBD",
+                "Description": "GOLDMAN SACHS BDC INC SHS",
+                "Quantity": 2.436460888,
+                "Market Price": 11.22,
+                "Market Value": 27.34,
+                "Cost Price": 14.37,
+                "Unrealized": -7.66,
+                "TD Cost Basis": 35.0
+            },
+            {
+                "Symbol": "IBB",
+                "Description": "ISHARES TR ISHARES BIOTECH",
+                "Quantity": 0.047021696,
+                "Market Price": 132.76,
+                "Market Value": 6.24,
+                "Cost Price": 126.75,
+                "Unrealized": 0.28,
+                "TD Cost Basis": 5.96
+            },
+            {
+                "Symbol": "IJR",
+                "Description": "ISHARES TR CORE S&P SCP ETF",
+                "Quantity": 0.22721489,
+                "Market Price": 110.28,
+                "Market Value": 25.06,
+                "Cost Price": 110.03,
+                "Unrealized": 0.06,
+                "TD Cost Basis": 25.0
+            },
+            {
+                "Symbol": "INDA",
+                "Description": "ISHARES TR MSCI INDIA ETF",
+                "Quantity": 0.877661151,
+                "Market Price": 52.64,
+                "Market Value": 46.2,
+                "Cost Price": 52.79,
+                "Unrealized": -0.13,
+                "TD Cost Basis": 46.33
+            },
+            {
+                "Symbol": "IPO",
+                "Description": "RENAISSANCE CAP GREENWICH FDS IPO ETF",
+                "Quantity": 1.288475687,
+                "Market Price": 46.03,
+                "Market Value": 59.31,
+                "Cost Price": 40.97,
+                "Unrealized": 6.52,
+                "TD Cost Basis": 52.79
+            },
+            {
+                "Symbol": "JPMB",
+                "Description": "J P MORGAN EXCHANGE TRADED FD USD EMRNG MKT",
+                "Quantity": 1.688699255,
+                "Market Price": 39.11,
+                "Market Value": 66.05,
+                "Cost Price": 40.55,
+                "Unrealized": -2.42,
+                "TD Cost Basis": 68.47
+            },
+            {
+                "Symbol": "KKR",
+                "Description": "KKR & CO INC COM",
+                "Quantity": 0.378201587,
+                "Market Price": 146.58,
+                "Market Value": 55.44,
+                "Cost Price": 140.14,
+                "Unrealized": 2.44,
+                "TD Cost Basis": 53.0
+            },
+            {
+                "Symbol": "LLY",
+                "Description": "ELI LILLY & CO COM",
+                "Quantity": 0.062060405,
+                "Market Price": 740.07,
+                "Market Value": 45.93,
+                "Cost Price": 604.25,
+                "Unrealized": 8.43,
+                "TD Cost Basis": 37.5
+            },
+            {
+                "Symbol": "LUX",
+                "Description": "TEMA ETF TRUST LUXURY ETF",
+                "Quantity": 2.0,
+                "Market Price": 23.42,
+                "Market Value": 46.85,
+                "Cost Price": 22.73,
+                "Unrealized": 1.39,
+                "TD Cost Basis": 45.45
+            },
+            {
+                "Symbol": "META",
+                "Description": "META PLATFORMS INC CL A",
+                "Quantity": 0.138582491,
+                "Market Price": 773.44,
+                "Market Value": 107.19,
+                "Cost Price": 305.52,
+                "Unrealized": 64.85,
+                "TD Cost Basis": 42.34
+            },
+            {
+                "Symbol": "MOAT",
+                "Description": "VANECK ETF TRUST MRNGSTR WDE MOAT",
+                "Quantity": 1.399620641,
+                "Market Price": 96.81,
+                "Market Value": 135.5,
+                "Cost Price": 92.88,
+                "Unrealized": 5.5,
+                "TD Cost Basis": 130.0
+            },
+            {
+                "Symbol": "MSFT",
+                "Description": "MICROSOFT CORP COM",
+                "Quantity": 0.255834079,
+                "Market Price": 533.5,
+                "Market Value": 136.49,
+                "Cost Price": 378.64,
+                "Unrealized": 39.62,
+                "TD Cost Basis": 96.87
+            },
+            {
+                "Symbol": "NVDA",
+                "Description": "NVIDIA CORPORATION COM",
+                "Quantity": 0.250397111,
+                "Market Price": 177.87,
+                "Market Value": 44.54,
+                "Cost Price": 138.5,
+                "Unrealized": 9.86,
+                "TD Cost Basis": 34.68
+            },
+            {
+                "Symbol": "OCSL",
+                "Description": "OAKTREE SPECIALTY LENDING CORP COM",
+                "Quantity": 1.042268639,
+                "Market Price": 13.83,
+                "Market Value": 14.41,
+                "Cost Price": 19.53,
+                "Unrealized": -5.95,
+                "TD Cost Basis": 20.36
+            },
+            {
+                "Symbol": "RYAAY",
+                "Description": "RYANAIR HOLDINGS PLC SPONSORED ADR",
+                "Quantity": 0.315592808,
+                "Market Price": 62.27,
+                "Market Value": 19.65,
+                "Cost Price": 47.53,
+                "Unrealized": 4.65,
+                "TD Cost Basis": 15.0
+            },
+            {
+                "Symbol": "SMOT",
+                "Description": "VANECK ETF TRUST MORNINGSTAR SMID",
+                "Quantity": 0.718432093,
+                "Market Price": 35.45,
+                "Market Value": 25.47,
+                "Cost Price": 34.8,
+                "Unrealized": 0.47,
+                "TD Cost Basis": 25.0
+            },
+            {
+                "Symbol": "SPY",
+                "Description": "SPDR S&P 500 ETF TR TR UNIT",
+                "Quantity": 0.177676073,
+                "Market Price": 632.08,
+                "Market Value": 112.31,
+                "Cost Price": 436.36,
+                "Unrealized": 34.78,
+                "TD Cost Basis": 77.53
+            },
+            {
+                "Symbol": "TPVG",
+                "Description": "TRIPLEPOINT VENTURE GROWTH BDC COM",
+                "Quantity": 4.0,
+                "Market Price": 6.88,
+                "Market Value": 27.52,
+                "Cost Price": 10.23,
+                "Unrealized": -13.41,
+                "TD Cost Basis": 40.93
+            },
+            {
+                "Symbol": "USRT",
+                "Description": "ISHARES TR CRE U S REIT ETF",
+                "Quantity": 0.167590075,
+                "Market Price": 56.01,
+                "Market Value": 9.39,
+                "Cost Price": 50.36,
+                "Unrealized": 0.95,
+                "TD Cost Basis": 8.44
+            },
+            {
+                "Symbol": "VOO",
+                "Description": "VANGUARD INDEX FDS S&P 500 ETF SHS",
+                "Quantity": 1.552063265,
+                "Market Price": 581.02,
+                "Market Value": 901.78,
+                "Cost Price": 500.23,
+                "Unrealized": 125.39,
+                "TD Cost Basis": 776.39
+            },
+            {
+                "Symbol": "VOOG",
+                "Description": "VANGUARD ADMIRAL FDS INC 500 GRTH IDX F",
+                "Quantity": 0.722995308,
+                "Market Price": 410.85,
+                "Market Value": 297.04,
+                "Cost Price": 332.96,
+                "Unrealized": 56.31,
+                "TD Cost Basis": 240.73
+            },
+            {
+                "Symbol": "VXUS",
+                "Description": "VANGUARD STAR FDS VG TL INTL STK F",
+                "Quantity": 0.716810028,
+                "Market Price": 68.47,
+                "Market Value": 49.08,
+                "Cost Price": 59.99,
+                "Unrealized": 6.08,
+                "TD Cost Basis": 43.0
+            },
+            {
+                "Symbol": "XLF",
+                "Description": "SELECT SECTOR SPDR TR FINANCIAL",
+                "Quantity": 1.309463788,
+                "Market Price": 52.37,
+                "Market Value": 68.58,
+                "Cost Price": 44.28,
+                "Unrealized": 10.6,
+                "TD Cost Basis": 57.98
+            },
+            {
+                "Symbol": "XLK",
+                "Description": "SELECT SECTOR SPDR TR TECHNOLOGY",
+                "Quantity": 1.223873376,
+                "Market Price": 262.74,
+                "Market Value": 321.56,
+                "Cost Price": 204.96,
+                "Unrealized": 70.72,
+                "TD Cost Basis": 250.84
+            },
+            {
+                "Symbol": "XLV",
+                "Description": "SELECT SECTOR SPDR TR SBI HEALTHCARE",
+                "Quantity": 0.28918907,
+                "Market Price": 130.43,
+                "Market Value": 37.72,
+                "Cost Price": 136.66,
+                "Unrealized": -1.8,
+                "TD Cost Basis": 39.52
+            }
+        ],
+        "Income": [
+            {
+                "Trade Date": "2025-07-02T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "VOO",
+                "Description": "DIV tax withholding on $2.71 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.81
+            },
+            {
+                "Trade Date": "2025-07-02T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "VOO",
+                "Description": "Cash DIV @ 1.7447, Pos QTY: 1.552063265, Rec Date: 2025-06-30",
+                "Net Amt": 2.71
+            },
+            {
+                "Trade Date": "2025-07-03T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "JPMB",
+                "Description": "DIV tax withholding on $0.33 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.09
+            },
+            {
+                "Trade Date": "2025-07-03T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "JPMB",
+                "Description": "Cash DIV @ 0.19524, Pos QTY: 1.688699255, Rec Date: 2025-07-01",
+                "Net Amt": 0.33
+            },
+            {
+                "Trade Date": "2025-07-28T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "GSBD",
+                "Description": "DIV tax withholding on $1.17 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.35
+            },
+            {
+                "Trade Date": "2025-07-28T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "GSBD",
+                "Description": "Cash DIV @ 0.48, Pos QTY: 2.436460888, Rec Date: 2025-06-30",
+                "Net Amt": 1.17
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "SPY",
+                "Description": "DIV tax withholding on $0.31 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.09
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "SPY",
+                "Description": "Cash DIV @ 1.761117, Pos QTY: 0.177676073, Rec Date: 2025-06-20",
+                "Net Amt": 0.31
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "BRW",
+                "Description": "DIV tax withholding on $0.4 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.12
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "CEFS",
+                "Description": "DIV tax withholding on $0.16 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.04
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "CLM",
+                "Description": "DIV tax withholding on $0.34 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.1
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Div. Adj(NRA Withheld)",
+                "Symbol": "GOF",
+                "Description": "DIV tax withholding on $0.55 at 30% for tax country ARE; w8w9: w8",
+                "Net Amt": -0.16
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "BRW",
+                "Description": "Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-07-09",
+                "Net Amt": 0.4
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "CEFS",
+                "Description": "Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-07-30",
+                "Net Amt": 0.16
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "CLM",
+                "Description": "Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-07-15",
+                "Net Amt": 0.34
+            },
+            {
+                "Trade Date": "2025-07-31T00:00:00.000",
+                "Entry Type": "Dividends",
+                "Symbol": "GOF",
+                "Description": "Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-07-15",
+                "Net Amt": 0.55
+            }
+        ],
+        "Transaction": [
+            {
+                "Trade Date": "2025-07-01T00:00:00.000",
+                "Entry Type": "High-Yield Cash Sweep",
+                "Side": null,
+                "Symbol": null,
+                "Description": "banking.transactions.id: 0197c7d7-f293-490c-9006-2f73a1f08bc6,\nsweep.transactions.id: f2ee3f51-5a2b-4ff7-a664-7f8c40e0e3f2",
+                "Quantity": null,
+                "Price": null,
+                "Amount": -2.23,
+                "Commission": null
+            },
+            {
+                "Trade Date": "2025-07-03T00:00:00.000",
+                "Entry Type": "High-Yield Cash Sweep",
+                "Side": null,
+                "Symbol": null,
+                "Description": "banking.transactions.id: 0197d21b-8051-8350-19bb-faa020abedad,\nsweep.transactions.id: 711d8952-19cd-488d-822e-d0386d3dea6a",
+                "Quantity": null,
+                "Price": null,
+                "Amount": -2.14,
+                "Commission": null
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "High-Yield Cash Sweep",
+                "Side": null,
+                "Symbol": null,
+                "Description": "banking.transactions.id: 01983e41-106e-9e31-0d6c-89049a9de196,\nsweep.transactions.id: 74a666fd-d94f-43a4-a7cc-c05ccd7544cd",
+                "Quantity": null,
+                "Price": null,
+                "Amount": -271.57,
+                "Commission": null
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Trade Entry",
+                "Side": "buy",
+                "Symbol": "APO",
+                "Description": null,
+                "Quantity": 0.261352499,
+                "Price": 153.05,
+                "Amount": -40.0,
+                "Commission": 1.0
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Trade Entry",
+                "Side": "buy",
+                "Symbol": "BRK-B",
+                "Description": null,
+                "Quantity": 0.123973114,
+                "Price": 482.04,
+                "Amount": -59.76,
+                "Commission": 1.0
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Trade Entry",
+                "Side": "buy",
+                "Symbol": "BX",
+                "Description": null,
+                "Quantity": 0.325842696,
+                "Price": 178.0,
+                "Amount": -58.0,
+                "Commission": 1.0
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Trade Entry",
+                "Side": "buy",
+                "Symbol": "VOOG",
+                "Description": null,
+                "Quantity": 0.244498777,
+                "Price": 409.0,
+                "Amount": -100.0,
+                "Commission": 1.0
+            },
+            {
+                "Trade Date": "2025-07-25T00:00:00.000",
+                "Entry Type": "High-Yield Cash Sweep",
+                "Side": null,
+                "Symbol": null,
+                "Description": "banking.transactions.id: 01984367-781e-fc80-3c36-9f7e245ba241,\nsweep.transactions.id: 5bc93727-2bd3-4c19-ac87-bf0031d48629",
+                "Quantity": null,
+                "Price": null,
+                "Amount": 281.36,
+                "Commission": null
+            },
+            {
+                "Trade Date": "2025-07-28T00:00:00.000",
+                "Entry Type": "High-Yield Cash Sweep",
+                "Side": null,
+                "Symbol": null,
+                "Description": "banking.transactions.id: 0198526c-b3c4-b6ba-ea99-28a6cf53512f,\nsweep.transactions.id: dbd00714-9c98-45b0-ab85-56ccbd4eb374",
+                "Quantity": null,
+                "Price": null,
+                "Amount": -0.82,
+                "Commission": null
+            }
+        ],
+        "Deposit & Withdrawals": [
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Journal Entry(Cash)",
+                "Description": "Deposit to Alpaca Crypto",
+                "Net Amt": -19.6,
+                "Account No": "987624856"
+            },
+            {
+                "Trade Date": "2025-07-24T00:00:00.000",
+                "Entry Type": "Journal Entry(Cash)",
+                "Description": "DT257241316 deposit",
+                "Net Amt": 271.57,
+                "Account No": "987624856"
+            }
+        ]
+    },
     "2024-September": {
         "Holdings": [
             {
