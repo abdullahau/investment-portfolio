@@ -63,8 +63,10 @@ class MarketData:
 
         Returns:
             A DataFrame with standardized columns, or an empty DataFrame if no data is found.
-            Ensure data returned is a DataFrame with a 'Close' and optional 'StockSplits' column
-            and ensure all `Close` prices are split-adjusted.
+            Ensure data returned is a DataFrame with 'Date' (set as index).
+            Equity data should have 'Open', 'Close', 'Dividends' (Before or After-Tax) and 'StockSplits' (optional) columns.
+            FX Data should have 'Close'
+            Additionally, ensure all prices are split-adjusted.
         """
         cache_file = config.PRICE_CACHE / f"{symbol}.csv"
         if os.path.exists(cache_file):
