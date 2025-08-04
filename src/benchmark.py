@@ -13,7 +13,12 @@ from src.transaction_processor import TransactionProcessor
 
 class Benchmark:
     def __init__(
-        self, trans_log, date_range, last_market_day, benchmark_symbol=config.BENCHMARK_INDEX, data_provider=MarketData()
+        self,
+        trans_log,
+        date_range,
+        last_market_day,
+        benchmark_symbol=config.BENCHMARK_INDEX,
+        data_provider=MarketData(),
     ):
         """
         Initializes the Benchmark simulation engine.
@@ -22,7 +27,7 @@ class Benchmark:
         self.date_range = date_range
         self.last_market_day = last_market_day
         self.data_provider = data_provider
-        self.benchmark_symbol = benchmark_symbol        # TODO: Add feature to allow manual/user provided benchmark price data
+        self.benchmark_symbol = benchmark_symbol  # TODO: Add feature to allow manual/user provided benchmark price data
         self.processor = TransactionProcessor(trans_log)
 
         self.simulation_df = pd.DataFrame(index=self.date_range)
@@ -236,8 +241,8 @@ class Benchmark:
 
     def get_income(self):
         """Returns a time series of total income for the benchmark."""
-        return self.simulation_df['NetDividend']
+        return self.simulation_df["NetDividend"]
 
     def get_monthly_income(self):
         """Returns a time series of total monthly income for the benchmark."""
-        return self.simulation_df['NetDividend'].resample('ME').sum()
+        return self.simulation_df["NetDividend"].resample("ME").sum()
