@@ -36,7 +36,10 @@ class Portfolio:
 
         # Initialize the holdings dictionary to store all DataFrames
         self.holdings = {}
-        for name in ["trade", "price", "raw_splits", "holding", "value", "income"]:
+        for name in [
+            "trade", "price", "raw_splits", "holding", "value", "income",
+            "cost_basis", "invested_capital", "unrealized_gains", "realized_gains"
+        ]:
             self.holdings[name] = pd.DataFrame(
                 0.0, index=self.date_range, columns=self.symbols
             )
@@ -115,6 +118,40 @@ class Portfolio:
                     fx_rates[pair].reindex(self.date_range).ffill()
                 )
 
+    def _get_converted_log(self, action):
+        """
+        Gets a transaction log for a specific action and converts all
+        monetary values to the base currency.
+        """
+        log = self.processor.get_log_for_action(action).copy()
+        
+        non_base_currencies = log[log['Currency'] != self.base_currency]['Currency'].dropna().unique()
+
+        if len(non_base_currencies) > 0:
+            currency_pairs = [(currency, self.base_currency) for currency in non_base_currencies]
+            fx_rates = self.data_provider.get_fx_rates(
+                currency_pairs, self.date_range.min(), self.last_market_day
+            )
+
+            for currency in non_base_currencies:
+                pair = (currency, self.base_currency)
+                if pair in fx_rates:
+                    is_currency = log['Currency'] == currency
+                    conversion_rates = fx_rates[pair].reindex(log[is_currency].index, method='ffill')
+                    
+                    # Convert both Price and Amount columns
+                    log.loc[is_currency, 'Price'] *= conversion_rates
+                    log.loc[is_currency, 'Amount'] *= conversion_rates
+        
+        return log
+
+    def _calculate_income(self):
+        """Calculates and aggregates all income transactions from the log."""
+        print("Calculating portfolio income...")
+        income_log = self._get_converted_log('income')
+        income_pivot = income_log.groupby([income_log.index, 'Symbol'])['Amount'].sum().unstack(fill_value=0)
+        self.holdings['income'].update(income_pivot)
+
     def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
         """
         Computes cumulative split factors for retroactive holding adjustment.
@@ -122,30 +159,65 @@ class Portfolio:
         factors = split_series.replace(0, 1)
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
-    
-    def _calculate_income(self):
+
+    def _calculate_gains_and_returns(self):
         """
-        Calculates and aggregates all income transactions from the log,
-        converting them to the base currency.
+        Calculates cost basis, invested capital, and gains for each holding.
+        This version is optimized and calculates daily unrealized gains.
         """
-        print("Calculating portfolio income...")
-        income_log = self.processor.get_log_for_action('income').copy()
+        print("Calculating cost basis and returns...")
         
-        non_base_currencies = income_log[income_log['Currency'] != self.base_currency]['Currency'].dropna().unique()
-        if len(non_base_currencies) > 0:
-            currency_pairs = [(currency, self.base_currency) for currency in non_base_currencies]
-            fx_rates = self.data_provider.get_fx_rates(
-                currency_pairs, self.date_range.min(), self.last_market_day
-            )
-            for currency in non_base_currencies:
-                pair = (currency, self.base_currency)
-                if pair in fx_rates:
-                    is_currency = income_log['Currency'] == currency
-                    conversion_rates = fx_rates[pair].reindex(income_log.loc[is_currency].index, method='ffill')
-                    income_log.loc[is_currency, 'Amount'] *= conversion_rates
-        
-        income_pivot = income_log.groupby(['Date', 'Symbol'])['Amount'].sum().unstack(fill_value=0)
-        self.holdings['income'].update(income_pivot)
+        # Use the new helper method to get a fully converted trade log
+        trade_log = self._get_converted_log('trade')
+
+        for symbol in self.symbols:
+            purchase_lots = []
+            symbol_trades = trade_log[trade_log['Symbol'] == symbol]
+            
+            for date in self.date_range:
+                # Carry over the previous day's state
+                if date > self.date_range.min():
+                    prev_date = date - pd.Timedelta(days=1)
+                    self.holdings['invested_capital'].loc[date, symbol] = self.holdings['invested_capital'].loc[prev_date, symbol]
+                    self.holdings['realized_gains'].loc[date, symbol] = self.holdings['realized_gains'].loc[prev_date, symbol]
+
+                # Process trades for the current day
+                if date in symbol_trades.index:
+                    daily_trades = symbol_trades.loc[[date]]
+                    for _, trade in daily_trades.iterrows():
+                        if trade['Quantity'] > 0: # Buy
+                            purchase_lots.append({'qty': trade['Quantity'], 'price': trade['Price']})
+                            self.holdings['invested_capital'].loc[date, symbol] += trade['Amount'] * -1
+                        
+                        elif trade['Quantity'] < 0: # Sell
+                            qty_to_sell = abs(trade['Quantity'])
+                            proceeds = trade['Amount']
+                            self.holdings['invested_capital'].loc[date, symbol] -= proceeds
+                            
+                            cost_of_sale = 0
+                            while qty_to_sell > 0 and purchase_lots:
+                                lot = purchase_lots[0]
+                                sell_qty = min(qty_to_sell, lot['qty'])
+                                
+                                cost_of_sale += sell_qty * lot['price']
+                                lot['qty'] -= sell_qty
+                                qty_to_sell -= sell_qty
+                                
+                                if lot['qty'] == 0:
+                                    purchase_lots.pop(0)
+                            
+                            self.holdings['realized_gains'].loc[date, symbol] += proceeds - cost_of_sale
+
+                # Calculate daily unrealized gains
+                current_holding_qty = self.holdings['holding'].loc[date, symbol]
+                if current_holding_qty > 0:
+                    total_cost = sum(lot['qty'] * lot['price'] for lot in purchase_lots)
+                    avg_cost_basis = total_cost / current_holding_qty
+                    
+                    current_market_value = self.holdings['value'].loc[date, symbol]
+                    cost_of_current_holdings = current_holding_qty * avg_cost_basis
+                    
+                    self.holdings['unrealized_gains'].loc[date, symbol] = current_market_value - cost_of_current_holdings
 
     def calculate_holdings_and_value(self):
         """
@@ -193,7 +265,20 @@ class Portfolio:
         self.holdings["value"] = self.holdings["adj holding"] * self.holdings["price"]
         self.holdings["Total Portfolio Value"] = self.holdings["value"].sum(axis=1)
 
+        self._calculate_gains_and_returns()
         print("Calculations complete.")
+
+    def get_return_summary(self):
+        """
+        Returns a summary DataFrame of the total return contribution for each symbol.
+        """
+        summary = pd.DataFrame(index=self.symbols)
+        summary['Income'] = self.holdings['income'].sum()
+        summary['Realized Gains'] = self.holdings['realized_gains'].iloc[-1]
+        summary['Unrealized Gains'] = self.holdings['unrealized_gains'].iloc[-1]
+        summary['Total Return'] = summary['Income'] + summary['Realized Gains'] + summary['Unrealized Gains']
+        
+        return summary[summary['Total Return'].abs() > 0.01].sort_values(by='Total Return', ascending=False)
 
     def get_income(self):
         """Returns a time series of total income for the portfolio."""
