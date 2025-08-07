@@ -91,13 +91,13 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Type": row["Type"],
                 "Symbol": row["Symbol"],
                 "Quantity": row["Quantity"],
-                "Price": row['Price'],
+                "Price": row["Price"],
                 "Amount": row["Amount"],
                 "Commission": row["Commission"],
-                "Currency": row['Currency'],
+                "Currency": row["Currency"],
                 "Description": row["Description"],
-                "Exchange": row['Exchange'],
-                "Source": row['Source'],
+                "Exchange": row["Exchange"],
+                "Source": row["Source"],
             }
             all_transactions.append(tx)
 
@@ -111,13 +111,13 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Type": row["Type"],
                 "Symbol": row["Symbol"],
                 "Quantity": row["Quantity"],
-                "Price": row['Price'],
+                "Price": row["Price"],
                 "Amount": row["Amount"],
                 "Commission": row["Commission"],
-                "Currency": row['Currency'],
+                "Currency": row["Currency"],
                 "Description": row["Description"],
-                "Exchange": row['Exchange'],
-                "Source": row['Source'],
+                "Exchange": row["Exchange"],
+                "Source": row["Source"],
             }
             all_transactions.append(tx)
 
