@@ -33,16 +33,16 @@ class Portfolio:
         self.processor = TransactionProcessor(trans_log)
         self.fx_rates = None
 
-        # Initialize the holdings dictionary to store all DataFrames
         self.holdings = {}
         for name in [
             "trade",
             "price",
             "raw_splits",
             "holding",
+            "adj holding",
+            "cumulative splits",
             "value",
             "income",
-            "cost_basis",
             "invested_capital",
             "unrealized_gains",
             "realized_gains",
@@ -108,55 +108,58 @@ class Portfolio:
         if len(unique_currencies) == 0:
             return
 
-        # Create a list of currency pairs to fetch, e.g., [('AED', 'USD')]
         currency_pairs = [
             (currency, self.base_currency) for currency in unique_currencies
         ]
 
-        fx_rates = self.data_provider.get_fx_rates(
-            currency_pairs, self.date_range.min(), self.last_market_day
-        )
-        self.fx_rates = fx_rates
+        if self.fx_rates is None:
+            self.fx_rates = self.data_provider.get_fx_rates(
+                currency_pairs, self.date_range.min(), self.last_market_day
+            )
 
         for symbol, row in non_base_symbols.iterrows():
             currency = row["Currency"]
             pair = (currency, self.base_currency)
-            if pair in fx_rates:
-                self.holdings["price"][symbol] *= (
-                    fx_rates[pair].reindex(self.date_range).ffill()
-                )
+            if pair in self.fx_rates:
+                fx_rate_series = self.fx_rates[pair].reindex(self.date_range).ffill()
+                self.holdings["price"][symbol] *= fx_rate_series
+            else:
+                print(f"⚠️ Warning: FX rate for {pair} not found for symbol {symbol}.")
 
     def _get_converted_log(self, action):
         """
-        Gets a transaction log for a specific action and converts all
-        monetary values to the base currency.
+        Gets a transaction log and robustly converts monetary values to the base currency.
         """
         log = self.processor.get_log_for_action(action).copy()
+        if log.empty:
+            return log
 
-        non_base_currencies = (
-            log[log["Currency"] != self.base_currency]["Currency"].dropna().unique()
-        )
+        for col in ["Price", "Amount", "Commission"]:
+            if col in log.columns:
+                log[col] = pd.to_numeric(log[col], errors="coerce")
 
-        if len(non_base_currencies) > 0:
-            currency_pairs = [
-                (currency, self.base_currency) for currency in non_base_currencies
-            ]
-            fx_rates = self.data_provider.get_fx_rates(
-                currency_pairs, self.date_range.min(), self.last_market_day
-            )
+        log.dropna(subset=["Price", "Amount", "Commission"], inplace=True)
 
-            for currency in non_base_currencies:
-                pair = (currency, self.base_currency)
-                if pair in fx_rates:
-                    is_currency = log["Currency"] == currency
-                    conversion_rates = fx_rates[pair].reindex(
-                        log[is_currency].index, method="ffill"
+        non_base_mask = log["Currency"] != self.base_currency
+        if not non_base_mask.any():
+            return log
+
+        log["Date_Only"] = log.index.date.astype("datetime64[ns]")
+
+        for currency in log.loc[non_base_mask, "Currency"].unique():
+            pair = (currency, self.base_currency)
+            if pair in self.fx_rates:
+                currency_mask = log["Currency"] == currency
+                rate_map = self.fx_rates[pair].reindex(self.date_range).ffill()
+                conversion_factors = log.loc[currency_mask, "Date_Only"].map(rate_map)
+                for col in ["Price", "Amount", "Commission"]:
+                    log.loc[currency_mask, col] = log.loc[currency_mask, col].mul(
+                        conversion_factors, axis=0
                     )
+            else:
+                print(f"⚠️ Warning: FX rate for {pair} not found during log conversion.")
 
-                    # Convert both Price and Amount columns
-                    log.loc[is_currency, "Price"] *= conversion_rates
-                    log.loc[is_currency, "Amount"] *= conversion_rates
-
+        log.drop(columns=["Date_Only"], inplace=True)
         return log
 
     def _calculate_income(self):
@@ -172,82 +175,86 @@ class Portfolio:
             self.holdings["income"].update(income_pivot)
 
     def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
-        """
-        Computes cumulative split factors for retroactive holding adjustment.
-        """
+        """Computes cumulative split factors for retroactive holding adjustment."""
         factors = split_series.replace(0, 1)
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
 
     def _calculate_gains_and_returns(self):
         """
-        Calculates cost basis, invested capital, and gains for each holding.
-        This version is optimized and calculates daily unrealized gains.
+        Calculates cost basis and gains, now correctly including commissions.
+        Uses FIFO (First-In, First-Out) accounting.
         """
-        print("Calculating cost basis and returns...")
-
-        # Use the new helper method to get a fully converted trade log
+        print("Calculating gains and returns with commissions...")
         trade_log = self._get_converted_log("trade")
+        if trade_log.empty:
+            return
 
         for symbol in self.symbols:
             purchase_lots = []
             symbol_trades = trade_log[trade_log["Symbol"] == symbol]
 
             for date in self.date_range:
-                # Carry over the previous day's state
                 if date > self.date_range.min():
                     prev_date = date - pd.Timedelta(days=1)
-                    self.holdings["invested_capital"].loc[date, symbol] = self.holdings[
-                        "invested_capital"
-                    ].loc[prev_date, symbol]
-                    self.holdings["realized_gains"].loc[date, symbol] = self.holdings[
-                        "realized_gains"
-                    ].loc[prev_date, symbol]
+                    for key in ["invested_capital", "realized_gains"]:
+                        self.holdings[key].loc[date, symbol] = self.holdings[key].loc[
+                            prev_date, symbol
+                        ]
 
-                # Process trades for the current day
                 if date in symbol_trades.index:
                     daily_trades = symbol_trades.loc[[date]]
                     for _, trade in daily_trades.iterrows():
-                        if trade["Quantity"] > 0:  # Buy
+                        if trade["Quantity"] > 0:
+                            total_cost = (trade["Price"] * trade["Quantity"]) + trade[
+                                "Commission"
+                            ]
+                            cost_per_share = total_cost / trade["Quantity"]
                             purchase_lots.append(
-                                {"qty": trade["Quantity"], "price": trade["Price"]}
+                                {
+                                    "qty": trade["Quantity"],
+                                    "cost_per_share": cost_per_share,
+                                }
                             )
                             self.holdings["invested_capital"].loc[date, symbol] += (
-                                trade["Amount"] * -1
+                                total_cost
                             )
 
-                        elif trade["Quantity"] < 0:  # Sell
+                        elif trade["Quantity"] < 0:
                             qty_to_sell = abs(trade["Quantity"])
-                            proceeds = trade["Amount"]
-                            self.holdings["invested_capital"].loc[date, symbol] -= (
-                                proceeds
-                            )
-
+                            net_proceeds = (trade["Price"] * qty_to_sell) - trade[
+                                "Commission"
+                            ]
                             cost_of_sale = 0
-                            while qty_to_sell > 0 and purchase_lots:
-                                lot = purchase_lots[0]
-                                sell_qty = min(qty_to_sell, lot["qty"])
 
-                                cost_of_sale += sell_qty * lot["price"]
-                                lot["qty"] -= sell_qty
-                                qty_to_sell -= sell_qty
+                            temp_lots = []
+                            for lot in purchase_lots:
+                                if qty_to_sell > 0:
+                                    sell_from_lot = min(qty_to_sell, lot["qty"])
+                                    cost_of_sale += (
+                                        sell_from_lot * lot["cost_per_share"]
+                                    )
+                                    lot["qty"] -= sell_from_lot
+                                    qty_to_sell -= sell_from_lot
 
-                                if lot["qty"] == 0:
-                                    purchase_lots.pop(0)
+                                if lot["qty"] > 1e-6:
+                                    temp_lots.append(lot)
 
+                            purchase_lots = temp_lots
+
+                            self.holdings["invested_capital"].loc[date, symbol] -= (
+                                cost_of_sale
+                            )
                             self.holdings["realized_gains"].loc[date, symbol] += (
-                                proceeds - cost_of_sale
+                                net_proceeds - cost_of_sale
                             )
 
-                # Calculate daily unrealized gains
                 current_holding_qty = self.holdings["holding"].loc[date, symbol]
-                if current_holding_qty > 0:
-                    total_cost = sum(lot["qty"] * lot["price"] for lot in purchase_lots)
-                    avg_cost_basis = total_cost / current_holding_qty
-
+                if current_holding_qty > 1e-6:
+                    cost_of_current_holdings = sum(
+                        lot["qty"] * lot["cost_per_share"] for lot in purchase_lots
+                    )
                     current_market_value = self.holdings["value"].loc[date, symbol]
-                    cost_of_current_holdings = current_holding_qty * avg_cost_basis
-
                     self.holdings["unrealized_gains"].loc[date, symbol] = (
                         current_market_value - cost_of_current_holdings
                     )
@@ -302,9 +309,7 @@ class Portfolio:
         print("Calculations complete.")
 
     def get_return_summary(self):
-        """
-        Returns a summary DataFrame of the total return contribution for each symbol.
-        """
+        """Returns a summary of total return contribution for each symbol."""
         summary = pd.DataFrame(index=self.symbols)
         summary["Income"] = self.holdings["income"].sum()
         summary["Realized Gains"] = self.holdings["realized_gains"].iloc[-1]
@@ -312,65 +317,47 @@ class Portfolio:
         summary["Total Return"] = (
             summary["Income"] + summary["Realized Gains"] + summary["Unrealized Gains"]
         )
-
         return summary[summary["Total Return"].abs() > 0.01].sort_values(
             by="Total Return", ascending=False
         )
 
     def get_income(self):
-        """Returns a time series of total income for the portfolio."""
         return self.holdings["income"].sum(axis=1)
 
     def get_monthly_income(self):
-        """Returns a time series of total monthly income for the portfolio."""
         return self.holdings["income"].sum(axis=1).resample("ME").sum()
 
     def get_individual_value_history(self):
-        """Returns a DataFrame of the daily market value for each individual holding."""
         return self.holdings["value"]
 
     def get_current_holdings(self):
-        """Returns a DataFrame of the most recent holdings and their market value."""
         current_date = self.last_market_day
         current_holdings = self.holdings["holding"].loc[current_date]
         current_value = self.holdings["value"].loc[current_date]
-
         summary = pd.DataFrame(
-            {"Shares": current_holdings, "Market Value (USD)": current_value}
+            {
+                "Shares": current_holdings,
+                f"Market Value ({self.base_currency})": current_value,
+            }
         )
         return summary[summary["Shares"] > 0]
 
     def get_total_value_history(self):
-        """
-        Returns the 'Total Portfolio Value' time series.
-        This is the primary output for performance charting.
-        """
         if "Total Portfolio Value" in self.holdings:
             return self.holdings["Total Portfolio Value"]
         else:
-            print(
-                "⚠️ Warning: Total Portfolio Value has not been calculated yet. Run calculate_holdings_and_value() first."
-            )
+            print("⚠️ Warning: Run calculate_holdings_and_value() first.")
             return None
 
     def get_holdings_dict(self):
-        """
-        Returns the entire dictionary of holdings DataFrames.
-        Useful for deeper, custom analysis.
-        """
         return self.holdings
 
-    # You can continue to add methods for your other analysis points (b through f) here.
-    # For example:
     def get_concentration(self, by="Sector"):
-        """Calculates portfolio concentration by Industry or Sector."""
         current_holdings = self.get_current_holdings()
         symbol_df = self.symbol_manager.get_unified_df()
-
-        # Merge with symbol metadata to get the concentration category
+        value_col = f"Market Value ({self.base_currency})"
         merged = current_holdings.merge(symbol_df, left_index=True, right_index=True)
-        concentration = merged.groupby(by)["Market Value (USD)"].sum()
-
+        concentration = merged.groupby(by)[value_col].sum()
         return (concentration / concentration.sum()) * 100
 
 
