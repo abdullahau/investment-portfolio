@@ -1,5 +1,5 @@
-Trade Date,Type,Crypto,Quantity,Amount
-2023-06-20,buy,BTC-USD,0.0004698,-13.0
-2023-10-07,sell,BTC-USD,-0.0004698,13.1
-2024-07-03,buy,BTC-USD,0.0001617,-9.91
-2025-07-24,buy,BTC-USD,0.0001625,-19.60
+Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Exchange,Source
+2023-06-20,buy,BTC-USD,0.0004698,27672.94,-13.0,0,USD,buy BTC,CCC,Sarwa Crypto
+2023-10-07,sell,BTC-USD,-0.0004698,27694.26,13.1,0,USD,sell BTC,CCC,Sarwa Crypto
+2024-07-03,buy,BTC-USD,0.0001617,61288.0,-9.91,0,USD,buy BTC,CCC,Sarwa Crypto
+2025-07-24,buy,BTC-USD,0.0001625,120639.85,-19.60,0,USD,buy BTC,CCC,Sarwa Crypto

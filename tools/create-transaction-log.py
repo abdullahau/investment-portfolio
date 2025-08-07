@@ -84,17 +84,20 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
     # 2. Process data from crypto_transactions.csv
     if os.path.exists(crypto_path):
         crypto_df = pd.read_csv(crypto_path)
-        crypto_df["Date"] = pd.to_datetime(crypto_df["Trade Date"])
+        crypto_df["Date"] = pd.to_datetime(crypto_df["Date"])
         for _, row in crypto_df.iterrows():
             tx = {
                 "Date": row["Date"],
-                "Symbol": row["Crypto"],
-                "Quantity": row["Quantity"],
-                "Amount": row["Amount"],
                 "Type": row["Type"],
-                "Currency": "USD",
-                "Exchange": "US Market",
-                "Source": "Sarwa Crypto",
+                "Symbol": row["Symbol"],
+                "Quantity": row["Quantity"],
+                "Price": row['Price'],
+                "Amount": row["Amount"],
+                "Commission": row["Commission"],
+                "Currency": row['Currency'],
+                "Description": row["Description"],
+                "Exchange": row['Exchange'],
+                "Source": row['Source'],
             }
             all_transactions.append(tx)
 
@@ -108,12 +111,13 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Type": row["Type"],
                 "Symbol": row["Symbol"],
                 "Quantity": row["Quantity"],
+                "Price": row['Price'],
                 "Amount": row["Amount"],
                 "Commission": row["Commission"],
+                "Currency": row['Currency'],
                 "Description": row["Description"],
-                "Currency": "USD",
-                "Exchange": "US Market",
-                "Source": "Sarwa Trade - Interim",
+                "Exchange": row['Exchange'],
+                "Source": row['Source'],
             }
             all_transactions.append(tx)
 
