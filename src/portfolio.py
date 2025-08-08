@@ -175,82 +175,85 @@ class Portfolio:
         return cumulative.fillna(1.0)
 
     def _calculate_gains_and_returns(self):
-        """Calculates cost basis, invested capital, and gains for each holding."""
-        trade_log = self._get_converted_log("trade")
+            """Calculates cost basis, invested capital, and gains for each holding."""
 
-        for symbol in self.symbols:
-            purchase_lots = []
-            symbol_trades = trade_log[trade_log["Symbol"] == symbol]
+            trade_log = self._get_converted_log("trade")
 
-            for date in self.date_range:
-                if date > self.date_range.min():
-                    prev_date = date - pd.Timedelta(days=1)
-                    self.holdings["invested_capital"].loc[date, symbol] = self.holdings[
-                        "invested_capital"
-                    ].loc[prev_date, symbol]
-                    self.holdings["realized_gains"].loc[date, symbol] = self.holdings[
-                        "realized_gains"
-                    ].loc[prev_date, symbol]
+            for symbol in self.symbols:
+                purchase_lots = []
+                symbol_trades = trade_log[trade_log["Symbol"] == symbol]
 
-                if date in symbol_trades.index:
-                    daily_trades = symbol_trades.loc[[date]]
-                    for _, trade in daily_trades.iterrows():
-                        trading_cost = abs(trade.get("Trading Cost", 0.0))
+                for date in self.date_range:
+                    if date > self.date_range.min():
+                        prev_date = date - pd.Timedelta(days=1)
+                        self.holdings["invested_capital"].loc[date, symbol] = self.holdings[
+                            "invested_capital"
+                        ].loc[prev_date, symbol]
+                        self.holdings["realized_gains"].loc[date, symbol] = self.holdings[
+                            "realized_gains"
+                        ].loc[prev_date, symbol]
 
-                        if trade["Quantity"] > 0:  # Buy
+                    self.holdings["unrealized_gains"].loc[date, symbol] = self.holdings[
+                            "unrealized_gains"
+                        ].loc[date - pd.Timedelta(days=1), symbol] if date > self.date_range.min() else 0.0
+
+                    if date in symbol_trades.index:
+                        daily_trades = symbol_trades.loc[[date]]
+
+                        buys_today = daily_trades[daily_trades["Quantity"] > 0]
+                        for _, trade in buys_today.iterrows():
+                            trading_cost = abs(trade.get("Trading Cost", 0.0))
                             cost_basis = abs(trade["Amount"]) + trading_cost
                             purchase_lots.append(
                                 {"qty": trade["Quantity"], "cost": cost_basis}
                             )
-                            self.holdings["invested_capital"].loc[date, symbol] += (
-                                cost_basis
-                            )
+                            self.holdings["invested_capital"].loc[date, symbol] += cost_basis
 
-                        elif trade["Quantity"] < 0:  # Sell
+                        sells_today = daily_trades[daily_trades["Quantity"] < 0]
+                        for _, trade in sells_today.iterrows():
                             qty_to_sell = abs(trade["Quantity"])
-                            net_proceeds = trade["Amount"] - trading_cost
+                            net_proceeds = trade["Amount"] - abs(trade.get("Trading Cost", 0.0))
+                            
                             cost_of_sale = 0.0
                             remaining_lots = []
                             temp_qty_to_sell = qty_to_sell
+                            
                             for lot in purchase_lots:
                                 if temp_qty_to_sell < 1e-9:
                                     remaining_lots.append(lot)
                                     continue
 
                                 sell_from_lot_qty = min(temp_qty_to_sell, lot["qty"])
-                                if lot["qty"] > 1e-9:
-                                    proportion_of_lot = sell_from_lot_qty / lot["qty"]
-                                    cost_of_sale += proportion_of_lot * lot["cost"]
-
+                                
+                                proportion_of_lot = sell_from_lot_qty / lot["qty"] if lot['qty'] > 1e-9 else 0
+                                cost_of_sale += proportion_of_lot * lot["cost"]
+                                
                                 temp_qty_to_sell -= sell_from_lot_qty
+
                                 remaining_qty = lot["qty"] - sell_from_lot_qty
                                 if remaining_qty > 1e-9:
-                                    remaining_lots.append(
-                                        {
-                                            "qty": remaining_qty,
-                                            "cost": lot["cost"]
-                                            * (1 - proportion_of_lot),
-                                        }
-                                    )
-
+                                    remaining_lots.append({
+                                        "qty": remaining_qty,
+                                        "cost": lot["cost"] * (1 - proportion_of_lot)
+                                    })
+                            
                             purchase_lots = remaining_lots
-                            self.holdings["invested_capital"].loc[date, symbol] -= (
-                                cost_of_sale
-                            )
+                            
+                            self.holdings["invested_capital"].loc[date, symbol] -= cost_of_sale
                             self.holdings["realized_gains"].loc[date, symbol] += (
                                 net_proceeds - cost_of_sale
                             )
 
-                current_holding_qty = self.holdings["holding"].loc[date, symbol]
-                if current_holding_qty > 0 and purchase_lots:
-                    total_cost_of_holdings = sum(lot["cost"] for lot in purchase_lots)
-                    current_market_value = self.holdings["value"].loc[date, symbol]
-
-                    self.holdings["unrealized_gains"].loc[date, symbol] = (
-                        current_market_value - total_cost_of_holdings
-                    )
-                elif current_holding_qty < 1e-9:
-                    self.holdings["unrealized_gains"].loc[date, symbol] = 0.0
+                    current_holding_qty = self.holdings["holding"].loc[date, symbol]
+                    if current_holding_qty > 1e-9 and purchase_lots:
+                        total_cost_of_holdings = sum(lot["cost"] for lot in purchase_lots)
+                        current_market_value = self.holdings["value"].loc[date, symbol]
+                        
+                        self.holdings["unrealized_gains"].loc[date, symbol] = (
+                            current_market_value - total_cost_of_holdings
+                        )
+                    else: 
+                        self.holdings["unrealized_gains"].loc[date, symbol] = 0.0
 
     def calculate_holdings_and_value(self):
         """
@@ -362,6 +365,7 @@ class Portfolio:
         current_holdings = self.get_current_holdings()
         symbol_df = self.symbol_manager.get_unified_df()
 
+        # Merge with symbol metadata to get the concentration category
         merged = current_holdings.merge(symbol_df, left_index=True, right_index=True)
         concentration = merged.groupby(by)["Market Value (USD)"].sum()
 
