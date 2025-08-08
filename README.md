@@ -72,8 +72,8 @@ You must provide your transaction history as one or more CSV files in the `data/
 | `Symbol` | String | The ticker symbol for the asset (e.g., `VOO`, `TSLA`). Can be blank for cash flows not specific to a symbol. |
 | `Quantity` | Float | The number of shares traded. Positive for buys, negative for sells. |
 | `Price` | Float | The price per share of the transaction. |
-| `Amount` | Float | The total cash effect of the transaction. **Negative for cash outflows (buys, withdrawals), positive for cash inflows (sells, deposits, dividends).** |
-| `Commission` | Float | Any commission paid on the transaction. |
+| `Amount` | Float | The cash effect of the transaction without commissions, fees, and taxes. **Negative for cash outflows (buys, withdrawals), positive for cash inflows (sells, deposits, dividends).** |
+| `Trading Cost` | Float | Any commission, fees, and/or taxes paid on the transaction. |
 | `Currency` | String | The 3-letter currency code of the transaction (e.g., `USD`, `AED`). |
 | `Description`| String | A brief description of the transaction. |
 | `Exchange` | String | The exchange where the asset is traded (e.g., `NYSE`, `ADX`). |
@@ -82,7 +82,7 @@ You must provide your transaction history as one or more CSV files in the `data/
 **Example:**
 
 ```csv
-Date,Type,Symbol,Quantity,Price,Amount,Commission,Currency,Description,Exchange,Source
+Date,Type,Symbol,Quantity,Price,Amount,Trading Cost,Currency,Description,Exchange,Source
 2023-02-16,Net Deposit,,,,271.57,,USD,Monthly Deposit,CASH,Brokerage
 2023-02-17,buy,VOO,0.2189,-372.07,-81.47,,USD,Trade,NYSE,Brokerage
 2023-03-29,Net Dividend,VOO,,,,0.24,,USD,Dividend,NYSE,Brokerage

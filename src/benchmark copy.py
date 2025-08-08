@@ -227,6 +227,7 @@ class Benchmark:
                 self.simulation_df.loc[today, "PortfolioValue"] + total_cash
             )
 
+
     def get_results(self):
         """Returns the completed simulation DataFrame."""
         return self.simulation_df

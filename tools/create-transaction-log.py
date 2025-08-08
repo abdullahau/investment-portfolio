@@ -29,7 +29,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
             "Symbol": "Symbol",
             "Quantity": "Quantity",
             "Amount": "Amount",
-            "Commission": "Commission",
+            "Trading Cost": "Commission",
             "Description": "Entry Type",
             "Type": "Side",
             "Price": "Price",
@@ -72,7 +72,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                         "Quantity": record.get(mapping.get("Quantity")),
                         "Price": record.get(mapping.get("Price")),
                         "Amount": record.get(mapping.get("Amount")),
-                        "Commission": record.get(mapping.get("Commission")),
+                        "Trading Cost": record.get(mapping.get("Commission")),
                         "Description": record.get(mapping.get("Description")),
                         "Type": type_val,
                         "Currency": "USD",
@@ -93,7 +93,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Quantity": row["Quantity"],
                 "Price": row["Price"],
                 "Amount": row["Amount"],
-                "Commission": row["Commission"],
+                "Trading Cost": row["Trading Cost"],
                 "Currency": row["Currency"],
                 "Description": row["Description"],
                 "Exchange": row["Exchange"],
@@ -113,7 +113,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                 "Quantity": row["Quantity"],
                 "Price": row["Price"],
                 "Amount": row["Amount"],
-                "Commission": row["Commission"],
+                "Trading Cost": row["Trading Cost"],
                 "Currency": row["Currency"],
                 "Description": row["Description"],
                 "Exchange": row["Exchange"],
@@ -124,7 +124,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
     master_log = pd.DataFrame(all_transactions)
 
     # Ensure all numerical columns are consistently typed as float64
-    numerical_cols = ["Quantity", "Price", "Amount", "Commission"]
+    numerical_cols = ["Quantity", "Price", "Amount", "Trading Cost"]
     for col in numerical_cols:
         if col in master_log.columns:
             master_log[col] = pd.to_numeric(master_log[col], errors="coerce")
@@ -153,7 +153,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
         "Quantity",
         "Price",
         "Amount",
-        "Commission",
+        "Trading Cost",
         "Currency",
         "Description",
         "Exchange",

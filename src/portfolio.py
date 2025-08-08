@@ -51,11 +51,8 @@ class Portfolio:
                 0.0, index=self.date_range, columns=self.symbols
             )
 
-        print("Portfolio object initialized.")
-
     def _prepare_trade_log(self):
         """Populates the trade DataFrame from the transaction log."""
-        print("Preparing trade log...")
         trade_log = self.processor.get_log_for_action("trade")
         if not trade_log.empty:
             self.holdings["trade"].update(
@@ -66,7 +63,6 @@ class Portfolio:
 
     def _fetch_price_data(self):
         """Fetches and prepares price and split data for all symbols."""
-        print("Fetching price and split data...")
         symbol_df = self.symbol_manager.get_unified_df()
 
         for symbol, row in symbol_df.iterrows():
@@ -100,7 +96,6 @@ class Portfolio:
         """
         Converts all non-base currency asset prices using the data provider.
         """
-        print(f"Converting prices to base currency ({self.base_currency})...")
         symbol_df = self.symbol_manager.get_unified_df()
         non_base_symbols = symbol_df[symbol_df["Currency"] != self.base_currency]
 
@@ -133,9 +128,9 @@ class Portfolio:
         """
         log = self.processor.get_log_for_action(action).copy()
 
-        if "Commission" not in log.columns:
-            log["Commission"] = 0.0
-        log["Commission"] = log["Commission"].fillna(0.0)
+        if "Trading Cost" not in log.columns:
+            log["Trading Cost"] = 0.0
+        log["Trading Cost"] = log["Trading Cost"].fillna(0.0)
 
         non_base_currencies = (
             log[log["Currency"] != self.base_currency]["Currency"].dropna().unique()
@@ -157,7 +152,7 @@ class Portfolio:
                         log[is_currency].index, method="ffill"
                     )
 
-                    for col in ["Price", "Amount", "Commission"]:
+                    for col in ["Price", "Amount", "Trading Cost"]:
                         if col in log.columns:
                             log.loc[is_currency, col] *= conversion_rates
 
@@ -165,7 +160,6 @@ class Portfolio:
 
     def _calculate_income(self):
         """Calculates and aggregates all income transactions from the log."""
-        print("Calculating portfolio income...")
         income_log = self._get_converted_log("income")
         if not income_log.empty:
             income_pivot = (
@@ -183,7 +177,6 @@ class Portfolio:
 
     def _calculate_gains_and_returns(self):
         """Calculates cost basis, invested capital, and gains for each holding."""
-        print("Calculating cost basis and returns...")
 
         trade_log = self._get_converted_log("trade")
 
@@ -206,10 +199,10 @@ class Portfolio:
                 if date in symbol_trades.index:
                     daily_trades = symbol_trades.loc[[date]]
                     for _, trade in daily_trades.iterrows():
-                        commission = abs(trade.get("Commission", 0.0))
+                        trading_cost = abs(trade.get("Trading Cost", 0.0))
 
                         if trade["Quantity"] > 0:  # Buy
-                            cost_basis = abs(trade["Amount"]) + commission
+                            cost_basis = abs(trade["Amount"]) + trading_cost
                             purchase_lots.append(
                                 {"qty": trade["Quantity"], "cost": cost_basis}
                             )
@@ -217,7 +210,7 @@ class Portfolio:
 
                         elif trade["Quantity"] < 0:  # Sell
                             qty_to_sell = abs(trade["Quantity"])
-                            net_proceeds = trade["Amount"] - commission
+                            net_proceeds = trade["Amount"] - trading_cost
                             self.holdings["invested_capital"].loc[date, symbol] -= net_proceeds
 
                             cost_of_sale = 0
@@ -266,7 +259,6 @@ class Portfolio:
         self._convert_prices_to_base_currency()
         self._calculate_income()
 
-        print("Calculating daily holdings and value...")
         for symbol in self.symbols:
             split_series = self.holdings["raw_splits"][symbol].replace(0, 1)
             for i in range(len(self.date_range)):
@@ -283,7 +275,6 @@ class Portfolio:
                     i, self.holdings["holding"].columns.get_loc(symbol)
                 ] = final_holding
 
-        print("Calculating split-adjusted holdings and market value...")
         self.holdings["adj holding"] = self.holdings["holding"].copy()
         self.holdings["cumulative splits"] = pd.DataFrame(
             1.0, index=self.date_range, columns=self.symbols
@@ -303,7 +294,6 @@ class Portfolio:
         self.holdings["Total Portfolio Value"] = self.holdings["value"].sum(axis=1)
 
         self._calculate_gains_and_returns()
-        print("Calculations complete.")
 
     def get_return_summary(self):
         """
@@ -397,7 +387,7 @@ There are a few important facts to keep in mind about information inside the tra
 
 Firstly it is mandatory to structure all transaction logs with the following headers:
 
-Date, Type, Symbol, Quantity, Price, Amount, Commission, Currency, Description, Exchange, Source
+Date, Type, Symbol, Quantity, Price, Amount, Trading Cost, Currency, Description, Exchange, Source
 
 There are quite a few variations we can expect in "Type" of transactions. One this is for sure, this cannot be an empty field.
 
@@ -409,7 +399,7 @@ But generally, I would like to enforce the following for all users:
 1) Deposits and withdrawals should be Net deposits. If cash was deposited, ensure it is positive `Amount`. If cash was withdrawn, ensure it is negative `Amount`.
 2) All dividend income should be net of taxes.
 3)  `Credit/Margin Interest` income should be net of taxes too.
-4) `buy`, `sell` should be separated for purchase Amount spent and commission paid.
+4) `buy`, `sell` should be separated for purchase Amount spent and Trading Cost paid.
 
 Everything else is a bit of an accounting standard employed in the preperation.
 

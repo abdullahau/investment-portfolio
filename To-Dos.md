@@ -21,7 +21,7 @@ There are a few important facts to keep in mind about information inside the tra
 
 Firstly it is mandatory to structure all transaction logs with the following headers:
 
-Date, Type, Symbol, Quantity, Price, Amount, Commission, Currency, Description, Exchange, Source
+Date, Type, Symbol, Quantity, Price, Amount, Trading Cost, Currency, Description, Exchange, Source
 
 There are quite a few variations we can expect in "Type" of transactions. One this is for sure, this cannot be an empty field.
 
@@ -33,7 +33,7 @@ But generally, I would like to enforce the following for all users:
 1) Deposits and withdrawals should be Net deposits. If cash was deposited, ensure it is positive `Amount`. If cash was withdrawn, ensure it is negative `Amount`.
 2) All dividend income should be net of taxes.
 3)  `Credit/Margin Interest` income should be net of taxes too.
-4) `buy`, `sell` should be separated for purchase Amount spent and commission paid.
+4) `buy`, `sell` should be separated for purchase Amount spent and Trading Cost paid.
 
 Everything else is a bit of an accounting standard employed in the preperation.
 
