@@ -133,6 +133,10 @@ class Portfolio:
         """
         log = self.processor.get_log_for_action(action).copy()
 
+        if "Commission" not in log.columns:
+            log["Commission"] = 0.0
+        log["Commission"] = log["Commission"].fillna(0.0)
+
         non_base_currencies = (
             log[log["Currency"] != self.base_currency]["Currency"].dropna().unique()
         )
@@ -153,9 +157,9 @@ class Portfolio:
                         log[is_currency].index, method="ffill"
                     )
 
-                    # Convert both Price and Amount columns
-                    log.loc[is_currency, "Price"] *= conversion_rates
-                    log.loc[is_currency, "Amount"] *= conversion_rates
+                    for col in ["Price", "Amount", "Commission"]:
+                        if col in log.columns:
+                            log.loc[is_currency, col] *= conversion_rates
 
         return log
 
@@ -172,21 +176,15 @@ class Portfolio:
             self.holdings["income"].update(income_pivot)
 
     def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
-        """
-        Computes cumulative split factors for retroactive holding adjustment.
-        """
+        """Computes cumulative split factors for retroactive holding adjustment."""
         factors = split_series.replace(0, 1)
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
 
     def _calculate_gains_and_returns(self):
-        """
-        Calculates cost basis, invested capital, and gains for each holding.
-        This version is optimized and calculates daily unrealized gains.
-        """
+        """Calculates cost basis, invested capital, and gains for each holding."""
         print("Calculating cost basis and returns...")
 
-        # Use the new helper method to get a fully converted trade log
         trade_log = self._get_converted_log("trade")
 
         for symbol in self.symbols:
@@ -208,48 +206,54 @@ class Portfolio:
                 if date in symbol_trades.index:
                     daily_trades = symbol_trades.loc[[date]]
                     for _, trade in daily_trades.iterrows():
+                        commission = abs(trade.get("Commission", 0.0))
+
                         if trade["Quantity"] > 0:  # Buy
+                            cost_basis = abs(trade["Amount"]) + commission
                             purchase_lots.append(
-                                {"qty": trade["Quantity"], "price": trade["Price"]}
+                                {"qty": trade["Quantity"], "cost": cost_basis}
                             )
-                            self.holdings["invested_capital"].loc[date, symbol] += (
-                                trade["Amount"] * -1
-                            )
+                            self.holdings["invested_capital"].loc[date, symbol] += cost_basis
 
                         elif trade["Quantity"] < 0:  # Sell
                             qty_to_sell = abs(trade["Quantity"])
-                            proceeds = trade["Amount"]
-                            self.holdings["invested_capital"].loc[date, symbol] -= (
-                                proceeds
-                            )
+                            net_proceeds = trade["Amount"] - commission
+                            self.holdings["invested_capital"].loc[date, symbol] -= net_proceeds
 
                             cost_of_sale = 0
-                            while qty_to_sell > 0 and purchase_lots:
-                                lot = purchase_lots[0]
-                                sell_qty = min(qty_to_sell, lot["qty"])
+                            lots_to_remove = 0
+                            for lot in purchase_lots:
+                                if qty_to_sell <= 0:
+                                    break
 
-                                cost_of_sale += sell_qty * lot["price"]
-                                lot["qty"] -= sell_qty
-                                qty_to_sell -= sell_qty
+                                sell_from_lot_qty = min(qty_to_sell, lot["qty"])
+                                
+                                proportion_of_lot = sell_from_lot_qty / lot["qty"]
+                                cost_of_portion_sold = proportion_of_lot * lot["cost"]
+                                cost_of_sale += cost_of_portion_sold
+                                
+                                lot["qty"] -= sell_from_lot_qty
+                                lot["cost"] -= cost_of_portion_sold
+                                qty_to_sell -= sell_from_lot_qty
 
-                                if lot["qty"] == 0:
-                                    purchase_lots.pop(0)
-
+                                if lot["qty"] < 1e-6:
+                                    lots_to_remove += 1
+                            
+                            if lots_to_remove > 0:
+                                purchase_lots = purchase_lots[lots_to_remove:]
+                            
                             self.holdings["realized_gains"].loc[date, symbol] += (
-                                proceeds - cost_of_sale
+                                net_proceeds - cost_of_sale
                             )
 
                 # Calculate daily unrealized gains
                 current_holding_qty = self.holdings["holding"].loc[date, symbol]
                 if current_holding_qty > 0:
-                    total_cost = sum(lot["qty"] * lot["price"] for lot in purchase_lots)
-                    avg_cost_basis = total_cost / current_holding_qty
-
+                    total_cost_of_holdings = sum(lot["cost"] for lot in purchase_lots)
                     current_market_value = self.holdings["value"].loc[date, symbol]
-                    cost_of_current_holdings = current_holding_qty * avg_cost_basis
-
+                    
                     self.holdings["unrealized_gains"].loc[date, symbol] = (
-                        current_market_value - cost_of_current_holdings
+                        current_market_value - total_cost_of_holdings
                     )
 
     def calculate_holdings_and_value(self):
@@ -360,8 +364,6 @@ class Portfolio:
         """
         return self.holdings
 
-    # You can continue to add methods for your other analysis points (b through f) here.
-    # For example:
     def get_concentration(self, by="Sector"):
         """Calculates portfolio concentration by Industry or Sector."""
         current_holdings = self.get_current_holdings()
@@ -372,7 +374,6 @@ class Portfolio:
         concentration = merged.groupby(by)["Market Value (USD)"].sum()
 
         return (concentration / concentration.sum()) * 100
-
 
 """
 The schematic idea is:
