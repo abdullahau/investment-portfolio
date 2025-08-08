@@ -1,0 +1,31 @@
+Date,Type,Symbol,Quantity,,,Price,Amount,Trading Cost,Currency,Description,Exchange,Source
+44974,buy,TSLA,0.202666401,0.202666401,,201.02,-40.74,,USD,Trade Entry,NasdaqGS,Sarwa Trade
+45160,buy,TSLA,0.089047083,0.291713484,,240.21,-21.39,,USD,Trade Entry,NasdaqGS,Sarwa Trade
+45190,buy,TSLA,0.096304008,0.388017492,,257.41,-24.79,,USD,Trade Entry,NasdaqGS,Sarwa Trade
+45274,sell,TSLA,-0.041464527,0.346552965,,241.17,10,,USD,Trade Entry,NasdaqGS,Sarwa Trade
+45288,sell,TSLA,-0.045589016,0.300963949,,263.66,12.02,,USD,Trade Entry,NasdaqGS,Sarwa Trade
+45488,sell,TSLA,-0.300963949,0,,255.8,76.99,1,USD,Trade Entry,NasdaqGS,Sarwa Trade
+,,,,,,,,,,,,
+,,,,,,,-86.92,,,,,
+,,,,,,,-1,,,,,
+,,,,,,,99.01,,,,,
+,,,,,,,11.09,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Date,Type,Symbol,Quantity,,,Price,Amount,Trading Cost,Currency,Description,Exchange,Source
+45231,buy,TQQQ,0.585171747,0.585171747,,34.18,-20,,USD,Trade Entry,NasdaqGM,Sarwa Trade
+45231,sell,TQQQ,-0.585171747,0,,34.57,20.23,,USD,Trade Entry,NasdaqGM,Sarwa Trade
+45519,buy,TQQQ,0.777963321,0.777963321,,68.27,-53.11,1,USD,Trade Entry,NasdaqGM,Sarwa Trade
+45539,sell,TQQQ,-0.777963321,0,,62.69,48.77,1,USD,Trade Entry,NasdaqGM,Sarwa Trade
+,,,,,,,,,,,,
+,,,,,,,-73.11,,,,,
+,,,,,,,-2,,,,,
+,,,,,,,69,,,,,
+,,,,,,,-6.11,,,,,
