@@ -66,6 +66,9 @@ class Benchmark:
             self.benchmark_symbol, self.date_range.min(), self.last_market_day
         )
 
+        valid_index = self.simulation_df.index.intersection(hist.index)
+        hist = hist.loc[valid_index]
+
         # Assign historical data, creating NaNs on non-trading days
         self.simulation_df["Open"] = hist["Open"]
         self.simulation_df["Close"] = hist["Close"]

@@ -48,7 +48,6 @@ class Symbols:
                 continue
 
             symbols_changed = True
-            print(f"Checking new symbol '{symbol}' with {self.provider_name}...")
 
             metadata = self.data_provider.get_metadata(symbol)
 
@@ -167,16 +166,12 @@ class Symbols:
             ]
             self.unified_df = self.unified_df.reindex(columns=cols_order)
 
-        print("Successfully created unified symbols DataFrame.")
-
     def reload_user_metadata(self):
         """
         Reloads the user-provided metadata file from disk into the class instance.
         This allows the user to see their manual edits without restarting the session.
         """
-        print("Reloading user-provided metadata from disk...")
         self.user_metadata = _load_json_cache(config.USER_METADATA)
-        print("User metadata reloaded successfully.")
 
     def get_unified_df(self):
         """

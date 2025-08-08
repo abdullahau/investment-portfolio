@@ -98,7 +98,6 @@ class MarketData:
         for base_curr, target_curr in currency_pairs:
             fx_ticker = f"{base_curr}{target_curr}=X"
 
-            print(f"Fetching FX rate for {fx_ticker}...")
             fx_hist = self.get_history(fx_ticker, start_date, last_market_day)
 
             if fx_hist is not None and not fx_hist.empty:
