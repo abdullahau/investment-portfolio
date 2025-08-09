@@ -79,7 +79,7 @@ class MarketData:
 
         end_date_for_api = last_market_day + pd.Timedelta(days=1)
         hist = yf.Ticker(symbol).history(
-            start=start_date, end=end_date_for_api, auto_adjust=True
+            start=start_date, end=end_date_for_api, auto_adjust=False
         )
 
         if not hist.empty:
