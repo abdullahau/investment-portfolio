@@ -185,8 +185,7 @@ Date,Type,Symbol,Quantity,Price,Amount,Trading Cost,Currency,Description,Exchang
 2024-02-08,sell,CAT,-0.09455636,323.39,30.58,1.0,USD,Trade Entry,NYSE,Sarwa Trade
 2024-02-08,buy,VOO,0.065187567,457.76,-29.84,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
 2024-02-20,Net Dividend,CAT,,,0.09,,USD,"Cash DIV @ 1.3, Pos QTY: 0.09455636, Rec Date: 2024-01-22",NYSE,Sarwa Trade
-2024-02-23,Merger/Acquisition,PAK,,,16.95,,USD,Cash Merger $16.9524 per share,NYSEArca,Sarwa Trade
-2024-02-23,Merger/Acquisition,PAK,-1.0,17.1,,,USD,Merger/Acquisition,NYSEArca,Sarwa Trade
+2024-02-23,Merger/Acquisition,PAK,-1.0,16.95,16.95,,USD,Merger/Acquisition,NYSEArca,Sarwa Trade
 2024-02-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-02-27",Cboe US,Sarwa Trade
 2024-02-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-02-15",NYSE,Sarwa Trade
 2024-02-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-02-09",NYSE,Sarwa Trade

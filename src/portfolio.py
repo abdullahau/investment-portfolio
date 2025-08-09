@@ -180,25 +180,6 @@ class Portfolio:
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
 
-    # def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
-    #     """
-    #     Computes cumulative split factors for retroactive holding quantity adjustment.
-    #     This factor is applied to all dates *before* the split date.
-    #     """
-    #     # Replace 0s with 1s for non-split days
-    #     split_factors = split_series.replace(0, 1)
-
-    #     # Calculate the cumulative product of splits, moving backwards in time
-    #     # This gives a factor that applies on and after the split date
-    #     inv_cum_prod = split_factors.iloc[::-1].cumprod().iloc[::-1]
-
-    #     # We need the reciprocal to apply to past quantities
-    #     # And we shift it by 1 day so the factor applies *before* the split
-    #     # We fill the last day (now NaN) with 1, as it has no preceding factor
-    #     cumulative_factors = (1 / inv_cum_prod).shift(-1).fillna(1.0)
-
-    #     return cumulative_factors
-
     def _calculate_gains_and_returns(self):
         """Calculates cost basis, invested capital, and gains for each holding."""
 
@@ -354,9 +335,7 @@ class Portfolio:
             summary["Income"] + summary["Realized Gains"] + summary["Unrealized Gains"]
         )
 
-        return summary[summary["Total Return"].abs() > 0.01].sort_values(
-            by="Total Return", ascending=False
-        )
+        return summary.sort_values(by="Total Return", ascending=False)        
 
     def get_income(self):
         """Returns a time series of total income for the portfolio."""
