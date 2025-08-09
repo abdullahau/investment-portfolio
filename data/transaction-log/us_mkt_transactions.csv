@@ -566,5 +566,5 @@ Date,Type,Symbol,Quantity,Price,Amount,Trading Cost,Currency,Description,Exchang
 2025-07-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.761117, Pos QTY: 0.177676073, Rec Date: 2025-06-20",NYSEArca,Sarwa Trade
 2025-07-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-07-15",NYSE,Sarwa Trade
 2025-08-04,Net Deposit,,,,244.41,,USD,Cash deposit made to Sarwa Trade on 2025-08-04,US Market,Sarwa Trade - Interim
-2025-08-04,buy,VOO,0.4268623496,575.08,245.48,1.0,USD,Purchase of VOO shares on 2025-08-04,NYSEArca,Sarwa Trade - Interim
+2025-08-04,buy,VOO,0.4268623496,575.08,-245.48,1.0,USD,Purchase of VOO shares on 2025-08-04,NYSEArca,Sarwa Trade - Interim
 2025-08-05,Net Dividend,JPMB,,,0.24,,USD,JPMB dividends,NYSEArca,Sarwa Trade - Interim

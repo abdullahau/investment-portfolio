@@ -122,10 +122,17 @@ class Portfolio:
 
     def _get_converted_log(self, action):
         """
-        Gets a transaction log for a specific action and converts all
-        monetary values to the base currency.
+        Gets a transaction log for a specific action, computes quantity for
+        numerical stability, and converts monetary values to the base currency.
         """
         log = self.processor.get_log_for_action(action).copy()
+
+        if action == "trade":
+            price_is_valid = (log["Price"].notna()) & (log["Price"] > 1e-16)
+            buys = price_is_valid & (log["Amount"] < 0)
+            log.loc[buys, "Quantity"] = abs(log.loc[buys, "Amount"]) / log.loc[buys, "Price"]
+            sells = price_is_valid & (log["Amount"] > 0)
+            log.loc[sells, "Quantity"] = -abs(log.loc[sells, "Amount"]) / log.loc[sells, "Price"]
 
         if "Trading Cost" not in log.columns:
             log["Trading Cost"] = 0.0
@@ -154,7 +161,6 @@ class Portfolio:
                     for col in ["Price", "Amount", "Trading Cost"]:
                         if col in log.columns:
                             log.loc[is_currency, col] *= conversion_rates
-
         return log
 
     def _calculate_income(self):
@@ -174,86 +180,121 @@ class Portfolio:
         cumulative = factors[::-1].ffill().cumprod()[::-1].shift(-1)
         return cumulative.fillna(1.0)
 
+    # def _cumulative_split_factors(self, split_series: pd.Series) -> pd.Series:
+    #     """
+    #     Computes cumulative split factors for retroactive holding quantity adjustment.
+    #     This factor is applied to all dates *before* the split date.
+    #     """
+    #     # Replace 0s with 1s for non-split days
+    #     split_factors = split_series.replace(0, 1)
+
+    #     # Calculate the cumulative product of splits, moving backwards in time
+    #     # This gives a factor that applies on and after the split date
+    #     inv_cum_prod = split_factors.iloc[::-1].cumprod().iloc[::-1]
+
+    #     # We need the reciprocal to apply to past quantities
+    #     # And we shift it by 1 day so the factor applies *before* the split
+    #     # We fill the last day (now NaN) with 1, as it has no preceding factor
+    #     cumulative_factors = (1 / inv_cum_prod).shift(-1).fillna(1.0)
+
+    #     return cumulative_factors
+
     def _calculate_gains_and_returns(self):
-            """Calculates cost basis, invested capital, and gains for each holding."""
+        """Calculates cost basis, invested capital, and gains for each holding."""
 
-            trade_log = self._get_converted_log("trade")
+        trade_log = self._get_converted_log("trade")
 
-            for symbol in self.symbols:
-                purchase_lots = []
-                symbol_trades = trade_log[trade_log["Symbol"] == symbol]
+        for symbol in self.symbols:
+            purchase_lots = []
+            symbol_trades = trade_log[trade_log["Symbol"] == symbol]
 
-                for date in self.date_range:
-                    if date > self.date_range.min():
-                        prev_date = date - pd.Timedelta(days=1)
-                        self.holdings["invested_capital"].loc[date, symbol] = self.holdings[
-                            "invested_capital"
-                        ].loc[prev_date, symbol]
-                        self.holdings["realized_gains"].loc[date, symbol] = self.holdings[
-                            "realized_gains"
-                        ].loc[prev_date, symbol]
+            for date in self.date_range:
+                if date > self.date_range.min():
+                    prev_date = date - pd.Timedelta(days=1)
+                    self.holdings["invested_capital"].loc[date, symbol] = self.holdings[
+                        "invested_capital"
+                    ].loc[prev_date, symbol]
+                    self.holdings["realized_gains"].loc[date, symbol] = self.holdings[
+                        "realized_gains"
+                    ].loc[prev_date, symbol]
 
-                    self.holdings["unrealized_gains"].loc[date, symbol] = self.holdings[
-                            "unrealized_gains"
-                        ].loc[date - pd.Timedelta(days=1), symbol] if date > self.date_range.min() else 0.0
+                self.holdings["unrealized_gains"].loc[date, symbol] = (
+                    self.holdings["unrealized_gains"].loc[
+                        date - pd.Timedelta(days=1), symbol
+                    ]
+                    if date > self.date_range.min()
+                    else 0.0
+                )
 
-                    if date in symbol_trades.index:
-                        daily_trades = symbol_trades.loc[[date]]
+                if date in symbol_trades.index:
+                    daily_trades = symbol_trades.loc[[date]]
 
-                        buys_today = daily_trades[daily_trades["Quantity"] > 0]
-                        for _, trade in buys_today.iterrows():
-                            trading_cost = abs(trade.get("Trading Cost", 0.0))
-                            cost_basis = abs(trade["Amount"]) + trading_cost
-                            purchase_lots.append(
-                                {"qty": trade["Quantity"], "cost": cost_basis}
-                            )
-                            self.holdings["invested_capital"].loc[date, symbol] += cost_basis
-
-                        sells_today = daily_trades[daily_trades["Quantity"] < 0]
-                        for _, trade in sells_today.iterrows():
-                            qty_to_sell = abs(trade["Quantity"])
-                            net_proceeds = trade["Amount"] - abs(trade.get("Trading Cost", 0.0))
-                            
-                            cost_of_sale = 0.0
-                            remaining_lots = []
-                            temp_qty_to_sell = qty_to_sell
-                            
-                            for lot in purchase_lots:
-                                if temp_qty_to_sell < 1e-9:
-                                    remaining_lots.append(lot)
-                                    continue
-
-                                sell_from_lot_qty = min(temp_qty_to_sell, lot["qty"])
-                                
-                                proportion_of_lot = sell_from_lot_qty / lot["qty"] if lot['qty'] > 1e-9 else 0
-                                cost_of_sale += proportion_of_lot * lot["cost"]
-                                
-                                temp_qty_to_sell -= sell_from_lot_qty
-
-                                remaining_qty = lot["qty"] - sell_from_lot_qty
-                                if remaining_qty > 1e-9:
-                                    remaining_lots.append({
-                                        "qty": remaining_qty,
-                                        "cost": lot["cost"] * (1 - proportion_of_lot)
-                                    })
-                            
-                            purchase_lots = remaining_lots
-                            
-                            self.holdings["invested_capital"].loc[date, symbol] -= cost_of_sale
-                            self.holdings["realized_gains"].loc[date, symbol] += (
-                                net_proceeds - cost_of_sale
-                            )
-
-                    current_holding_qty = self.holdings["holding"].loc[date, symbol]
-                    if current_holding_qty > 1e-9 and purchase_lots:
-                        total_cost_of_holdings = sum(lot["cost"] for lot in purchase_lots)
-                        current_market_value = self.holdings["value"].loc[date, symbol]
-                        
-                        self.holdings["unrealized_gains"].loc[date, symbol] = (
-                            current_market_value - total_cost_of_holdings
+                    buys_today = daily_trades[daily_trades["Quantity"] > 0]
+                    for _, trade in buys_today.iterrows():
+                        trading_cost = abs(trade.get("Trading Cost", 0.0))
+                        cost_basis = abs(trade["Amount"]) + trading_cost
+                        purchase_lots.append(
+                            {"qty": trade["Quantity"], "cost": cost_basis}
                         )
-                    else: 
-                        self.holdings["unrealized_gains"].loc[date, symbol] = 0.0
+                        self.holdings["invested_capital"].loc[date, symbol] += (
+                            cost_basis
+                        )
+
+                    sells_today = daily_trades[daily_trades["Quantity"] < 0]
+                    for _, trade in sells_today.iterrows():
+                        qty_to_sell = abs(trade["Quantity"])
+                        net_proceeds = trade["Amount"] - abs(
+                            trade.get("Trading Cost", 0.0)
+                        )
+
+                        cost_of_sale = 0.0
+                        remaining_lots = []
+                        temp_qty_to_sell = qty_to_sell
+
+                        for lot in purchase_lots:
+                            if temp_qty_to_sell < 1e-9:
+                                remaining_lots.append(lot)
+                                continue
+
+                            sell_from_lot_qty = min(temp_qty_to_sell, lot["qty"])
+
+                            proportion_of_lot = (
+                                sell_from_lot_qty / lot["qty"]
+                                if lot["qty"] > 1e-9
+                                else 0
+                            )
+                            cost_of_sale += proportion_of_lot * lot["cost"]
+
+                            temp_qty_to_sell -= sell_from_lot_qty
+
+                            remaining_qty = lot["qty"] - sell_from_lot_qty
+                            if remaining_qty > 1e-9:
+                                remaining_lots.append(
+                                    {
+                                        "qty": remaining_qty,
+                                        "cost": lot["cost"] * (1 - proportion_of_lot),
+                                    }
+                                )
+
+                        purchase_lots = remaining_lots
+
+                        self.holdings["invested_capital"].loc[date, symbol] -= (
+                            cost_of_sale
+                        )
+                        self.holdings["realized_gains"].loc[date, symbol] += (
+                            net_proceeds - cost_of_sale
+                        )
+
+                current_holding_qty = self.holdings["holding"].loc[date, symbol]
+                if current_holding_qty > 1e-9 and purchase_lots:
+                    total_cost_of_holdings = sum(lot["cost"] for lot in purchase_lots)
+                    current_market_value = self.holdings["value"].loc[date, symbol]
+
+                    self.holdings["unrealized_gains"].loc[date, symbol] = (
+                        current_market_value - total_cost_of_holdings
+                    )
+                else:
+                    self.holdings["unrealized_gains"].loc[date, symbol] = 0.0
 
     def calculate_holdings_and_value(self):
         """
