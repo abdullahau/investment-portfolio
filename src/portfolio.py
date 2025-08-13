@@ -127,13 +127,6 @@ class Portfolio:
         """
         log = self.processor.get_log_for_action(action).copy()
 
-        if action == "trade":
-            price_is_valid = (log["Price"].notna()) & (log["Price"] > 1e-16)
-            buys = price_is_valid & (log["Amount"] < 0)
-            log.loc[buys, "Quantity"] = abs(log.loc[buys, "Amount"]) / log.loc[buys, "Price"]
-            sells = price_is_valid & (log["Amount"] > 0)
-            log.loc[sells, "Quantity"] = -abs(log.loc[sells, "Amount"]) / log.loc[sells, "Price"]
-
         if "Trading Cost" not in log.columns:
             log["Trading Cost"] = 0.0
         log["Trading Cost"] = log["Trading Cost"].fillna(0.0)
