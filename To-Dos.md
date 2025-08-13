@@ -295,3 +295,10 @@ Let me know if you want code snippets for this logic!
 
 
 **Realized/Unrealized Gains**: To calculate gains and losses, you need to implement cost basis tracking. This involves tracking each purchase (a "lot") with its date and price. When you sell shares, you match the sale against a specific lot (usually First-In, First-Out or FIFO) to calculate the realized gain or loss. This is a significant feature that would require adding a new _calculate_cost_basis method to your Portfolio class.
+
+TODO:
+- Calculate time-weighted portfolio performance
+- Calculate total return for each holding
+- Calculate overall portfolio performance metrics
+- Calculate individual stock performance metrics
+

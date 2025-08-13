@@ -356,9 +356,9 @@ class Portfolio:
         current_value = self.holdings["value"].loc[current_date]
 
         summary = pd.DataFrame(
-            {"Shares": current_holdings, "Market Value (USD)": current_value}
+            {"Shares": current_holdings, f"Market Value ({config.BASE_CURRENCY})": current_value}
         )
-        return summary[summary["Shares"] > 0]
+        return summary[summary["Shares"] > 1e-9]
 
     def get_total_value_history(self):
         """
