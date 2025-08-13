@@ -26,35 +26,32 @@ class MarketData:
         Returns:
             A dictionary with a standard set of keys, or None if the symbol is not found.
         """
-        try:
-            with open(os.devnull, "w") as fnull:
-                original_stderr = sys.stderr
-                sys.stderr = fnull
-                info = yf.Ticker(symbol).info
-                sys.stderr = original_stderr
+        with open(os.devnull, "w") as fnull:
+            original_stderr = sys.stderr
+            sys.stderr = fnull
+            info = yf.Ticker(symbol).info
+            sys.stderr = original_stderr
 
-            if (
-                info
-                and info.get("market")
-                and info.get("regularMarketPrice") is not None
-            ):
-                quote_type = info.get("quoteType")
+        if (
+            info
+            and info.get("market")
+            and info.get("regularMarketPrice") is not None
+        ):
+            quote_type = info.get("quoteType")
 
-                metadata = {
-                    "Name": info.get("longName"),
-                    "Exchange": info.get("fullExchangeName"),
-                    "Currency": info.get("currency"),
-                    "Type": quote_type.lower() if quote_type else None,
-                    "Country": info.get("country"),
-                    "Industry": info.get("industry")
-                    if quote_type == "EQUITY"
-                    else None,
-                    "Sector": info.get("sector") if quote_type == "EQUITY" else None,
-                }
-                return metadata
-            else:
-                return None
-        except Exception:
+            metadata = {
+                "Name": info.get("longName"),
+                "Exchange": info.get("fullExchangeName"),
+                "Currency": info.get("currency"),
+                "Type": quote_type.lower() if quote_type else None,
+                "Country": info.get("country"),
+                "Industry": info.get("industry")
+                if quote_type == "EQUITY"
+                else None,
+                "Sector": info.get("sector") if quote_type == "EQUITY" else None,
+            }
+            return metadata
+        else:
             return None
 
     def get_history(self, symbol, start_date, last_market_day):
