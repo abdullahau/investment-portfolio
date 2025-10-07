@@ -27,8 +27,14 @@ format:
             href: https://github.com/abdullahau/market-simulation/
         -   text: Quarto Markdown
             icon: file-code
-            href: https://github.com/abdullahau/market-simulation/blob/main/    
+            href: https://github.com/abdullahau/market-simulation/blob/main/
         html-math-method:
             method: mathjax
             url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ---
+
+## test
+
+```{python}
+
+```
