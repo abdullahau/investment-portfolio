@@ -5,6 +5,11 @@ __pycache__/
 *$py.class
 *.pyc
 
+# Dev Settings & Caches
+.vscode
+.ruff_cache
+
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
