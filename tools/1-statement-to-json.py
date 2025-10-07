@@ -27,7 +27,7 @@ def clean_header(header):
     return [col.replace("\n", " ").strip() for col in header]
 
 
-def process_single_statement(file_path):
+def process_statement(file_path):
     """
     Parses a single statement PDF, sets correct data types, and extracts the period.
     Returns the period string and a dictionary of DataFrames.
@@ -80,7 +80,7 @@ def process_single_statement(file_path):
         if not data:
             continue
 
-        df = pd.DataFrame(data, columns=header)
+        df = pd.DataFrame(data, columns=header)  # pyright: ignore
         df.replace(["-", "--", "$ --", "$--", ""], pd.NA, inplace=True)
 
         for col in df.columns:
@@ -108,7 +108,7 @@ def process_single_statement(file_path):
     return statement_period, final_dfs
 
 
-def process_all_statements(input_folder, output_file):
+def process_statements(input_folder, output_file):
     """
     Processes all PDF statements in a folder and saves the aggregated data to a single JSON file.
     """
@@ -120,7 +120,7 @@ def process_all_statements(input_folder, output_file):
 
     for pdf_file in pdf_files:
         print(f"Processing {pdf_file.name}...")
-        period, dfs = process_single_statement(pdf_file)
+        period, dfs = process_statement(pdf_file)
         if period:
             # Convert DataFrames to JSON-serializable format (list of dicts)
             # and handle datetime conversion to string format for JSON
@@ -142,18 +142,18 @@ def process_all_statements(input_folder, output_file):
 
 if __name__ == "__main__":
     # Process Statements & Store as JSON
-    process_all_statements(
-        input_folder=config.RAW_DATA_DIR / "monthly-statements-pdf",
+    process_statements(
+        input_folder=config.RAW_DATA_DIR / "redacted-statements",
         output_file=config.RAW_DATA_DIR / "sarwa_trade.json",
     )
 
     # # Example Code: Read & Load JSON
-    # with open('brokerage_data.json', 'r') as f:
+    # with open('sarwa_trade.json', 'r') as f:
     #     loaded_data = json.load(f)
 
     # # Example: Get the Holdings DataFrame for December 2024
     # pd.DataFrame(loaded_data['2024-December']['Holdings'])
 
     # # Inspect Single Statement Dataframes
-    # december2024 = process_single_statement('monthly-statements-pdf/December2024.pdf')[1]
+    # december2024 = process_statement('tools/raw-data/redacted-statements/December2024.pdf')[1]
     # december2024['Income']

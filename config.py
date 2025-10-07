@@ -1,17 +1,17 @@
 # config.py
 
-import os
 import pandas as pd
 import yfinance as yf
+from os import getenv
 from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()  # Reads the .env file
 
 # --- API Keys & Secrets ---
-API_KEY_TWELVE_DATA = os.getenv("TWELVE_DATA_API_KEY")
-ACCOUNT_NUM = os.getenv("ACCOUNT_NUM")
-ACCOUNT_NAME = os.getenv("ACCOUNT_NAME")
+API_KEY_TWELVE_DATA = getenv("TWELVE_DATA_API_KEY")
+ACCOUNT_NUM = getenv("ACCOUNT_NUM")
+ACCOUNT_NAME = getenv("ACCOUNT_NAME")
 
 # --- Path Management ---
 # Root directory
@@ -57,7 +57,7 @@ def project_dates(log_dates):
     )
 
     hist_recent = yf.Ticker(BENCHMARK_INDEX).history(period="10d")
-    hist_recent.index = hist_recent.index.tz_localize(None).normalize()
+    hist_recent.index = hist_recent.index.tz_localize(None).normalize()  # pyright: ignore
 
     completed_market_days = hist_recent[hist_recent.index < today]
 

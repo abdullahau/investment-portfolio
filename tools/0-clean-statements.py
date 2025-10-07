@@ -19,11 +19,11 @@ for input_path in input_folder.glob("*.pdf"):
 
     first_page = doc[0]
     for text in texts_to_remove:
-        areas = first_page.search_for(text)
+        areas = first_page.search_for(text)  # pyright: ignore
         for area in areas:
             first_page.add_redact_annot(area, fill=(1, 1, 1))  # white box
 
-    first_page.apply_redactions()
+    first_page.apply_redactions()  # pyright: ignore
 
     total_pages = len(doc)
     if total_pages > 2:

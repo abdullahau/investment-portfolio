@@ -1,12 +1,10 @@
 # tools/create-transaction-log.py
 
 import json
-import os
 import pandas as pd
 import numpy as np
-
-import sys
 from pathlib import Path
+import sys
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
@@ -82,7 +80,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
                     all_transactions.append(tx)
 
     # 2. Process data from crypto_transactions.csv
-    if os.path.exists(crypto_path):
+    if crypto_path.exists():
         crypto_df = pd.read_csv(crypto_path)
         crypto_df["Date"] = pd.to_datetime(crypto_df["Date"])
         for _, row in crypto_df.iterrows():
@@ -102,7 +100,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
             all_transactions.append(tx)
 
     # 3. Process data from interim_transactions.csv
-    if os.path.exists(interim_path):
+    if interim_path.exists():
         interim_df = pd.read_csv(interim_path)
         interim_df["Date"] = pd.to_datetime(interim_df["Date"])
         for _, row in interim_df.iterrows():
@@ -140,7 +138,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
 
     master_log["Price"] = np.where(
         pd.isnull(master_log["Price"]),
-        (master_log["Amount"].abs() / master_log["Quantity"].abs()).where(
+        (master_log["Amount"].abs() / master_log["Quantity"].abs()).where(  # pyright: ignore
             master_log["Quantity"] != 0
         ),
         master_log["Price"],
@@ -163,22 +161,20 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
 
     # 5. Aggregate dividend-related transactions
     types_to_combine = ["Dividends", "Div. Adj(NRA Withheld)"]
-    div_rows = master_log[master_log["Type"].isin(types_to_combine)].copy()
-    other_rows = master_log[~master_log["Type"].isin(types_to_combine)]
-    div_rows_sorted = div_rows.sort_values(by="Type", ascending=False)
+    div_rows = master_log[master_log["Type"].isin(types_to_combine)].copy()  # pyright: ignore
+    other_rows = master_log[~master_log["Type"].isin(types_to_combine)]  # pyright: ignore
+    div_rows_sorted = div_rows.sort_values(by="Type", ascending=False)  # pyright: ignore
     group_keys = ["Date", "Symbol"]
     agg_rules = {
         col: "first" for col in div_rows_sorted.columns if col not in group_keys
     }
     agg_rules["Amount"] = "sum"
     aggregated_divs = div_rows_sorted.groupby(group_keys, as_index=False).agg(agg_rules)
-    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(
-        12
-    )  # Numerical stability
-    aggregated_divs["Type"] = "Net Dividend"
+    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(12)  # pyright: ignore
+    aggregated_divs["Type"] = "Net Dividend"  # pyright: ignore
 
     master_log = (
-        pd.concat([other_rows, aggregated_divs], ignore_index=True)
+        pd.concat([other_rows, aggregated_divs], ignore_index=True)  # pyright: ignore
         .sort_values(by="Date")
         .reset_index(drop=True)
     )

@@ -1,572 +1,628 @@
 Date,Type,Symbol,Quantity,Price,Amount,Trading Cost,Currency,Description,Exchange,Source
 2023-02-16,Net Deposit,,,,271.57,,USD,ID: 37fdafdc-d707-42fa-ba74-98b30cf9ab2a - DT23215738,US Market,Sarwa Trade
-2023-02-17,buy,VOO,0.218966527,372.07,-81.47,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-02-17,buy,TSLA,0.202666401,201.02,-40.74,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-02-17,buy,PERI,0.407269673,33.34,-13.58,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-03-29,Net Dividend,VOO,,,0.24,,USD,"Cash DIV @ 1.4874, Pos QTY: 0.218966527, Rec Date: 2023-03-27",NYSEArca,Sarwa Trade
+2023-02-17,buy,PERI,0.407269673,33.34,-13.58,,USD,Trade Entry,US Market,Sarwa Trade
+2023-02-17,buy,TSLA,0.202666401,201.02,-40.74,,USD,Trade Entry,US Market,Sarwa Trade
+2023-02-17,buy,VOO,0.218966527,372.07,-81.47,,USD,Trade Entry,US Market,Sarwa Trade
+2023-03-29,Net Dividend,VOO,,,0.24,,USD,"Cash DIV @ 1.4874, Pos QTY: 0.218966527, Rec Date: 2023-03-27",US Market,Sarwa Trade
+2023-06-20,sell,PERI,-0.407269673,33.54,13.66,,USD,Trade Entry,US Market,Sarwa Trade
+2023-06-20,buy,VOOG,0.11943626,251.18,-30.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-06-20,buy,UAE,0.417475728,14.42,-6.02,,USD,Trade Entry,US Market,Sarwa Trade
+2023-06-20,buy,XLK,0.581936685,171.84,-100.0,,USD,Trade Entry,US Market,Sarwa Trade
 2023-06-20,buy,BTC-USD,0.0004698,27672.94,-13.0,0.0,USD,buy BTC,CCC,Sarwa Crypto
-2023-06-20,buy,XLK,0.581936685,171.84,-100.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-06-20,buy,VOOG,0.11943626,251.18,-30.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-06-20,buy,UAE,0.417475728,14.42,-6.02,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-06-20,sell,PERI,-0.407269673,33.54,13.66,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-07-05,Net Dividend,VOOG,,,0.06,,USD,"Cash DIV @ 0.6987, Pos QTY: 0.11943626, Rec Date: 2023-06-30",NYSEArca,Sarwa Trade
-2023-07-05,Net Dividend,VOO,,,0.25,,USD,"Cash DIV @ 1.5762, Pos QTY: 0.218966527, Rec Date: 2023-06-30",NYSEArca,Sarwa Trade
-2023-08-18,buy,SPY,0.091857308,435.46,-40.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-18,buy,VHT,0.133556611,243.64,-32.54,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-18,buy,NOBL,0.321722717,93.25,-30.0,,USD,Trade Entry,Cboe US,Sarwa Trade
+2023-07-05,Net Dividend,VOOG,,,0.06,,USD,"Cash DIV @ 0.6987, Pos QTY: 0.11943626, Rec Date: 2023-06-30",US Market,Sarwa Trade
+2023-07-05,Net Dividend,VOO,,,0.25,,USD,"Cash DIV @ 1.5762, Pos QTY: 0.218966527, Rec Date: 2023-06-30",US Market,Sarwa Trade
+2023-08-18,buy,VHT,0.133556611,243.64,-32.54,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-18,buy,SPY,0.091857308,435.46,-40.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-18,buy,NOBL,0.321722717,93.25,-30.0,,USD,Trade Entry,US Market,Sarwa Trade
 2023-08-18,Net Deposit,,,,271.57,,USD,ID: 977a86e5-8ee2-4d0f-90fe-6fc19b29c5bb - DT23818273,US Market,Sarwa Trade
-2023-08-22,buy,TSLA,0.089047083,240.21,-21.39,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-08-22,buy,UAE,0.190126751,14.99,-2.85,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-08-22,buy,XLK,0.263294422,169.62,-44.66,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-22,buy,VOOG,0.054228483,254.11,-13.78,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-22,buy,VOO,0.099555994,405.4,-40.36,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-22,buy,NOBL,0.146682438,92.99,-13.64,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-08-22,buy,VHT,0.061053062,244.05,-14.9,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-08-22,buy,SPY,0.041763972,441.05,-18.42,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,IBB,0.047021696,126.75,-5.96,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-09-07,buy,LUX,1.0,23.0,-23.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,SHOP,0.379384395,64.26,-24.38,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,ADBE,0.04371275,557.73,-24.38,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,BA,0.082145456,217.05,-17.83,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-07,buy,BKNG,0.003320753,3110.74,-10.33,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,CAT,0.071134406,283.13,-20.14,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-07,buy,EL,0.066052816,156.39,-10.33,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-07,buy,NVDA,0.02369919,453.6,-10.75,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,COIN,0.141906697,75.75,-10.75,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,STIP,0.065740664,97.05,-6.38,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,SPHY,0.282076222,22.62,-6.38,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,META,0.081603416,298.76,-24.38,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-07,buy,UAE,0.476125511,14.66,-6.98,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-09-07,buy,USRT,0.125987361,50.64,-6.38,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,VHT,0.024623011,242.05,-5.96,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-07,buy,XLK,0.074194863,171.71,-12.74,,USD,Trade Entry,NYSEArca,Sarwa Trade
+2023-08-22,buy,SPY,0.041763972,441.05,-18.42,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,NOBL,0.146682438,92.99,-13.64,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,VOOG,0.054228483,254.11,-13.78,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,XLK,0.263294422,169.62,-44.66,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,VOO,0.099555994,405.4,-40.36,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,UAE,0.190126751,14.99,-2.85,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,TSLA,0.089047083,240.21,-21.39,,USD,Trade Entry,US Market,Sarwa Trade
+2023-08-22,buy,VHT,0.061053062,244.05,-14.9,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,VHT,0.024623011,242.05,-5.96,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,ADBE,0.04371275,557.73,-24.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,COIN,0.141906697,75.75,-10.75,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,USRT,0.125987361,50.64,-6.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,LUX,1.0,23.0,-23.0,,USD,Trade Entry,US Market,Sarwa Trade
 2023-09-07,Net Deposit,,,,271.57,,USD,ID: 28979918-1174-4ee9-8ba5-afe3d4e44879 - DT23905331,US Market,Sarwa Trade
-2023-09-07,buy,DE,0.048628784,414.16,-20.14,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-07,buy,MSFT,0.073728203,330.67,-24.38,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,CAT,0.023421954,272.39,-6.38,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-21,buy,BKNG,0.001094996,3022.84,-3.31,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,ADBE,0.01442104,519.38,-7.49,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,USRT,0.041602714,49.52,-2.06,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,META,0.026961846,295.23,-7.96,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,TSLA,0.096304008,257.41,-24.79,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,MSFT,0.024305145,322.15,-7.83,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,Net Dividend,XLK,,,0.24,,USD,"Cash DIV @ 0.360286, Pos QTY: 0.91942597, Rec Date: 2023-09-19",NYSEArca,Sarwa Trade
-2023-09-21,buy,COIN,0.04714936,73.81,-3.48,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,EL,0.021854511,147.34,-3.22,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-21,buy,DE,0.016008702,389.79,-6.24,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-09-21,buy,NOBL,0.154331851,90.91,-14.03,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-09-21,buy,VOO,0.104855795,400.26,-41.97,,USD,Trade Entry,NYSEArca,Sarwa Trade
+2023-09-07,buy,XLK,0.074194863,171.71,-12.74,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,UAE,0.476125511,14.66,-6.98,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,IBB,0.047021696,126.75,-5.96,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,SPHY,0.282076222,22.62,-6.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,BA,0.082145456,217.05,-17.83,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,STIP,0.065740664,97.05,-6.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,CAT,0.071134406,283.13,-20.14,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,DE,0.048628784,414.16,-20.14,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,EL,0.066052816,156.39,-10.33,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,BKNG,0.003320753,3110.74,-10.33,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,SHOP,0.379384395,64.26,-24.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,META,0.081603416,298.76,-24.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,MSFT,0.073728203,330.67,-24.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-07,buy,NVDA,0.02369919,453.6,-10.75,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,Net Dividend,XLK,,,0.24,,USD,"Cash DIV @ 0.360286, Pos QTY: 0.91942597, Rec Date: 2023-09-19",US Market,Sarwa Trade
+2023-09-21,buy,EL,0.021854511,147.34,-3.22,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,ADBE,0.01442104,519.38,-7.49,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,STIP,0.021645467,97.02,-2.1,,USD,Trade Entry,US Market,Sarwa Trade
 2023-09-21,Net Deposit,,,,271.57,,USD,ID: de521040-b6a5-40cf-a230-cd3b2df8f022 - DT23920844,US Market,Sarwa Trade
-2023-09-21,buy,LUX,1.0,22.45,-22.45,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,XLK,0.303008274,165.08,-50.02,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,VHT,0.072187687,239.38,-17.28,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,VOOG,0.05719013,250.22,-14.31,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,UAE,0.355945318,15.51,-5.52,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-09-21,buy,STIP,0.021645467,97.02,-2.1,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,SPHY,0.092773437,22.53,-2.09,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-21,buy,SHOP,0.125208077,55.27,-6.92,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,NVDA,0.007846034,414.22,-3.25,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-09-21,buy,SPY,0.044054793,433.78,-19.11,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-09-27,Net Dividend,NOBL,,,0.17,,USD,"Cash DIV @ 0.521068, Pos QTY: 0.468405155, Rec Date: 2023-09-21",Cboe US,Sarwa Trade
-2023-10-02,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.592702, Pos QTY: 0.167590075, Rec Date: 2023-09-27",NYSEArca,Sarwa Trade
-2023-10-02,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.153164, Pos QTY: 0.047021696, Rec Date: 2023-09-27",NasdaqGM,Sarwa Trade
-2023-10-03,Net Dividend,VOOG,,,0.12,,USD,"Cash DIV @ 0.7511, Pos QTY: 0.230854873, Rec Date: 2023-09-29",NYSEArca,Sarwa Trade
-2023-10-03,Net Dividend,VOO,,,0.45,,USD,"Cash DIV @ 1.4925, Pos QTY: 0.423378316, Rec Date: 2023-09-29",NYSEArca,Sarwa Trade
-2023-10-03,Net Dividend,VHT,,,0.19,,USD,"Cash DIV @ 0.8774, Pos QTY: 0.291420371, Rec Date: 2023-09-29",NYSEArca,Sarwa Trade
+2023-09-21,buy,XLK,0.303008274,165.08,-50.02,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,VOO,0.104855795,400.26,-41.97,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,VHT,0.072187687,239.38,-17.28,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,USRT,0.041602714,49.52,-2.06,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,UAE,0.355945318,15.51,-5.52,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,VOOG,0.05719013,250.22,-14.31,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,SPY,0.044054793,433.78,-19.11,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,TSLA,0.096304008,257.41,-24.79,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,COIN,0.04714936,73.81,-3.48,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,CAT,0.023421954,272.39,-6.38,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,DE,0.016008702,389.79,-6.24,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,META,0.026961846,295.23,-7.96,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,MSFT,0.024305145,322.15,-7.83,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,LUX,1.0,22.45,-22.45,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,NVDA,0.007846034,414.22,-3.25,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,NOBL,0.154331851,90.91,-14.03,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,SPHY,0.092773437,22.53,-2.09,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,BKNG,0.001094996,3022.84,-3.31,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-21,buy,SHOP,0.125208077,55.27,-6.92,,USD,Trade Entry,US Market,Sarwa Trade
+2023-09-27,Net Dividend,NOBL,,,0.17,,USD,"Cash DIV @ 0.521068, Pos QTY: 0.468405155, Rec Date: 2023-09-21",US Market,Sarwa Trade
+2023-10-02,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.153164, Pos QTY: 0.047021696, Rec Date: 2023-09-27",US Market,Sarwa Trade
+2023-10-02,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.592702, Pos QTY: 0.167590075, Rec Date: 2023-09-27",US Market,Sarwa Trade
+2023-10-03,Net Dividend,VOO,,,0.45,,USD,"Cash DIV @ 1.4925, Pos QTY: 0.423378316, Rec Date: 2023-09-29",US Market,Sarwa Trade
+2023-10-03,Net Dividend,VOOG,,,0.12,,USD,"Cash DIV @ 0.7511, Pos QTY: 0.230854873, Rec Date: 2023-09-29",US Market,Sarwa Trade
+2023-10-03,Net Dividend,VHT,,,0.19,,USD,"Cash DIV @ 0.8774, Pos QTY: 0.291420371, Rec Date: 2023-09-29",US Market,Sarwa Trade
 2023-10-06,Qualified interest income reallocation for 2023,,,,0.01,,USD,Qualified interest income reallocation for 2023,US Market,Sarwa Trade
-2023-10-06,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.152415, Pos QTY: 0.374849659, Rec Date: 2023-10-03",NYSEArca,Sarwa Trade
-2023-10-06,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.157231, Pos QTY: 0.087386131, Rec Date: 2023-10-03",NYSEArca,Sarwa Trade
+2023-10-06,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.157231, Pos QTY: 0.087386131, Rec Date: 2023-10-03",US Market,Sarwa Trade
+2023-10-06,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.152415, Pos QTY: 0.374849659, Rec Date: 2023-10-03",US Market,Sarwa Trade
 2023-10-07,sell,BTC-USD,-0.0004698,27694.26,13.1,0.0,USD,sell BTC,CCC,Sarwa Crypto
-2023-10-09,buy,OCSL,0.216230366,19.1,-4.13,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-10-09,buy,TPVG,1.0,10.1,-10.1,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-10-09,sell,COIN,-0.012617978,79.25,1.0,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-10-11,buy,TPVG,1.0,10.2,-10.2,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-10-11,buy,OCSL,0.826038273,19.65,-16.23,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-10-11,buy,NVO,0.378787878,99.0,-37.5,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-10-11,buy,LLY,0.062060405,604.25,-37.5,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-10-11,buy,GSBD,1.774559909,14.09,-25.0,,USD,Trade Entry,NYSE,Sarwa Trade
+2023-10-09,sell,COIN,-0.012617978,79.25,1.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-09,buy,TPVG,1.0,10.1,-10.1,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-09,buy,OCSL,0.216230366,19.1,-4.13,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-11,buy,TPVG,1.0,10.2,-10.2,,USD,Trade Entry,US Market,Sarwa Trade
 2023-10-11,Net Deposit,,,,135.78,,USD,ID: a0a331f6-4df8-4ce5-aa2d-91360af8419a - DT23A10104,US Market,Sarwa Trade
-2023-10-11,buy,TPVG,1.0,10.2,-10.2,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-10-31,Net Dividend,SPY,,,0.15,,USD,"Cash DIV @ 1.583169, Pos QTY: 0.13362128, Rec Date: 2023-09-18",NYSEArca,Sarwa Trade
-2023-11-01,buy,CLM,1.0,7.1,-7.1,,USD,Trade Entry,NYSE American,Sarwa Trade
-2023-11-01,buy,GOF,1.0,12.92,-12.92,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-11-01,buy,SPXL,0.215014577,74.09,-15.93,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-11-01,buy,CLM,1.816941083,7.1,-12.9,,USD,Trade Entry,NYSE American,Sarwa Trade
-2023-11-01,buy,MOAT,0.306803023,71.97,-22.08,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-11-01,buy,CEFS,0.589553118,16.96,-10.0,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-11-01,buy,BRW,1.707717967,7.43,-12.7,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-11-01,buy,BRW,3.0,7.43,-22.3,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-11-01,buy,MOAT,0.280356994,72.16,-20.23,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-11-01,buy,TQQQ,0.585171747,34.18,-20.0,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-11-01,sell,TQQQ,-0.585171747,34.57,20.23,,USD,Trade Entry,NasdaqGM,Sarwa Trade
+2023-10-11,buy,GSBD,1.774559909,14.09,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-11,buy,NVO,0.378787878,99.0,-37.5,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-11,buy,OCSL,0.826038273,19.65,-16.23,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-11,buy,TPVG,1.0,10.2,-10.2,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-11,buy,LLY,0.062060405,604.25,-37.5,,USD,Trade Entry,US Market,Sarwa Trade
+2023-10-31,Net Dividend,SPY,,,0.15,,USD,"Cash DIV @ 1.583169, Pos QTY: 0.13362128, Rec Date: 2023-09-18",US Market,Sarwa Trade
+2023-11-01,buy,MOAT,0.280356994,72.16,-20.23,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,SPXL,0.215014577,74.09,-15.93,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,GOF,1.0,12.92,-12.92,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,MOAT,0.306803023,71.97,-22.08,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,TQQQ,0.585171747,34.18,-20.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,CLM,1.816941083,7.1,-12.9,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,CLM,1.0,7.1,-7.1,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,CEFS,0.589553118,16.96,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,buy,BRW,1.707717967,7.43,-12.7,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-01,sell,TQQQ,-0.585171747,34.57,20.23,,USD,Trade Entry,US Market,Sarwa Trade
 2023-11-01,Net Deposit,,,,135.78,,USD,ID: 501c0af0-d740-4f14-9f92-f70d95f1638b - DT23B01316,US Market,Sarwa Trade
-2023-11-02,sell,SPXL,-0.215014577,76.97,16.55,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-11-02,buy,MOAT,0.225950905,73.25,-16.55,,USD,Trade Entry,Cboe US,Sarwa Trade
+2023-11-01,buy,BRW,3.0,7.43,-22.3,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-02,buy,MOAT,0.225950905,73.25,-16.55,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-02,sell,SPXL,-0.215014577,76.97,16.55,,USD,Trade Entry,US Market,Sarwa Trade
+2023-11-07,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.394231, Pos QTY: 0.087386131, Rec Date: 2023-11-02",US Market,Sarwa Trade
+2023-11-07,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.148664, Pos QTY: 0.374849659, Rec Date: 2023-11-02",US Market,Sarwa Trade
 2023-11-07,Qualified interest income reallocation for 2023,,,,0.03,,USD,Qualified interest income reallocation for 2023,US Market,Sarwa Trade
-2023-11-07,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.394231, Pos QTY: 0.087386131, Rec Date: 2023-11-02",NYSEArca,Sarwa Trade
-2023-11-07,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.148664, Pos QTY: 0.374849659, Rec Date: 2023-11-02",NYSEArca,Sarwa Trade
-2023-11-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.35, Pos QTY: 0.064637486, Rec Date: 2023-09-29",NYSE,Sarwa Trade
-2023-11-20,Net Dividend,CAT,,,0.09,,USD,"Cash DIV @ 1.3, Pos QTY: 0.09455636, Rec Date: 2023-10-23",NYSE,Sarwa Trade
-2023-11-24,Net Dividend,CEFS,,,0.06,,USD,"Cash DIV @ 0.14, Pos QTY: 0.589553118, Rec Date: 2023-11-21",Cboe US,Sarwa Trade
-2023-11-30,Net Dividend,CLM,,,0.25,,USD,"Cash DIV @ 0.1228, Pos QTY: 2.816941083, Rec Date: 2023-11-15",NYSE American,Sarwa Trade
-2023-11-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-11-09",NYSE,Sarwa Trade
-2023-11-30,Net Dividend,GOF,,,0.13,,USD,"Cash DIV @ 0.1821, Pos QTY: 1, Rec Date: 2023-11-15",NYSE,Sarwa Trade
+2023-11-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.35, Pos QTY: 0.064637486, Rec Date: 2023-09-29",US Market,Sarwa Trade
+2023-11-20,Net Dividend,CAT,,,0.09,,USD,"Cash DIV @ 1.3, Pos QTY: 0.09455636, Rec Date: 2023-10-23",US Market,Sarwa Trade
+2023-11-24,Net Dividend,CEFS,,,0.06,,USD,"Cash DIV @ 0.14, Pos QTY: 0.589553118, Rec Date: 2023-11-21",US Market,Sarwa Trade
+2023-11-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-11-09",US Market,Sarwa Trade
+2023-11-30,Net Dividend,CLM,,,0.25,,USD,"Cash DIV @ 0.1228, Pos QTY: 2.816941083, Rec Date: 2023-11-15",US Market,Sarwa Trade
+2023-11-30,Net Dividend,GOF,,,0.13,,USD,"Cash DIV @ 0.1821, Pos QTY: 1, Rec Date: 2023-11-15",US Market,Sarwa Trade
 2023-12-07,Qualified interest income reallocation for 2023,,,,0.02,,USD,Qualified interest income reallocation for 2023,US Market,Sarwa Trade
-2023-12-07,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.153322, Pos QTY: 0.374849659, Rec Date: 2023-12-04",NYSEArca,Sarwa Trade
-2023-12-07,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.223697, Pos QTY: 0.087386131, Rec Date: 2023-12-04",NYSEArca,Sarwa Trade
-2023-12-08,Net Dividend,LLY,,,0.05,,USD,"Cash DIV @ 1.13, Pos QTY: 0.062060405, Rec Date: 2023-11-15",NYSE,Sarwa Trade
-2023-12-08,buy,MSFT,0.002888441,373.9,-1.08,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,Net Dividend,MSFT,,,0.05,,USD,"Cash DIV @ 0.75, Pos QTY: 0.098033348, Rec Date: 2023-11-16",NasdaqGS,Sarwa Trade
-2023-12-14,buy,META,0.030017229,333.14,-10.0,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,buy,MSFT,0.02735544,365.56,-10.0,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,sell,BA,-0.012493753,256.13,3.2,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-12-14,buy,CEFS,0.52471403,19.06,-10.0,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-12-14,sell,COIN,-0.087245233,152.1,13.27,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,buy,AMZN,0.134890873,148.27,-20.0,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,buy,GOF,2.0,13.68,-27.35,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-12-14,buy,GSBD,0.661900979,15.11,-10.0,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-12-14,buy,MOAT,0.540460859,84.8,-45.83,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-12-14,buy,AMZN,0.015088902,147.13,-2.22,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,buy,TPVG,1.0,10.43,-10.43,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-12-14,sell,TSLA,-0.041464527,241.17,10.0,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-14,buy,VOO,0.007542765,433.53,-3.27,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-14,buy,VOOG,0.011937358,268.07,-3.2,,USD,Trade Entry,NYSEArca,Sarwa Trade
+2023-12-07,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.153322, Pos QTY: 0.374849659, Rec Date: 2023-12-04",US Market,Sarwa Trade
+2023-12-07,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.223697, Pos QTY: 0.087386131, Rec Date: 2023-12-04",US Market,Sarwa Trade
+2023-12-08,buy,MSFT,0.002888441,373.9,-1.08,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-08,Net Dividend,LLY,,,0.05,,USD,"Cash DIV @ 1.13, Pos QTY: 0.062060405, Rec Date: 2023-11-15",US Market,Sarwa Trade
+2023-12-14,Net Dividend,MSFT,,,0.05,,USD,"Cash DIV @ 0.75, Pos QTY: 0.098033348, Rec Date: 2023-11-16",US Market,Sarwa Trade
+2023-12-14,buy,VOO,0.007542765,433.53,-3.27,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,TPVG,1.0,10.43,-10.43,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,VOOG,0.011937358,268.07,-3.2,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,VHT,0.040402081,247.51,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,sell,TSLA,-0.041464527,241.17,10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,sell,COIN,-0.087245233,152.1,13.27,,USD,Trade Entry,US Market,Sarwa Trade
 2023-12-14,Net Deposit,,,,135.78,,USD,ID: 97ca234a-c4c4-477d-9d0b-f82209a03ae6 - DT23C14608 deposit,US Market,Sarwa Trade
-2023-12-14,buy,VHT,0.040402081,247.51,-10.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-15,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2023-11-30",NYSE,Sarwa Trade
-2023-12-15,Net Dividend,LUX,,,0.24,,USD,"Cash DIV @ 0.1697364, Pos QTY: 2, Rec Date: 2023-12-14",NYSEArca,Sarwa Trade
-2023-12-18,buy,VOO,0.007927098,435.22,-3.45,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-18,sell,BA,-0.012045988,262.33,3.16,,USD,Trade Entry,NYSE,Sarwa Trade
-2023-12-21,Net Dividend,XLK,,,0.37,,USD,"Cash DIV @ 0.422014, Pos QTY: 1.222434244, Rec Date: 2023-12-19",NYSEArca,Sarwa Trade
-2023-12-22,Net Dividend,VHT,,,0.21,,USD,"Cash DIV @ 0.8947, Pos QTY: 0.331822452, Rec Date: 2023-12-20",NYSEArca,Sarwa Trade
-2023-12-22,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.155964, Pos QTY: 0.374849659, Rec Date: 2023-12-19",NYSEArca,Sarwa Trade
-2023-12-22,Net Dividend,MOAT,,,0.7,,USD,"Cash DIV @ 0.7285, Pos QTY: 1.353571781, Rec Date: 2023-12-19",Cboe US,Sarwa Trade
-2023-12-26,Net Dividend,CEFS,,,0.17,,USD,"Cash DIV @ 0.20558, Pos QTY: 1.114267148, Rec Date: 2023-12-21",Cboe US,Sarwa Trade
-2023-12-26,Net Dividend,VOOG,,,0.16,,USD,"Cash DIV @ 0.9117, Pos QTY: 0.242792231, Rec Date: 2023-12-21",NYSEArca,Sarwa Trade
-2023-12-26,Net Dividend,VOO,,,0.56,,USD,"Cash DIV @ 1.8011, Pos QTY: 0.438848179, Rec Date: 2023-12-21",NYSEArca,Sarwa Trade
-2023-12-26,buy,INDA,0.027360625,48.61,-1.33,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-12-27,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.555419, Pos QTY: 0.167590075, Rec Date: 2023-12-21",NYSEArca,Sarwa Trade
-2023-12-27,Net Dividend,UAE,,,0.1,,USD,"Cash DIV @ 0.094306, Pos QTY: 1.439673308, Rec Date: 2023-12-21",NasdaqGM,Sarwa Trade
-2023-12-27,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.12396, Pos QTY: 0.047021696, Rec Date: 2023-12-21",NasdaqGM,Sarwa Trade
-2023-12-27,buy,MCHI,0.507768863,39.39,-20.0,,USD,Trade Entry,NasdaqGM,Sarwa Trade
+2023-12-14,buy,CEFS,0.52471403,19.06,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,sell,BA,-0.012493753,256.13,3.2,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,AMZN,0.015088902,147.13,-2.22,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,AMZN,0.134890873,148.27,-20.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,MSFT,0.02735544,365.56,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,MOAT,0.540460859,84.8,-45.83,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,META,0.030017229,333.14,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,GSBD,0.661900979,15.11,-10.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-14,buy,GOF,2.0,13.68,-27.35,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-15,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2023-11-30",US Market,Sarwa Trade
+2023-12-15,Net Dividend,LUX,,,0.24,,USD,"Cash DIV @ 0.1697364, Pos QTY: 2, Rec Date: 2023-12-14",US Market,Sarwa Trade
+2023-12-18,sell,BA,-0.012045988,262.33,3.16,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-18,buy,VOO,0.007927098,435.22,-3.45,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-21,Net Dividend,XLK,,,0.37,,USD,"Cash DIV @ 0.422014, Pos QTY: 1.222434244, Rec Date: 2023-12-19",US Market,Sarwa Trade
+2023-12-22,Net Dividend,VHT,,,0.21,,USD,"Cash DIV @ 0.8947, Pos QTY: 0.331822452, Rec Date: 2023-12-20",US Market,Sarwa Trade
+2023-12-22,Net Dividend,SPHY,,,0.05,,USD,"Cash DIV @ 0.155964, Pos QTY: 0.374849659, Rec Date: 2023-12-19",US Market,Sarwa Trade
+2023-12-22,Net Dividend,MOAT,,,0.7,,USD,"Cash DIV @ 0.7285, Pos QTY: 1.353571781, Rec Date: 2023-12-19",US Market,Sarwa Trade
+2023-12-26,Net Dividend,VOO,,,0.56,,USD,"Cash DIV @ 1.8011, Pos QTY: 0.438848179, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-26,Net Dividend,VOOG,,,0.16,,USD,"Cash DIV @ 0.9117, Pos QTY: 0.242792231, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-26,buy,INDA,0.027360625,48.61,-1.33,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-26,Net Dividend,CEFS,,,0.17,,USD,"Cash DIV @ 0.20558, Pos QTY: 1.114267148, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-27,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.12396, Pos QTY: 0.047021696, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-27,Net Dividend,UAE,,,0.1,,USD,"Cash DIV @ 0.094306, Pos QTY: 1.439673308, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-27,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.555419, Pos QTY: 0.167590075, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-27,buy,INDA,0.409601048,48.83,-20.0,,USD,Trade Entry,US Market,Sarwa Trade
 2023-12-27,Net Deposit,,,,271.57,,USD,ID: b9a98c50-8a11-454b-9441-5b9dd9c0bda4 - DT23C26478 deposit,US Market,Sarwa Trade
-2023-12-27,buy,VOOG,0.276289905,271.45,-75.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-27,buy,IJR,0.22721489,110.03,-25.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-27,buy,INDA,0.409601048,48.83,-20.0,,USD,Trade Entry,Cboe US,Sarwa Trade
-2023-12-27,buy,KSA,0.473731583,42.22,-20.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-27,buy,PAK,1.0,17.1,-17.1,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-27,buy,SPSM,1.058872963,42.84,-45.36,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-27,buy,UAE,1.696986152,14.73,-25.0,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2023-12-27,buy,VBK,0.10193098,245.26,-25.0,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2023-12-28,Net Dividend,NOBL,,,0.29,,USD,"Cash DIV @ 0.655835, Pos QTY: 0.622737006, Rec Date: 2023-12-21",Cboe US,Sarwa Trade
-2023-12-28,sell,TSLA,-0.045589016,263.66,12.02,,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2023-12-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-12-11",NYSE,Sarwa Trade
-2023-12-29,Net Dividend,CLM,,,0.25,,USD,"Cash DIV @ 0.1228, Pos QTY: 2.816941083, Rec Date: 2023-12-15",NYSE American,Sarwa Trade
-2023-12-29,Net Dividend,GOF,,,0.13,,USD,"Cash DIV @ 0.1821, Pos QTY: 1, Rec Date: 2023-12-15",NYSE,Sarwa Trade
-2023-12-29,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.4, Pos QTY: 3, Rec Date: 2023-12-15",NYSE,Sarwa Trade
-2023-12-29,Net Dividend,OCSL,,,0.46,,USD,"Cash DIV @ 0.62, Pos QTY: 1.042268639, Rec Date: 2023-12-15",NasdaqGS,Sarwa Trade
-2023-12-29,buy,EWJ,0.1948214,64.11,-12.49,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-01-02,sell,BA,-0.009786407,257.5,2.52,,USD,Trade Entry,NYSE,Sarwa Trade
-2024-01-02,buy,MBB,0.04786427,93.6,-4.48,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-01-08,Net Dividend,PAK,,,0.46,,USD,"Cash DIV @ 0.651099, Pos QTY: 1, Rec Date: 2023-12-29",NYSEArca,Sarwa Trade
-2024-01-19,Net Dividend,BRW,,,0.38,,USD,"Cash DIV @ 0.114, Pos QTY: 4.707717967, Rec Date: 2023-12-29",NYSE,Sarwa Trade
-2024-01-26,buy,MOAT,0.0204231,84.71,-1.73,,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-01-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2023-12-29",NYSE,Sarwa Trade
-2024-01-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-01-25",Cboe US,Sarwa Trade
-2024-01-31,Net Dividend,SPY,,,0.24,,USD,"Cash DIV @ 1.906073, Pos QTY: 0.177676073, Rec Date: 2023-12-18",NYSEArca,Sarwa Trade
-2024-01-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-01-12",NYSE,Sarwa Trade
-2024-01-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-01-16",NYSE American,Sarwa Trade
-2024-01-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-12-29",NYSE,Sarwa Trade
-2024-02-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-02-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.296844, Pos QTY: 0.04786427, Rec Date: 2024-02-02",NasdaqGM,Sarwa Trade
-2024-02-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.160318, Pos QTY: 0.374849659, Rec Date: 2024-02-02",NYSEArca,Sarwa Trade
-2024-02-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-02-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2023-12-29",NYSE,Sarwa Trade
-2024-02-08,sell,CAT,-0.09455636,323.39,30.58,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-02-08,buy,VOO,0.065187567,457.76,-29.84,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-02-20,Net Dividend,CAT,,,0.09,,USD,"Cash DIV @ 1.3, Pos QTY: 0.09455636, Rec Date: 2024-01-22",NYSE,Sarwa Trade
-2024-02-23,Merger/Acquisition,PAK,-1.0,16.95,16.95,,USD,Merger/Acquisition,NYSEArca,Sarwa Trade
-2024-02-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-02-27",Cboe US,Sarwa Trade
-2024-02-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-02-15",NYSE,Sarwa Trade
-2024-02-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-02-09",NYSE,Sarwa Trade
-2024-02-29,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-02-15",NYSE American,Sarwa Trade
-2024-03-05,buy,ARKK,0.59392152,48.83,-29.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
+2023-12-27,buy,SPSM,1.058872963,42.84,-45.36,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,VOOG,0.276289905,271.45,-75.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,UAE,1.696986152,14.73,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,IJR,0.22721489,110.03,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,VBK,0.10193098,245.26,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,MCHI,0.507768863,39.39,-20.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,PAK,1.0,17.1,-17.1,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-27,buy,KSA,0.473731583,42.22,-20.0,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-28,sell,TSLA,-0.045589016,263.66,12.02,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-28,Net Dividend,NOBL,,,0.29,,USD,"Cash DIV @ 0.655835, Pos QTY: 0.622737006, Rec Date: 2023-12-21",US Market,Sarwa Trade
+2023-12-29,buy,EWJ,0.1948214,64.11,-12.49,,USD,Trade Entry,US Market,Sarwa Trade
+2023-12-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-12-11",US Market,Sarwa Trade
+2023-12-29,Net Dividend,CLM,,,0.25,,USD,"Cash DIV @ 0.1228, Pos QTY: 2.816941083, Rec Date: 2023-12-15",US Market,Sarwa Trade
+2023-12-29,Net Dividend,GOF,,,0.13,,USD,"Cash DIV @ 0.1821, Pos QTY: 1, Rec Date: 2023-12-15",US Market,Sarwa Trade
+2023-12-29,Net Dividend,OCSL,,,0.46,,USD,"Cash DIV @ 0.62, Pos QTY: 1.042268639, Rec Date: 2023-12-15",US Market,Sarwa Trade
+2023-12-29,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.4, Pos QTY: 3, Rec Date: 2023-12-15",US Market,Sarwa Trade
+2024-01-02,buy,MBB,0.04786427,93.6,-4.48,,USD,Trade Entry,US Market,Sarwa Trade
+2024-01-02,sell,BA,-0.009786407,257.5,2.52,,USD,Trade Entry,US Market,Sarwa Trade
+2024-01-08,Net Dividend,PAK,,,0.46,,USD,"Cash DIV @ 0.651099, Pos QTY: 1, Rec Date: 2023-12-29",US Market,Sarwa Trade
+2024-01-19,Net Dividend,BRW,,,0.38,,USD,"Cash DIV @ 0.114, Pos QTY: 4.707717967, Rec Date: 2023-12-29",US Market,Sarwa Trade
+2024-01-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2023-12-29",US Market,Sarwa Trade
+2024-01-26,buy,MOAT,0.0204231,84.71,-1.73,,USD,Trade Entry,US Market,Sarwa Trade
+2024-01-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-01-25",US Market,Sarwa Trade
+2024-01-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2023-12-29",US Market,Sarwa Trade
+2024-01-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-01-16",US Market,Sarwa Trade
+2024-01-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-01-12",US Market,Sarwa Trade
+2024-01-31,Net Dividend,SPY,,,0.24,,USD,"Cash DIV @ 1.906073, Pos QTY: 0.177676073, Rec Date: 2023-12-18",US Market,Sarwa Trade
+2024-02-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.296844, Pos QTY: 0.04786427, Rec Date: 2024-02-02",US Market,Sarwa Trade
+2024-02-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.160318, Pos QTY: 0.374849659, Rec Date: 2024-02-02",US Market,Sarwa Trade
+2024-02-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-02-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-02-08,sell,CAT,-0.09455636,323.39,30.58,,USD,Trade Entry,US Market,Sarwa Trade
+2024-02-08,buy,VOO,0.065187567,457.76,-29.84,,USD,Trade Entry,US Market,Sarwa Trade
+2024-02-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2023-12-29",US Market,Sarwa Trade
+2024-02-20,Net Dividend,CAT,,,0.09,,USD,"Cash DIV @ 1.3, Pos QTY: 0.09455636, Rec Date: 2024-01-22",US Market,Sarwa Trade
+2024-02-23,Merger/Acquisition,PAK,,,16.95,,USD,Cash Merger $16.9524 per share,US Market,Sarwa Trade
+2024-02-23,Merger/Acquisition,PAK,-1.0,17.1,,,USD,Merger/Acquisition,US Market,Sarwa Trade
+2024-02-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-02-27",US Market,Sarwa Trade
+2024-02-29,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-02-15",US Market,Sarwa Trade
+2024-02-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-02-09",US Market,Sarwa Trade
+2024-02-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-02-15",US Market,Sarwa Trade
+2024-03-05,buy,VOO,0.10770384,464.24,-50.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-03-05,buy,MOAT,0.579387703,86.3,-50.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-03-05,buy,MCHI,0.389934491,38.47,-15.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-03-05,buy,IPO,0.803650127,38.57,-31.0,,USD,Trade Entry,US Market,Sarwa Trade
 2024-03-05,Net Deposit,,,,190.1,,USD,ID: 935ad3ed-1eaf-4529-ad09-2f2b11e76214 - DT24304996 deposit,US Market,Sarwa Trade
-2024-03-05,buy,MOAT,0.579387703,86.3,-50.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-03-05,buy,VOO,0.10770384,464.24,-50.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-03-05,buy,MCHI,0.389934491,38.47,-15.0,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-03-05,buy,IPO,0.803650127,38.57,-31.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-03-05,buy,XLK,0.132796603,204.45,-27.15,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-03-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.292058, Pos QTY: 0.04786427, Rec Date: 2024-03-04",NasdaqGM,Sarwa Trade
-2024-03-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.155974, Pos QTY: 0.374849659, Rec Date: 2024-03-04",NYSEArca,Sarwa Trade
-2024-03-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-03-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-03-08,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-02-15",NYSE,Sarwa Trade
-2024-03-14,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-02-15",NasdaqGS,Sarwa Trade
-2024-03-15,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2024-02-29",NYSE,Sarwa Trade
-2024-03-21,Net Dividend,SPSM,,,0.11,,USD,"Cash DIV @ 0.144177, Pos QTY: 1.058872963, Rec Date: 2024-03-19",NYSEArca,Sarwa Trade
-2024-03-21,Net Dividend,XLK,,,0.33,,USD,"Cash DIV @ 0.339199, Pos QTY: 1.355230847, Rec Date: 2024-03-19",NYSEArca,Sarwa Trade
-2024-03-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-02-22",NasdaqGS,Sarwa Trade
-2024-03-26,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.4046, Pos QTY: 0.10193098, Rec Date: 2024-03-22",NYSEArca,Sarwa Trade
-2024-03-27,Net Dividend,VOOG,,,0.12,,USD,"Cash DIV @ 0.3014, Pos QTY: 0.519082136, Rec Date: 2024-03-25",NYSEArca,Sarwa Trade
-2024-03-27,Net Dividend,NOBL,,,0.17,,USD,"Cash DIV @ 0.386266, Pos QTY: 0.622737006, Rec Date: 2024-03-21",Cboe US,Sarwa Trade
-2024-03-27,Net Dividend,VHT,,,0.19,,USD,"Cash DIV @ 0.8189, Pos QTY: 0.331822452, Rec Date: 2024-03-25",NYSEArca,Sarwa Trade
-2024-03-27,Net Dividend,USRT,,,0.04,,USD,"Cash DIV @ 0.272854, Pos QTY: 0.167590075, Rec Date: 2024-03-22",NYSEArca,Sarwa Trade
-2024-03-27,Net Dividend,IJR,,,0.05,,USD,"Cash DIV @ 0.326291, Pos QTY: 0.22721489, Rec Date: 2024-03-22",NYSEArca,Sarwa Trade
-2024-03-27,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.125994, Pos QTY: 0.047021696, Rec Date: 2024-03-22",NasdaqGM,Sarwa Trade
-2024-03-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-03-26",Cboe US,Sarwa Trade
-2024-03-27,Net Dividend,VOO,,,0.66,,USD,"Cash DIV @ 1.5429, Pos QTY: 0.611739586, Rec Date: 2024-03-25",NYSEArca,Sarwa Trade
-2024-03-28,Net Dividend,BKNG,,,0.03,,USD,"Cash DIV @ 8.75, Pos QTY: 0.004415749, Rec Date: 2024-03-08",NasdaqGS,Sarwa Trade
-2024-03-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-03-11",NYSE,Sarwa Trade
-2024-03-28,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-03-15",NYSE American,Sarwa Trade
-2024-04-01,Net Dividend,TPVG,,,1.12,,USD,"Cash DIV @ 0.4, Pos QTY: 4, Rec Date: 2024-03-14",NYSE,Sarwa Trade
-2024-04-01,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-03-15",NasdaqGS,Sarwa Trade
-2024-04-01,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-03-15",NYSE,Sarwa Trade
-2024-04-02,Net Dividend,NVO,,,0.25,,USD,"Cash DIV @ 0.663414, Pos QTY: 0.378787878, Rec Date: 2024-03-25",NYSE,Sarwa Trade
-2024-04-05,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.085272, Pos QTY: 0.087386131, Rec Date: 2024-04-02",NYSEArca,Sarwa Trade
-2024-04-05,buy,VXUS,0.716810028,59.99,-43.0,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-04-05,buy,XLF,1.0,41.51,-41.51,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-04-05,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.282729, Pos QTY: 0.04786427, Rec Date: 2024-04-02",NasdaqGM,Sarwa Trade
-2024-04-05,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.153729, Pos QTY: 0.374849659, Rec Date: 2024-04-02",NYSEArca,Sarwa Trade
-2024-04-05,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-04-05,buy,VOO,0.115529714,476.07,-55.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-04-05,buy,XLK,0.296624137,206.29,-61.19,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
+2024-03-05,buy,ARKK,0.59392152,48.83,-29.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-03-05,buy,XLK,0.132796603,204.45,-27.15,,USD,Trade Entry,US Market,Sarwa Trade
+2024-03-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.292058, Pos QTY: 0.04786427, Rec Date: 2024-03-04",US Market,Sarwa Trade
+2024-03-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-03-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.155974, Pos QTY: 0.374849659, Rec Date: 2024-03-04",US Market,Sarwa Trade
+2024-03-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-03-08,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-02-15",US Market,Sarwa Trade
+2024-03-14,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-02-15",US Market,Sarwa Trade
+2024-03-15,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2024-02-29",US Market,Sarwa Trade
+2024-03-21,Net Dividend,SPSM,,,0.11,,USD,"Cash DIV @ 0.144177, Pos QTY: 1.058872963, Rec Date: 2024-03-19",US Market,Sarwa Trade
+2024-03-21,Net Dividend,XLK,,,0.33,,USD,"Cash DIV @ 0.339199, Pos QTY: 1.355230847, Rec Date: 2024-03-19",US Market,Sarwa Trade
+2024-03-26,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.4046, Pos QTY: 0.10193098, Rec Date: 2024-03-22",US Market,Sarwa Trade
+2024-03-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-02-22",US Market,Sarwa Trade
+2024-03-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-03-26",US Market,Sarwa Trade
+2024-03-27,Net Dividend,NOBL,,,0.17,,USD,"Cash DIV @ 0.386266, Pos QTY: 0.622737006, Rec Date: 2024-03-21",US Market,Sarwa Trade
+2024-03-27,Net Dividend,IJR,,,0.05,,USD,"Cash DIV @ 0.326291, Pos QTY: 0.22721489, Rec Date: 2024-03-22",US Market,Sarwa Trade
+2024-03-27,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.125994, Pos QTY: 0.047021696, Rec Date: 2024-03-22",US Market,Sarwa Trade
+2024-03-27,Net Dividend,VOO,,,0.66,,USD,"Cash DIV @ 1.5429, Pos QTY: 0.611739586, Rec Date: 2024-03-25",US Market,Sarwa Trade
+2024-03-27,Net Dividend,VOOG,,,0.12,,USD,"Cash DIV @ 0.3014, Pos QTY: 0.519082136, Rec Date: 2024-03-25",US Market,Sarwa Trade
+2024-03-27,Net Dividend,VHT,,,0.19,,USD,"Cash DIV @ 0.8189, Pos QTY: 0.331822452, Rec Date: 2024-03-25",US Market,Sarwa Trade
+2024-03-27,Net Dividend,USRT,,,0.04,,USD,"Cash DIV @ 0.272854, Pos QTY: 0.167590075, Rec Date: 2024-03-22",US Market,Sarwa Trade
+2024-03-28,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-03-15",US Market,Sarwa Trade
+2024-03-28,Net Dividend,BKNG,,,0.03,,USD,"Cash DIV @ 8.75, Pos QTY: 0.004415749, Rec Date: 2024-03-08",US Market,Sarwa Trade
+2024-03-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-03-11",US Market,Sarwa Trade
+2024-04-01,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-03-15",US Market,Sarwa Trade
+2024-04-01,Net Dividend,TPVG,,,1.12,,USD,"Cash DIV @ 0.4, Pos QTY: 4, Rec Date: 2024-03-14",US Market,Sarwa Trade
+2024-04-01,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-03-15",US Market,Sarwa Trade
+2024-04-02,Net Dividend,NVO,,,0.25,,USD,"Cash DIV @ 0.663414, Pos QTY: 0.378787878, Rec Date: 2024-03-25",US Market,Sarwa Trade
+2024-04-05,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.085272, Pos QTY: 0.087386131, Rec Date: 2024-04-02",US Market,Sarwa Trade
+2024-04-05,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.153729, Pos QTY: 0.374849659, Rec Date: 2024-04-02",US Market,Sarwa Trade
+2024-04-05,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.282729, Pos QTY: 0.04786427, Rec Date: 2024-04-02",US Market,Sarwa Trade
+2024-04-05,buy,XLK,0.296624137,206.29,-61.19,,USD,Trade Entry,US Market,Sarwa Trade
 2024-04-05,Net Deposit,,,,271.57,,USD,ID: b2110d1c-ff9b-46fd-acfe-e7a211fa0de4 - DT24404597 deposit,US Market,Sarwa Trade
-2024-04-05,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-04-05,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-04-05,buy,MOAT,0.570528766,87.64,-50.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-04-05,buy,XLF,0.5,41.51,-20.75,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-04-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-04-25",Cboe US,Sarwa Trade
-2024-04-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-03-28",NYSE,Sarwa Trade
-2024-04-30,Net Dividend,SPY,,,0.2,,USD,"Cash DIV @ 1.594937, Pos QTY: 0.177676073, Rec Date: 2024-03-18",NYSEArca,Sarwa Trade
-2024-04-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-04-15",NYSE,Sarwa Trade
-2024-04-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-04-15",NYSE American,Sarwa Trade
-2024-04-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-04-09",NYSE,Sarwa Trade
-2024-05-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-05-07,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.612228, Pos QTY: 0.087386131, Rec Date: 2024-05-02",NYSEArca,Sarwa Trade
-2024-05-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.153526, Pos QTY: 0.374849659, Rec Date: 2024-05-02",NYSEArca,Sarwa Trade
-2024-05-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.282324, Pos QTY: 0.04786427, Rec Date: 2024-05-02",NasdaqGM,Sarwa Trade
-2024-05-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-05-07,Credit/Margin Interest,STIP,,,0.04,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-05-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2024-03-29",NYSE,Sarwa Trade
-2024-05-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-05-24",Cboe US,Sarwa Trade
-2024-05-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-05-15",NYSE,Sarwa Trade
-2024-05-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-05-09",NYSE,Sarwa Trade
-2024-05-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-05-15",NYSE American,Sarwa Trade
-2024-06-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.14979, Pos QTY: 0.374849659, Rec Date: 2024-06-03",NYSEArca,Sarwa Trade
-2024-06-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-06-07,Credit/Margin Interest,STIP,,,0.04,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-06-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-06-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.300202, Pos QTY: 0.04786427, Rec Date: 2024-06-03",NasdaqGM,Sarwa Trade
-2024-06-07,Net Dividend,STIP,,,0.02,,USD,"Cash DIV @ 0.659063, Pos QTY: 0.087386131, Rec Date: 2024-06-03",NYSEArca,Sarwa Trade
-2024-06-10,Stock Split,NVDA,0.31545224,44.38,,,USD,Stock Split,NasdaqGS,Sarwa Trade
-2024-06-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-05-16",NYSE,Sarwa Trade
-2024-06-10,Stock Split,NVDA,-0.031545224,443.81,,,USD,Stock Split,NasdaqGS,Sarwa Trade
-2024-06-13,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-05-16",NasdaqGS,Sarwa Trade
-2024-06-17,Net Dividend,EWJ,,,0.07,,USD,"Cash DIV @ 0.508651, Pos QTY: 0.1948214, Rec Date: 2024-06-11",NYSEArca,Sarwa Trade
-2024-06-17,Net Dividend,IJR,,,0.07,,USD,"Cash DIV @ 0.385723, Pos QTY: 0.22721489, Rec Date: 2024-06-11",NYSEArca,Sarwa Trade
-2024-06-17,Net Dividend,KSA,,,0.21,,USD,"Cash DIV @ 0.611749, Pos QTY: 0.473731583, Rec Date: 2024-06-11",NYSEArca,Sarwa Trade
-2024-06-17,Net Dividend,MCHI,,,0.12,,USD,"Cash DIV @ 0.190546, Pos QTY: 0.897703354, Rec Date: 2024-06-11",NasdaqGM,Sarwa Trade
-2024-06-17,Net Dividend,UAE,,,1.16,,USD,"Cash DIV @ 0.527576, Pos QTY: 3.13665946, Rec Date: 2024-06-11",NasdaqGM,Sarwa Trade
-2024-06-17,Net Dividend,USRT,,,0.04,,USD,"Cash DIV @ 0.292446, Pos QTY: 0.167590075, Rec Date: 2024-06-11",NYSEArca,Sarwa Trade
-2024-06-17,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2024-05-31",NYSE,Sarwa Trade
-2024-06-21,Net Dividend,IPO,,,0.01,,USD,"Cash DIV @ 0.007658, Pos QTY: 0.803650127, Rec Date: 2024-06-14",NYSEArca,Sarwa Trade
-2024-06-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-06-24",Cboe US,Sarwa Trade
-2024-06-25,Net Dividend,VXUS,,,0.25,,USD,"Cash DIV @ 0.4835, Pos QTY: 0.716810028, Rec Date: 2024-06-21",NasdaqGM,Sarwa Trade
-2024-06-26,Net Dividend,SPSM,,,0.16,,USD,"Cash DIV @ 0.205888, Pos QTY: 1.058872963, Rec Date: 2024-06-24",NYSEArca,Sarwa Trade
-2024-06-26,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.162796, Pos QTY: 1.5, Rec Date: 2024-06-24",NYSEArca,Sarwa Trade
-2024-06-26,Net Dividend,XLK,,,0.47,,USD,"Cash DIV @ 0.400001, Pos QTY: 1.651854984, Rec Date: 2024-06-24",NYSEArca,Sarwa Trade
-2024-06-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-06-14",NasdaqGS,Sarwa Trade
-2024-06-28,Net Dividend,TPVG,,,1.12,,USD,"Cash DIV @ 0.4, Pos QTY: 4, Rec Date: 2024-06-14",NYSE,Sarwa Trade
-2024-06-28,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-06-14",NasdaqGS,Sarwa Trade
-2024-06-28,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-06-14",NYSE American,Sarwa Trade
-2024-06-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-06-11",NYSE,Sarwa Trade
-2024-06-28,Net Dividend,BKNG,,,0.03,,USD,"Cash DIV @ 8.75, Pos QTY: 0.004415749, Rec Date: 2024-06-07",NasdaqGS,Sarwa Trade
-2024-06-28,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-06-14",NYSE,Sarwa Trade
-2024-07-01,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.4141, Pos QTY: 0.10193098, Rec Date: 2024-06-27",NYSEArca,Sarwa Trade
-2024-07-02,Net Dividend,VHT,,,0.23,,USD,"Cash DIV @ 0.9656, Pos QTY: 0.331822452, Rec Date: 2024-06-28",NYSEArca,Sarwa Trade
-2024-07-02,Net Dividend,VOO,,,0.91,,USD,"Cash DIV @ 1.7835, Pos QTY: 0.7272693, Rec Date: 2024-06-28",NYSEArca,Sarwa Trade
-2024-07-02,Net Dividend,VOOG,,,0.16,,USD,"Cash DIV @ 0.4326, Pos QTY: 0.519082136, Rec Date: 2024-06-28",NYSEArca,Sarwa Trade
+2024-04-05,buy,XLF,0.5,41.51,-20.75,,USD,Trade Entry,US Market,Sarwa Trade
+2024-04-05,buy,VOO,0.115529714,476.07,-55.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-04-05,buy,VXUS,0.716810028,59.99,-43.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-04-05,buy,XLF,1.0,41.51,-41.51,,USD,Trade Entry,US Market,Sarwa Trade
+2024-04-05,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-04-05,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-04-05,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-04-05,buy,MOAT,0.570528766,87.64,-50.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-04-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-04-25",US Market,Sarwa Trade
+2024-04-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-03-28",US Market,Sarwa Trade
+2024-04-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-04-15",US Market,Sarwa Trade
+2024-04-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-04-15",US Market,Sarwa Trade
+2024-04-30,Net Dividend,SPY,,,0.2,,USD,"Cash DIV @ 1.594937, Pos QTY: 0.177676073, Rec Date: 2024-03-18",US Market,Sarwa Trade
+2024-04-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-04-09",US Market,Sarwa Trade
+2024-05-07,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-05-07,Credit/Margin Interest,STIP,,,0.04,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-05-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-05-07,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.612228, Pos QTY: 0.087386131, Rec Date: 2024-05-02",US Market,Sarwa Trade
+2024-05-07,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.153526, Pos QTY: 0.374849659, Rec Date: 2024-05-02",US Market,Sarwa Trade
+2024-05-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.282324, Pos QTY: 0.04786427, Rec Date: 2024-05-02",US Market,Sarwa Trade
+2024-05-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2024-03-29",US Market,Sarwa Trade
+2024-05-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-05-24",US Market,Sarwa Trade
+2024-05-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-05-15",US Market,Sarwa Trade
+2024-05-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-05-09",US Market,Sarwa Trade
+2024-05-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-05-15",US Market,Sarwa Trade
+2024-06-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-06-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.14979, Pos QTY: 0.374849659, Rec Date: 2024-06-03",US Market,Sarwa Trade
+2024-06-07,Net Dividend,STIP,,,0.02,,USD,"Cash DIV @ 0.659063, Pos QTY: 0.087386131, Rec Date: 2024-06-03",US Market,Sarwa Trade
+2024-06-07,Credit/Margin Interest,STIP,,,0.04,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-06-07,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-06-07,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.300202, Pos QTY: 0.04786427, Rec Date: 2024-06-03",US Market,Sarwa Trade
+2024-06-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-05-16",US Market,Sarwa Trade
+2024-06-10,Stock Split,NVDA,0.31545224,44.38,,,USD,Stock Split,US Market,Sarwa Trade
+2024-06-10,Stock Split,NVDA,-0.031545224,443.81,,,USD,Stock Split,US Market,Sarwa Trade
+2024-06-13,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-05-16",US Market,Sarwa Trade
+2024-06-17,Net Dividend,EL,,,0.05,,USD,"Cash DIV @ 0.66, Pos QTY: 0.087907327, Rec Date: 2024-05-31",US Market,Sarwa Trade
+2024-06-17,Net Dividend,EWJ,,,0.07,,USD,"Cash DIV @ 0.508651, Pos QTY: 0.1948214, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-17,Net Dividend,IJR,,,0.07,,USD,"Cash DIV @ 0.385723, Pos QTY: 0.22721489, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-17,Net Dividend,KSA,,,0.21,,USD,"Cash DIV @ 0.611749, Pos QTY: 0.473731583, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-17,Net Dividend,MCHI,,,0.12,,USD,"Cash DIV @ 0.190546, Pos QTY: 0.897703354, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-17,Net Dividend,UAE,,,1.16,,USD,"Cash DIV @ 0.527576, Pos QTY: 3.13665946, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-17,Net Dividend,USRT,,,0.04,,USD,"Cash DIV @ 0.292446, Pos QTY: 0.167590075, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-21,Net Dividend,IPO,,,0.01,,USD,"Cash DIV @ 0.007658, Pos QTY: 0.803650127, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-06-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-06-24",US Market,Sarwa Trade
+2024-06-25,Net Dividend,VXUS,,,0.25,,USD,"Cash DIV @ 0.4835, Pos QTY: 0.716810028, Rec Date: 2024-06-21",US Market,Sarwa Trade
+2024-06-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-06-26,Net Dividend,SPSM,,,0.16,,USD,"Cash DIV @ 0.205888, Pos QTY: 1.058872963, Rec Date: 2024-06-24",US Market,Sarwa Trade
+2024-06-26,Net Dividend,XLK,,,0.47,,USD,"Cash DIV @ 0.400001, Pos QTY: 1.651854984, Rec Date: 2024-06-24",US Market,Sarwa Trade
+2024-06-26,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.162796, Pos QTY: 1.5, Rec Date: 2024-06-24",US Market,Sarwa Trade
+2024-06-28,Net Dividend,BKNG,,,0.03,,USD,"Cash DIV @ 8.75, Pos QTY: 0.004415749, Rec Date: 2024-06-07",US Market,Sarwa Trade
+2024-06-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-06-11",US Market,Sarwa Trade
+2024-06-28,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-06-28,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-06-28,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-06-28,Net Dividend,TPVG,,,1.12,,USD,"Cash DIV @ 0.4, Pos QTY: 4, Rec Date: 2024-06-14",US Market,Sarwa Trade
+2024-07-01,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.4141, Pos QTY: 0.10193098, Rec Date: 2024-06-27",US Market,Sarwa Trade
+2024-07-02,Net Dividend,VOOG,,,0.16,,USD,"Cash DIV @ 0.4326, Pos QTY: 0.519082136, Rec Date: 2024-06-28",US Market,Sarwa Trade
+2024-07-02,Net Dividend,VHT,,,0.23,,USD,"Cash DIV @ 0.9656, Pos QTY: 0.331822452, Rec Date: 2024-06-28",US Market,Sarwa Trade
+2024-07-02,Net Dividend,VOO,,,0.91,,USD,"Cash DIV @ 1.7835, Pos QTY: 0.7272693, Rec Date: 2024-06-28",US Market,Sarwa Trade
+2024-07-03,Net Dividend,NOBL,,,0.24,,USD,"Cash DIV @ 0.550235, Pos QTY: 0.622737006, Rec Date: 2024-06-26",US Market,Sarwa Trade
 2024-07-03,buy,BTC-USD,0.0001617,61288.0,-9.91,0.0,USD,buy BTC,CCC,Sarwa Crypto
-2024-07-03,Net Dividend,NOBL,,,0.24,,USD,"Cash DIV @ 0.550235, Pos QTY: 0.622737006, Rec Date: 2024-06-26",Cboe US,Sarwa Trade
-2024-07-05,Credit/Margin Interest,STIP,,,0.02,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-07-05,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-07-05,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,NasdaqGM,Sarwa Trade
-2024-07-05,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.305332, Pos QTY: 0.04786427, Rec Date: 2024-07-01",NasdaqGM,Sarwa Trade
-2024-07-05,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.152562, Pos QTY: 0.374849659, Rec Date: 2024-07-01",NYSEArca,Sarwa Trade
-2024-07-05,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.398399, Pos QTY: 0.087386131, Rec Date: 2024-07-01",NYSEArca,Sarwa Trade
+2024-07-05,Credit/Margin Interest,STIP,,,0.02,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-07-05,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-07-05,Credit/Margin Interest,MBB,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-07-05,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.152562, Pos QTY: 0.374849659, Rec Date: 2024-07-01",US Market,Sarwa Trade
+2024-07-05,Net Dividend,MBB,,,0.0,,USD,"Cash DIV @ 0.305332, Pos QTY: 0.04786427, Rec Date: 2024-07-01",US Market,Sarwa Trade
+2024-07-05,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.398399, Pos QTY: 0.087386131, Rec Date: 2024-07-01",US Market,Sarwa Trade
+2024-07-10,buy,INDA,0.440699478,56.73,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-10,buy,ROM,0.343370036,76.65,-26.32,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-10,buy,RYAAY,0.126237123,118.82,-15.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-10,buy,XLK,0.211009638,236.96,-50.0,,USD,Trade Entry,US Market,Sarwa Trade
 2024-07-10,Net Deposit,,,,135.78,,USD,ID: 5149ca3e-5e87-4983-b66d-7b357196b7e6 - DT24704231 deposit,US Market,Sarwa Trade
-2024-07-10,buy,RYAAY,0.126237123,118.82,-15.0,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-10,buy,ARM,0.080825933,185.58,-15.0,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-10,buy,ROM,0.343370036,76.65,-26.32,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-10,buy,INDA,0.440699478,56.73,-25.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-07-10,buy,XLK,0.211009638,236.96,-50.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,XLK,-0.851100046,234.99,200.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,XLF,-0.705384434,42.53,30.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,VOO,-0.29038253,516.56,150.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,MOAT,-0.52391135,88.21,46.21,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-07-15,sell,BA,-0.047819308,183.5,8.77,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-07-15,sell,COIN,-0.089192846,229.7,20.49,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-15,sell,DE,-0.064637486,365.0,23.59,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-07-15,sell,KSA,-0.473731583,41.64,19.73,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,MBB,-0.04786427,92.86,4.44,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-07-15,sell,UAE,-0.13665946,14.05,1.92,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-07-15,sell,VOOG,-0.172806082,347.21,60.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-07-15,sell,NVDA,-0.31545224,130.56,41.19,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-15,sell,UAE,-3.0,14.05,42.15,,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-07-15,sell,TSLA,-0.300963949,255.8,76.99,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-15,sell,SHOP,-0.504592472,65.03,32.81,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-07-15,sell,NVO,-0.378787878,143.25,54.26,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-07-15,sell,MCHI,-0.897703354,43.43,38.99,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-07-15,sell,MOAT,-2.0,88.21,176.42,,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-07-15,sell,VHT,-0.331822452,273.05,90.6,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
+2024-07-10,buy,ARM,0.080825933,185.58,-15.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,MCHI,-0.897703354,43.43,38.99,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,NVDA,-0.31545224,130.56,41.19,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,BA,-0.047819308,183.5,8.77,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,COIN,-0.089192846,229.7,20.49,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,DE,-0.064637486,365.0,23.59,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,KSA,-0.473731583,41.64,19.73,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,MBB,-0.04786427,92.86,4.44,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,XLF,-0.705384434,42.53,30.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,MOAT,-2.0,88.21,176.42,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,MOAT,-0.52391135,88.21,46.21,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,NVO,-0.378787878,143.25,54.26,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,VOOG,-0.172806082,347.21,60.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,XLK,-0.851100046,234.99,200.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,VHT,-0.331822452,273.05,90.6,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,UAE,-0.13665946,14.05,1.92,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,UAE,-3.0,14.05,42.15,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,TSLA,-0.300963949,255.8,76.99,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,SHOP,-0.504592472,65.03,32.81,,USD,Trade Entry,US Market,Sarwa Trade
+2024-07-15,sell,VOO,-0.29038253,516.56,150.0,,USD,Trade Entry,US Market,Sarwa Trade
 2024-07-16,Net Deposit,,,,-1101.56,,USD,ID: b00e4f3b-2821-43d7-bf3b-cabb206c121e -,US Market,Sarwa Trade
-2024-07-25,Net Dividend,CEFS,,,0.11,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-07-24",Cboe US,Sarwa Trade
-2024-07-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-06-28",NYSE,Sarwa Trade
-2024-07-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-07-09",NYSE,Sarwa Trade
-2024-07-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-07-15",NYSE American,Sarwa Trade
-2024-07-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-07-15",NYSE,Sarwa Trade
-2024-07-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.759024, Pos QTY: 0.177676073, Rec Date: 2024-06-21",NYSEArca,Sarwa Trade
-2024-08-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-08-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.15214, Pos QTY: 0.374849659, Rec Date: 2024-08-01",NYSEArca,Sarwa Trade
-2024-08-06,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.187261, Pos QTY: 0.087386131, Rec Date: 2024-08-01",NYSEArca,Sarwa Trade
-2024-08-06,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-08-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2024-06-28",NYSE,Sarwa Trade
-2024-08-14,sell,BKNG,-0.004415749,3572.0,15.77,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-08-14,sell,EL,-0.087907327,91.15,8.01,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-08-14,sell,ADBE,-0.05813379,536.62,31.2,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-08-15,sell,SPSM,-1.0,43.97,43.97,,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-08-15,buy,VOO,0.087700307,508.09,-44.56,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-08-15,sell,SPSM,-0.058872963,43.97,2.59,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-08-15,buy,TQQQ,0.777963321,68.27,-53.11,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-08-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-08-26",Cboe US,Sarwa Trade
-2024-08-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-08-09",NYSE,Sarwa Trade
-2024-08-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-08-15",NYSE,Sarwa Trade
-2024-08-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-08-15",NYSE American,Sarwa Trade
-2024-09-04,sell,TQQQ,-0.777963321,62.69,48.77,1.0,USD,Trade Entry,NasdaqGM,Sarwa Trade
-2024-09-04,buy,VOO,0.13190062,508.03,-67.01,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-09-04,sell,ROM,-0.343370036,58.93,20.23,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-09-06,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.057605, Pos QTY: 0.087386131, Rec Date: 2024-09-03",NYSEArca,Sarwa Trade
-2024-09-06,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-09-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.155175, Pos QTY: 0.374849659, Rec Date: 2024-09-03",NYSEArca,Sarwa Trade
-2024-09-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-09-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-08-15",NYSE,Sarwa Trade
-2024-09-12,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-08-15",NasdaqGS,Sarwa Trade
-2024-09-20,Net Dividend,IPO,,,0.01,,USD,"Cash DIV @ 0.008838, Pos QTY: 0.803650127, Rec Date: 2024-09-13",NYSEArca,Sarwa Trade
-2024-09-23,buy,VOO,0.133261245,525.28,-70.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-09-23,buy,KKR,0.211608222,132.32,-28.0,1.0,USD,Trade Entry,NYSE,Sarwa Trade
+2024-07-25,Net Dividend,CEFS,,,0.11,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-07-24",US Market,Sarwa Trade
+2024-07-26,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-06-28",US Market,Sarwa Trade
+2024-07-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-07-09",US Market,Sarwa Trade
+2024-07-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-07-15",US Market,Sarwa Trade
+2024-07-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-07-15",US Market,Sarwa Trade
+2024-07-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.759024, Pos QTY: 0.177676073, Rec Date: 2024-06-21",US Market,Sarwa Trade
+2024-08-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-08-06,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-08-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.15214, Pos QTY: 0.374849659, Rec Date: 2024-08-01",US Market,Sarwa Trade
+2024-08-06,Net Dividend,STIP,,,0.01,,USD,"Cash DIV @ 0.187261, Pos QTY: 0.087386131, Rec Date: 2024-08-01",US Market,Sarwa Trade
+2024-08-08,Net Dividend,DE,,,0.07,,USD,"Cash DIV @ 1.47, Pos QTY: 0.064637486, Rec Date: 2024-06-28",US Market,Sarwa Trade
+2024-08-14,sell,EL,-0.087907327,91.15,8.01,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-14,sell,ADBE,-0.05813379,536.62,31.2,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-14,sell,BKNG,-0.004415749,3572.0,15.77,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-15,buy,VOO,0.087700307,508.09,-44.56,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-15,buy,TQQQ,0.777963321,68.27,-53.11,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-15,sell,SPSM,-1.0,43.97,43.97,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-15,sell,SPSM,-0.058872963,43.97,2.59,,USD,Trade Entry,US Market,Sarwa Trade
+2024-08-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-08-26",US Market,Sarwa Trade
+2024-08-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-08-15",US Market,Sarwa Trade
+2024-08-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-08-15",US Market,Sarwa Trade
+2024-08-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-08-09",US Market,Sarwa Trade
+2024-09-04,buy,VOO,0.13190062,508.03,-67.01,,USD,Trade Entry,US Market,Sarwa Trade
+2024-09-04,sell,TQQQ,-0.777963321,62.69,48.77,,USD,Trade Entry,US Market,Sarwa Trade
+2024-09-04,sell,ROM,-0.343370036,58.93,20.23,,USD,Trade Entry,US Market,Sarwa Trade
+2024-09-06,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-09-06,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-09-06,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.057605, Pos QTY: 0.087386131, Rec Date: 2024-09-03",US Market,Sarwa Trade
+2024-09-06,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.155175, Pos QTY: 0.374849659, Rec Date: 2024-09-03",US Market,Sarwa Trade
+2024-09-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-08-15",US Market,Sarwa Trade
+2024-09-12,Net Dividend,MSFT,,,0.07,,USD,"Cash DIV @ 0.75, Pos QTY: 0.128277229, Rec Date: 2024-08-15",US Market,Sarwa Trade
+2024-09-20,Net Dividend,IPO,,,0.01,,USD,"Cash DIV @ 0.008838, Pos QTY: 0.803650127, Rec Date: 2024-09-13",US Market,Sarwa Trade
+2024-09-23,buy,VOO,0.133261245,525.28,-70.0,,USD,Trade Entry,US Market,Sarwa Trade
 2024-09-23,Net Deposit,,,,135.0,,USD,IT249188489 interaccount transfer,US Market,Sarwa Trade
-2024-09-23,buy,APO,0.273328857,125.12,-34.2,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2024-09-24,Net Dividend,VXUS,,,0.14,,USD,"Cash DIV @ 0.2723, Pos QTY: 0.716810028, Rec Date: 2024-09-20",NasdaqGM,Sarwa Trade
-2024-09-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-09-24",Cboe US,Sarwa Trade
-2024-09-25,Net Dividend,XLF,,,0.1,,USD,"Cash DIV @ 0.165306, Pos QTY: 0.794615566, Rec Date: 2024-09-23",NYSEArca,Sarwa Trade
-2024-09-25,Net Dividend,XLK,,,0.28,,USD,"Cash DIV @ 0.398514, Pos QTY: 1.011764576, Rec Date: 2024-09-23",NYSEArca,Sarwa Trade
-2024-09-26,Net Dividend,RYAAY,,,0.09,,USD,"Cash DIV @ 0.723328, Pos QTY: 0.126237123, Rec Date: 2024-08-09",NasdaqGS,Sarwa Trade
-2024-09-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-09-16",NasdaqGS,Sarwa Trade
-2024-09-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-09-16",NYSE American,Sarwa Trade
-2024-09-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-09-13",NYSE,Sarwa Trade
-2024-09-30,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.200474, Pos QTY: 0.047021696, Rec Date: 2024-09-25",NasdaqGM,Sarwa Trade
-2024-09-30,Net Dividend,IJR,,,0.09,,USD,"Cash DIV @ 0.514828, Pos QTY: 0.22721489, Rec Date: 2024-09-25",NYSEArca,Sarwa Trade
-2024-09-30,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-09-16",NasdaqGS,Sarwa Trade
-2024-09-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-09-10",NYSE,Sarwa Trade
-2024-09-30,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.558615, Pos QTY: 0.167590075, Rec Date: 2024-09-25",NYSEArca,Sarwa Trade
-2024-09-30,Stock Split,RYAAY,0.315592808,47.53,,,USD,Stock Split,NasdaqGS,Sarwa Trade
-2024-09-30,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2024-09-16",NYSE,Sarwa Trade
-2024-09-30,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.286, Pos QTY: 0.10193098, Rec Date: 2024-09-26",NYSEArca,Sarwa Trade
-2024-09-30,Stock Split,RYAAY,-0.126237123,118.82,,,USD,Stock Split,NasdaqGS,Sarwa Trade
-2024-10-01,buy,JPMB,1.688699255,40.55,-68.47,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-01,buy,MSFT,0.12755685,420.05,-53.58,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-10-01,sell,NOBL,-0.622737006,106.5,66.32,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-10-01,sell,SPHY,-0.374849659,23.88,8.95,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-01,sell,STIP,-0.087386131,101.39,8.86,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-01,sell,VBK,-0.10193098,263.66,26.87,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-01,sell,EWJ,-0.1948214,71.34,13.9,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-01,Net Dividend,VOO,,,0.91,,USD,"Cash DIV @ 1.6386, Pos QTY: 0.789748942, Rec Date: 2024-09-27",NYSEArca,Sarwa Trade
-2024-10-01,Net Dividend,VOOG,,,0.13,,USD,"Cash DIV @ 0.521, Pos QTY: 0.346276054, Rec Date: 2024-09-27",NYSEArca,Sarwa Trade
-2024-10-02,Net Dividend,NOBL,,,0.24,,USD,"Cash DIV @ 0.522315, Pos QTY: 0.622737006, Rec Date: 2024-09-25",Cboe US,Sarwa Trade
-2024-10-04,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-10-04,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,NYSEArca,Sarwa Trade
-2024-10-04,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.150403, Pos QTY: 0.374849659, Rec Date: 2024-10-01",NYSEArca,Sarwa Trade
-2024-10-04,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.139775, Pos QTY: 0.087386131, Rec Date: 2024-10-01",NYSEArca,Sarwa Trade
-2024-10-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-10-24",Cboe US,Sarwa Trade
-2024-10-28,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-09-30",NYSE,Sarwa Trade
+2024-09-23,buy,APO,0.273328857,125.12,-34.2,,USD,Trade Entry,US Market,Sarwa Trade
+2024-09-23,buy,KKR,0.211608222,132.32,-28.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-09-24,Net Dividend,VXUS,,,0.14,,USD,"Cash DIV @ 0.2723, Pos QTY: 0.716810028, Rec Date: 2024-09-20",US Market,Sarwa Trade
+2024-09-25,Net Dividend,XLK,,,0.28,,USD,"Cash DIV @ 0.398514, Pos QTY: 1.011764576, Rec Date: 2024-09-23",US Market,Sarwa Trade
+2024-09-25,Net Dividend,XLF,,,0.1,,USD,"Cash DIV @ 0.165306, Pos QTY: 0.794615566, Rec Date: 2024-09-23",US Market,Sarwa Trade
+2024-09-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-09-24",US Market,Sarwa Trade
+2024-09-26,Net Dividend,RYAAY,,,0.09,,USD,"Cash DIV @ 0.723328, Pos QTY: 0.126237123, Rec Date: 2024-08-09",US Market,Sarwa Trade
+2024-09-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-09-16",US Market,Sarwa Trade
+2024-09-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-09-13",US Market,Sarwa Trade
+2024-09-30,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-09-16",US Market,Sarwa Trade
+2024-09-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-09-10",US Market,Sarwa Trade
+2024-09-30,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-09-16",US Market,Sarwa Trade
+2024-09-30,Stock Split,RYAAY,0.315592808,47.53,,,USD,Stock Split,US Market,Sarwa Trade
+2024-09-30,Stock Split,RYAAY,-0.126237123,118.82,,,USD,Stock Split,US Market,Sarwa Trade
+2024-09-30,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2024-09-16",US Market,Sarwa Trade
+2024-09-30,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.558615, Pos QTY: 0.167590075, Rec Date: 2024-09-25",US Market,Sarwa Trade
+2024-09-30,Net Dividend,VBK,,,0.03,,USD,"Cash DIV @ 0.286, Pos QTY: 0.10193098, Rec Date: 2024-09-26",US Market,Sarwa Trade
+2024-09-30,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.200474, Pos QTY: 0.047021696, Rec Date: 2024-09-25",US Market,Sarwa Trade
+2024-09-30,Net Dividend,IJR,,,0.09,,USD,"Cash DIV @ 0.514828, Pos QTY: 0.22721489, Rec Date: 2024-09-25",US Market,Sarwa Trade
+2024-10-01,Net Dividend,VOO,,,0.91,,USD,"Cash DIV @ 1.6386, Pos QTY: 0.789748942, Rec Date: 2024-09-27",US Market,Sarwa Trade
+2024-10-01,Net Dividend,VOOG,,,0.13,,USD,"Cash DIV @ 0.521, Pos QTY: 0.346276054, Rec Date: 2024-09-27",US Market,Sarwa Trade
+2024-10-01,sell,STIP,-0.087386131,101.39,8.86,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,buy,MSFT,0.12755685,420.05,-53.58,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,buy,JPMB,1.688699255,40.55,-68.47,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,sell,EWJ,-0.1948214,71.34,13.9,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,sell,SPHY,-0.374849659,23.88,8.95,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,sell,VBK,-0.10193098,263.66,26.87,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-01,sell,NOBL,-0.622737006,106.5,66.32,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-02,Net Dividend,NOBL,,,0.24,,USD,"Cash DIV @ 0.522315, Pos QTY: 0.622737006, Rec Date: 2024-09-25",US Market,Sarwa Trade
+2024-10-04,Net Dividend,SPHY,,,0.01,,USD,"Cash DIV @ 0.150403, Pos QTY: 0.374849659, Rec Date: 2024-10-01",US Market,Sarwa Trade
+2024-10-04,Net Dividend,STIP,,,0.0,,USD,"Cash DIV @ 0.139775, Pos QTY: 0.087386131, Rec Date: 2024-10-01",US Market,Sarwa Trade
+2024-10-04,Credit/Margin Interest,STIP,,,0.01,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-10-04,Credit/Margin Interest,SPHY,,,0.05,,USD,Qualified interest income reallocation for 2024,US Market,Sarwa Trade
+2024-10-25,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-10-24",US Market,Sarwa Trade
+2024-10-28,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-09-30",US Market,Sarwa Trade
 2024-10-29,Net Deposit,,,,81.47,,USD,DT24A296242 deposit,US Market,Sarwa Trade
-2024-10-30,buy,VOO,0.152798308,534.43,-81.66,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-10-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-10-09",NYSE,Sarwa Trade
-2024-10-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-10-15",NYSE American,Sarwa Trade
-2024-10-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-10-15",NYSE,Sarwa Trade
-2024-10-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.745531, Pos QTY: 0.177676073, Rec Date: 2024-09-20",NYSEArca,Sarwa Trade
-2024-11-05,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.2007, Pos QTY: 1.688699255, Rec Date: 2024-11-01",NYSEArca,Sarwa Trade
-2024-11-11,sell,ARKK,-0.59392152,57.56,34.19,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-11-19,Net Dividend,KKR,,,0.03,,USD,"Cash DIV @ 0.175, Pos QTY: 0.211608222, Rec Date: 2024-11-04",NYSE,Sarwa Trade
-2024-11-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-11-25",Cboe US,Sarwa Trade
-2024-11-29,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.4625, Pos QTY: 0.273328857, Rec Date: 2024-11-18",NYSE,Sarwa Trade
-2024-11-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-11-15",NYSE,Sarwa Trade
-2024-11-29,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-11-15",NYSE American,Sarwa Trade
-2024-11-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-11-11",NYSE,Sarwa Trade
-2024-12-03,buy,NVDA,0.250397111,138.5,-34.68,1.0,USD,Trade Entry,NasdaqGS,Sarwa Trade
-2024-12-04,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.20093, Pos QTY: 1.688699255, Rec Date: 2024-12-02",NYSEArca,Sarwa Trade
-2024-12-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-11-15",NYSE,Sarwa Trade
-2024-12-12,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2024-11-21",NasdaqGS,Sarwa Trade
-2024-12-12,Net Dividend,LUX,,,0.87,,USD,"Cash DIV @ 0.6224417, Pos QTY: 2, Rec Date: 2024-12-11",NYSEArca,Sarwa Trade
+2024-10-30,buy,VOO,0.152798308,534.43,-81.66,,USD,Trade Entry,US Market,Sarwa Trade
+2024-10-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-10-15",US Market,Sarwa Trade
+2024-10-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.745531, Pos QTY: 0.177676073, Rec Date: 2024-09-20",US Market,Sarwa Trade
+2024-10-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-10-15",US Market,Sarwa Trade
+2024-10-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-10-09",US Market,Sarwa Trade
+2024-11-05,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.2007, Pos QTY: 1.688699255, Rec Date: 2024-11-01",US Market,Sarwa Trade
+2024-11-11,sell,ARKK,-0.59392152,57.56,34.19,,USD,Trade Entry,US Market,Sarwa Trade
+2024-11-19,Net Dividend,KKR,,,0.03,,USD,"Cash DIV @ 0.175, Pos QTY: 0.211608222, Rec Date: 2024-11-04",US Market,Sarwa Trade
+2024-11-26,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2024-11-25",US Market,Sarwa Trade
+2024-11-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-11-15",US Market,Sarwa Trade
+2024-11-29,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.4625, Pos QTY: 0.273328857, Rec Date: 2024-11-18",US Market,Sarwa Trade
+2024-11-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-11-11",US Market,Sarwa Trade
+2024-11-29,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-11-15",US Market,Sarwa Trade
+2024-12-03,buy,NVDA,0.250397111,138.5,-34.68,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-04,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.20093, Pos QTY: 1.688699255, Rec Date: 2024-12-02",US Market,Sarwa Trade
+2024-12-10,Net Dividend,LLY,,,0.06,,USD,"Cash DIV @ 1.3, Pos QTY: 0.062060405, Rec Date: 2024-11-15",US Market,Sarwa Trade
+2024-12-12,Net Dividend,LUX,,,0.87,,USD,"Cash DIV @ 0.6224417, Pos QTY: 2, Rec Date: 2024-12-11",US Market,Sarwa Trade
+2024-12-12,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2024-11-21",US Market,Sarwa Trade
 2024-12-16,High-Yield Cash Sweep,,,,-1.43,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2024-12-20,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.507862, Pos QTY: 0.167590075, Rec Date: 2024-12-17",NYSEArca,Sarwa Trade
-2024-12-20,Net Dividend,IJR,,,0.19,,USD,"Cash DIV @ 1.137595, Pos QTY: 0.22721489, Rec Date: 2024-12-17",NYSEArca,Sarwa Trade
-2024-12-20,Net Dividend,INDA,,,0.25,,USD,"Cash DIV @ 0.399373, Pos QTY: 0.877661151, Rec Date: 2024-12-17",Cboe US,Sarwa Trade
-2024-12-20,Net Dividend,IPO,,,0.03,,USD,"Cash DIV @ 0.034653, Pos QTY: 0.803650127, Rec Date: 2024-12-13",NYSEArca,Sarwa Trade
+2024-12-20,Net Dividend,IJR,,,0.19,,USD,"Cash DIV @ 1.137595, Pos QTY: 0.22721489, Rec Date: 2024-12-17",US Market,Sarwa Trade
+2024-12-20,Net Dividend,INDA,,,0.25,,USD,"Cash DIV @ 0.399373, Pos QTY: 0.877661151, Rec Date: 2024-12-17",US Market,Sarwa Trade
+2024-12-20,Net Dividend,IPO,,,0.03,,USD,"Cash DIV @ 0.034653, Pos QTY: 0.803650127, Rec Date: 2024-12-13",US Market,Sarwa Trade
+2024-12-20,Net Dividend,USRT,,,0.07,,USD,"Cash DIV @ 0.507862, Pos QTY: 0.167590075, Rec Date: 2024-12-17",US Market,Sarwa Trade
 2024-12-23,High-Yield Cash Sweep,,,,-0.54,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
 2024-12-23,Net Deposit,,,,271.57,,USD,DT24C237589 deposit,US Market,Sarwa Trade
-2024-12-24,buy,VOO,0.123841264,549.09,-68.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-12-24,buy,XLF,0.514848222,48.56,-25.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-12-24,buy,SMOT,0.718432093,34.8,-25.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-12-24,buy,MOAT,0.544790309,93.61,-51.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2024-12-24,buy,KKR,0.166593365,150.07,-25.0,1.0,USD,Trade Entry,NYSE,Sarwa Trade
+2024-12-24,buy,MOAT,0.544790309,93.61,-51.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,buy,VOO,0.123841264,549.09,-68.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,buy,IPO,0.48482556,44.94,-21.79,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,buy,XLK,0.2121088,239.26,-50.75,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,buy,KKR,0.166593365,150.07,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
 2024-12-24,High-Yield Cash Sweep,,,,-271.57,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2024-12-24,buy,XLK,0.2121088,239.26,-50.75,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-12-24,buy,IPO,0.48482556,44.94,-21.79,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2024-12-24,Net Dividend,VXUS,,,0.51,,USD,"Cash DIV @ 1.0049, Pos QTY: 0.716810028, Rec Date: 2024-12-20",NasdaqGM,Sarwa Trade
+2024-12-24,buy,XLF,0.514848222,48.56,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,buy,SMOT,0.718432093,34.8,-25.0,,USD,Trade Entry,US Market,Sarwa Trade
+2024-12-24,Net Dividend,VXUS,,,0.51,,USD,"Cash DIV @ 1.0049, Pos QTY: 0.716810028, Rec Date: 2024-12-20",US Market,Sarwa Trade
 2024-12-26,High-Yield Cash Sweep,,,,273.03,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2024-12-26,Net Dividend,VOO,,,1.15,,USD,"Cash DIV @ 1.7385, Pos QTY: 0.94254725, Rec Date: 2024-12-23",NYSEArca,Sarwa Trade
-2024-12-26,Net Dividend,VOOG,,,0.13,,USD,"Cash DIV @ 0.5336, Pos QTY: 0.346276054, Rec Date: 2024-12-23",NYSEArca,Sarwa Trade
-2024-12-26,Net Dividend,XLF,,,0.12,,USD,"Cash DIV @ 0.206245, Pos QTY: 0.794615566, Rec Date: 2024-12-23",NYSEArca,Sarwa Trade
-2024-12-26,Net Dividend,XLK,,,0.28,,USD,"Cash DIV @ 0.385957, Pos QTY: 1.011764576, Rec Date: 2024-12-23",NYSEArca,Sarwa Trade
-2024-12-27,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-12-16",NasdaqGS,Sarwa Trade
-2024-12-27,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2024-12-13",NYSE,Sarwa Trade
+2024-12-26,Net Dividend,VOO,,,1.15,,USD,"Cash DIV @ 1.7385, Pos QTY: 0.94254725, Rec Date: 2024-12-23",US Market,Sarwa Trade
+2024-12-26,Net Dividend,VOOG,,,0.13,,USD,"Cash DIV @ 0.5336, Pos QTY: 0.346276054, Rec Date: 2024-12-23",US Market,Sarwa Trade
+2024-12-26,Net Dividend,XLF,,,0.12,,USD,"Cash DIV @ 0.206245, Pos QTY: 0.794615566, Rec Date: 2024-12-23",US Market,Sarwa Trade
+2024-12-26,Net Dividend,XLK,,,0.28,,USD,"Cash DIV @ 0.385957, Pos QTY: 1.011764576, Rec Date: 2024-12-23",US Market,Sarwa Trade
 2024-12-27,High-Yield Cash Sweep,,,,-1.68,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2024-12-27,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.5, Pos QTY: 0.138582491, Rec Date: 2024-12-16",US Market,Sarwa Trade
+2024-12-27,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2024-12-13",US Market,Sarwa Trade
 2024-12-30,High-Yield Cash Sweep,,,,-0.89,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2024-12-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-12-10",NYSE,Sarwa Trade
-2024-12-31,Net Dividend,CEFS,,,0.27,,USD,"Cash DIV @ 0.1227, Pos QTY: 1.114267148, Rec Date: 2024-12-30",Cboe US,Sarwa Trade
-2024-12-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-12-16",NYSE American,Sarwa Trade
-2024-12-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-12-13",NYSE,Sarwa Trade
-2024-12-31,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-12-16",NasdaqGS,Sarwa Trade
+2024-12-31,Net Dividend,CEFS,,,0.27,,USD,"Cash DIV @ 0.1227, Pos QTY: 1.114267148, Rec Date: 2024-12-30",US Market,Sarwa Trade
+2024-12-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2024-12-13",US Market,Sarwa Trade
+2024-12-31,Net Dividend,CLM,,,0.22,,USD,"Cash DIV @ 0.1086, Pos QTY: 2.816941083, Rec Date: 2024-12-16",US Market,Sarwa Trade
+2024-12-31,Net Dividend,OCSL,,,0.4,,USD,"Cash DIV @ 0.55, Pos QTY: 1.042268639, Rec Date: 2024-12-16",US Market,Sarwa Trade
+2024-12-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2024-12-10",US Market,Sarwa Trade
 2025-01-02,High-Yield Cash Sweep,,,,-1.56,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-01-03,Net Dividend,JPMB,,,0.26,,USD,"Cash DIV @ 0.21849, Pos QTY: 1.688699255, Rec Date: 2024-12-31",NYSEArca,Sarwa Trade
+2025-01-03,Net Dividend,JPMB,,,0.26,,USD,"Cash DIV @ 0.21849, Pos QTY: 1.688699255, Rec Date: 2024-12-31",US Market,Sarwa Trade
 2025-01-06,High-Yield Cash Sweep,,,,-0.26,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
 2025-01-27,High-Yield Cash Sweep,,,,-0.77,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-01-27,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-12-31",NYSE,Sarwa Trade
-2025-01-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-01-10",NYSE,Sarwa Trade
-2025-01-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-01-15",NYSE American,Sarwa Trade
-2025-01-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-01-15",NYSE,Sarwa Trade
-2025-01-31,Net Dividend,SPY,,,0.25,,USD,"Cash DIV @ 1.965548, Pos QTY: 0.177676073, Rec Date: 2024-12-20",NYSEArca,Sarwa Trade
-2025-01-31,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-01-30",Cboe US,Sarwa Trade
+2025-01-27,Net Dividend,GSBD,,,0.77,,USD,"Cash DIV @ 0.45, Pos QTY: 2.436460888, Rec Date: 2024-12-31",US Market,Sarwa Trade
+2025-01-31,Net Dividend,SPY,,,0.25,,USD,"Cash DIV @ 1.965548, Pos QTY: 0.177676073, Rec Date: 2024-12-20",US Market,Sarwa Trade
+2025-01-31,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-01-30",US Market,Sarwa Trade
+2025-01-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-01-10",US Market,Sarwa Trade
+2025-01-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-01-15",US Market,Sarwa Trade
+2025-01-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-01-15",US Market,Sarwa Trade
 2025-02-03,High-Yield Cash Sweep,,,,-1.28,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-02-05,Net Dividend,JPMB,,,0.52,,USD,"Cash DIV @ 0.43049, Pos QTY: 1.688699255, Rec Date: 2025-02-03",NYSEArca,Sarwa Trade
 2025-02-05,High-Yield Cash Sweep,,,,-0.52,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-02-28,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.4625, Pos QTY: 0.273328857, Rec Date: 2025-02-18",NYSE,Sarwa Trade
-2025-02-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-02-27",Cboe US,Sarwa Trade
-2025-02-28,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-02-14",NYSE,Sarwa Trade
-2025-02-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-02-11",NYSE,Sarwa Trade
-2025-02-28,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-02-14",NYSE American,Sarwa Trade
-2025-02-28,Net Dividend,KKR,,,0.05,,USD,"Cash DIV @ 0.175, Pos QTY: 0.378201587, Rec Date: 2025-02-14",NYSE,Sarwa Trade
-2025-03-03,buy,MOAT,0.854830332,92.42,-79.0,1.0,USD,Trade Entry,Cboe US,Sarwa Trade
-2025-03-03,buy,VOO,0.275352117,545.56,-150.22,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2025-03-03,buy,VOOG,0.132220477,363.03,-48.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2025-03-03,High-Yield Cash Sweep,,,,-272.75,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-02-05,Net Dividend,JPMB,,,0.52,,USD,"Cash DIV @ 0.43049, Pos QTY: 1.688699255, Rec Date: 2025-02-03",US Market,Sarwa Trade
+2025-02-28,Net Dividend,KKR,,,0.05,,USD,"Cash DIV @ 0.175, Pos QTY: 0.378201587, Rec Date: 2025-02-14",US Market,Sarwa Trade
+2025-02-28,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-02-14",US Market,Sarwa Trade
+2025-02-28,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-02-11",US Market,Sarwa Trade
+2025-02-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-02-27",US Market,Sarwa Trade
+2025-02-28,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-02-14",US Market,Sarwa Trade
+2025-02-28,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.4625, Pos QTY: 0.273328857, Rec Date: 2025-02-18",US Market,Sarwa Trade
+2025-03-03,buy,VOO,0.275352117,545.56,-150.22,,USD,Trade Entry,US Market,Sarwa Trade
+2025-03-03,buy,MOAT,0.854830332,92.42,-79.0,,USD,Trade Entry,US Market,Sarwa Trade
+2025-03-03,buy,VOOG,0.132220477,363.03,-48.0,,USD,Trade Entry,US Market,Sarwa Trade
 2025-03-03,Net Deposit,,,,271.57,,USD,DT253033994 deposit,US Market,Sarwa Trade
+2025-03-03,High-Yield Cash Sweep,,,,-272.75,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
 2025-03-04,High-Yield Cash Sweep,,,,280.22,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-05,Net Dividend,JPMB,,,0.25,,USD,"Cash DIV @ 0.20592, Pos QTY: 1.688699255, Rec Date: 2025-03-03",NYSEArca,Sarwa Trade
+2025-03-05,Net Dividend,JPMB,,,0.25,,USD,"Cash DIV @ 0.20592, Pos QTY: 1.688699255, Rec Date: 2025-03-03",US Market,Sarwa Trade
 2025-03-05,High-Yield Cash Sweep,,,,-0.25,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-10,Net Dividend,RYAAY,,,0.1,,USD,"Cash DIV @ 0.332578, Pos QTY: 0.315592808, Rec Date: 2025-01-17",NasdaqGS,Sarwa Trade
 2025-03-10,High-Yield Cash Sweep,,,,-0.17,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-10,Net Dividend,LLY,,,0.07,,USD,"Cash DIV @ 1.5, Pos QTY: 0.062060405, Rec Date: 2025-02-14",NYSE,Sarwa Trade
-2025-03-13,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2025-02-20",NasdaqGS,Sarwa Trade
+2025-03-10,Net Dividend,LLY,,,0.07,,USD,"Cash DIV @ 1.5, Pos QTY: 0.062060405, Rec Date: 2025-02-14",US Market,Sarwa Trade
+2025-03-10,Net Dividend,RYAAY,,,0.1,,USD,"Cash DIV @ 0.332578, Pos QTY: 0.315592808, Rec Date: 2025-01-17",US Market,Sarwa Trade
+2025-03-13,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2025-02-20",US Market,Sarwa Trade
 2025-03-14,High-Yield Cash Sweep,,,,-0.15,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-21,Net Dividend,USRT,,,0.03,,USD,"Cash DIV @ 0.249185, Pos QTY: 0.167590075, Rec Date: 2025-03-18",NYSEArca,Sarwa Trade
-2025-03-21,Net Dividend,IJR,,,0.05,,USD,"Cash DIV @ 0.323181, Pos QTY: 0.22721489, Rec Date: 2025-03-18",NYSEArca,Sarwa Trade
-2025-03-21,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.121169, Pos QTY: 0.047021696, Rec Date: 2025-03-18",NasdaqGM,Sarwa Trade
-2025-03-21,Net Dividend,IPO,,,0.07,,USD,"Cash DIV @ 0.072442, Pos QTY: 1.288475687, Rec Date: 2025-03-14",NYSEArca,Sarwa Trade
+2025-03-21,Net Dividend,IBB,,,0.01,,USD,"Cash DIV @ 0.121169, Pos QTY: 0.047021696, Rec Date: 2025-03-18",US Market,Sarwa Trade
+2025-03-21,Net Dividend,IJR,,,0.05,,USD,"Cash DIV @ 0.323181, Pos QTY: 0.22721489, Rec Date: 2025-03-18",US Market,Sarwa Trade
+2025-03-21,Net Dividend,USRT,,,0.03,,USD,"Cash DIV @ 0.249185, Pos QTY: 0.167590075, Rec Date: 2025-03-18",US Market,Sarwa Trade
+2025-03-21,Net Dividend,IPO,,,0.07,,USD,"Cash DIV @ 0.072442, Pos QTY: 1.288475687, Rec Date: 2025-03-14",US Market,Sarwa Trade
 2025-03-24,High-Yield Cash Sweep,,,,-0.16,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-03-25,Net Dividend,VXUS,,,0.1,,USD,"Cash DIV @ 0.1909, Pos QTY: 0.716810028, Rec Date: 2025-03-21",US Market,Sarwa Trade
 2025-03-25,High-Yield Cash Sweep,,,,-0.1,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-25,Net Dividend,VXUS,,,0.1,,USD,"Cash DIV @ 0.1909, Pos QTY: 0.716810028, Rec Date: 2025-03-21",NasdaqGM,Sarwa Trade
+2025-03-26,Net Dividend,XLK,,,0.33,,USD,"Cash DIV @ 0.374892, Pos QTY: 1.223873376, Rec Date: 2025-03-24",US Market,Sarwa Trade
+2025-03-26,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.178776, Pos QTY: 1.309463788, Rec Date: 2025-03-24",US Market,Sarwa Trade
+2025-03-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.525, Pos QTY: 0.138582491, Rec Date: 2025-03-14",US Market,Sarwa Trade
 2025-03-26,High-Yield Cash Sweep,,,,-0.05,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-26,Net Dividend,XLK,,,0.33,,USD,"Cash DIV @ 0.374892, Pos QTY: 1.223873376, Rec Date: 2025-03-24",NYSEArca,Sarwa Trade
-2025-03-26,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.178776, Pos QTY: 1.309463788, Rec Date: 2025-03-24",NYSEArca,Sarwa Trade
-2025-03-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.525, Pos QTY: 0.138582491, Rec Date: 2025-03-14",NasdaqGS,Sarwa Trade
+2025-03-27,Net Dividend,VOOG,,,0.19,,USD,"Cash DIV @ 0.5475, Pos QTY: 0.478496531, Rec Date: 2025-03-25",US Market,Sarwa Trade
 2025-03-27,High-Yield Cash Sweep,,,,-0.69,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-03-27,Net Dividend,VOOG,,,0.19,,USD,"Cash DIV @ 0.5475, Pos QTY: 0.478496531, Rec Date: 2025-03-25",NYSEArca,Sarwa Trade
-2025-03-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-03-27",Cboe US,Sarwa Trade
-2025-03-31,Net Dividend,VOO,,,1.71,,USD,"Cash DIV @ 1.8121, Pos QTY: 1.341740631, Rec Date: 2025-03-27",NYSEArca,Sarwa Trade
-2025-03-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-03-11",NYSE,Sarwa Trade
-2025-03-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-03-14",NYSE American,Sarwa Trade
-2025-03-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-03-14",NYSE,Sarwa Trade
-2025-03-31,Net Dividend,OCSL,,,0.35,,USD,"Cash DIV @ 0.47, Pos QTY: 1.042268639, Rec Date: 2025-03-17",NasdaqGS,Sarwa Trade
-2025-03-31,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2025-03-17",NYSE,Sarwa Trade
+2025-03-28,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-03-27",US Market,Sarwa Trade
+2025-03-31,Net Dividend,VOO,,,1.71,,USD,"Cash DIV @ 1.8121, Pos QTY: 1.341740631, Rec Date: 2025-03-27",US Market,Sarwa Trade
+2025-03-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-03-14",US Market,Sarwa Trade
+2025-03-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-03-14",US Market,Sarwa Trade
+2025-03-31,Net Dividend,OCSL,,,0.35,,USD,"Cash DIV @ 0.47, Pos QTY: 1.042268639, Rec Date: 2025-03-17",US Market,Sarwa Trade
+2025-03-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-03-11",US Market,Sarwa Trade
 2025-03-31,High-Yield Cash Sweep,,,,-0.12,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-03-31,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2025-03-17",US Market,Sarwa Trade
 2025-04-01,High-Yield Cash Sweep,,,,-3.81,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-04-03,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19833, Pos QTY: 1.688699255, Rec Date: 2025-04-01",NYSEArca,Sarwa Trade
+2025-04-03,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19833, Pos QTY: 1.688699255, Rec Date: 2025-04-01",US Market,Sarwa Trade
 2025-04-03,High-Yield Cash Sweep,,,,-0.24,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-04-07,Net Deposit,,,,135.78,,USD,DT254073747 deposit,US Market,Sarwa Trade
 2025-04-07,High-Yield Cash Sweep,,,,-135.78,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-04-08,buy,XLV,0.28918907,136.66,-39.52,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2025-04-08,buy,VOO,0.210322634,475.46,-100.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
+2025-04-07,Net Deposit,,,,135.78,,USD,DT254073747 deposit,US Market,Sarwa Trade
+2025-04-08,buy,VOO,0.210322634,475.46,-100.0,,USD,Trade Entry,US Market,Sarwa Trade
+2025-04-08,buy,XLV,0.28918907,136.66,-39.52,,USD,Trade Entry,US Market,Sarwa Trade
 2025-04-09,High-Yield Cash Sweep,,,,141.52,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-04-28,Net Dividend,GSBD,,,0.82,,USD,"Cash DIV @ 0.48, Pos QTY: 2.436460888, Rec Date: 2025-03-31",NYSE,Sarwa Trade
+2025-04-28,Net Dividend,GSBD,,,0.82,,USD,"Cash DIV @ 0.48, Pos QTY: 2.436460888, Rec Date: 2025-03-31",US Market,Sarwa Trade
 2025-04-29,High-Yield Cash Sweep,,,,-0.82,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-04-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-04-09",NYSE,Sarwa Trade
-2025-04-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-04-15",NYSE American,Sarwa Trade
-2025-04-30,Net Dividend,SPY,,,0.21,,USD,"Cash DIV @ 1.695528, Pos QTY: 0.177676073, Rec Date: 2025-03-21",NYSEArca,Sarwa Trade
-2025-04-30,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-04-29",Cboe US,Sarwa Trade
-2025-04-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-04-15",NYSE,Sarwa Trade
+2025-04-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-04-09",US Market,Sarwa Trade
+2025-04-30,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-04-29",US Market,Sarwa Trade
+2025-04-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-04-15",US Market,Sarwa Trade
+2025-04-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-04-15",US Market,Sarwa Trade
+2025-04-30,Net Dividend,SPY,,,0.21,,USD,"Cash DIV @ 1.695528, Pos QTY: 0.177676073, Rec Date: 2025-03-21",US Market,Sarwa Trade
 2025-05-01,High-Yield Cash Sweep,,,,-1.24,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-05-05,Net Dividend,JPMB,,,0.4,,USD,"Cash DIV @ 0.33313, Pos QTY: 1.688699255, Rec Date: 2025-05-01",NYSEArca,Sarwa Trade
+2025-05-05,Net Dividend,JPMB,,,0.4,,USD,"Cash DIV @ 0.33313, Pos QTY: 1.688699255, Rec Date: 2025-05-01",US Market,Sarwa Trade
 2025-05-06,High-Yield Cash Sweep,,,,-0.4,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
 2025-05-27,High-Yield Cash Sweep,,,,-0.05,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-05-27,Net Dividend,KKR,,,0.05,,USD,"Cash DIV @ 0.185, Pos QTY: 0.378201587, Rec Date: 2025-05-12",NYSE,Sarwa Trade
-2025-05-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-05-09",NYSE,Sarwa Trade
+2025-05-27,Net Dividend,KKR,,,0.05,,USD,"Cash DIV @ 0.185, Pos QTY: 0.378201587, Rec Date: 2025-05-12",US Market,Sarwa Trade
+2025-05-30,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-05-29",US Market,Sarwa Trade
 2025-05-30,High-Yield Cash Sweep,,,,-1.13,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-05-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-05-15",NYSE American,Sarwa Trade
-2025-05-30,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.51, Pos QTY: 0.273328857, Rec Date: 2025-05-16",NYSE,Sarwa Trade
-2025-05-30,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-05-29",Cboe US,Sarwa Trade
-2025-05-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-05-15",NYSE,Sarwa Trade
-2025-06-04,Net Dividend,JPMB,,,0.23,,USD,"Cash DIV @ 0.18921, Pos QTY: 1.688699255, Rec Date: 2025-06-02",NYSEArca,Sarwa Trade
+2025-05-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-05-09",US Market,Sarwa Trade
+2025-05-30,Net Dividend,APO,,,0.1,,USD,"Cash DIV @ 0.51, Pos QTY: 0.273328857, Rec Date: 2025-05-16",US Market,Sarwa Trade
+2025-05-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-05-15",US Market,Sarwa Trade
+2025-05-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-05-15",US Market,Sarwa Trade
+2025-06-04,Net Dividend,JPMB,,,0.23,,USD,"Cash DIV @ 0.18921, Pos QTY: 1.688699255, Rec Date: 2025-06-02",US Market,Sarwa Trade
 2025-06-05,High-Yield Cash Sweep,,,,-0.23,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-10,Net Dividend,LLY,,,0.07,,USD,"Cash DIV @ 1.5, Pos QTY: 0.062060405, Rec Date: 2025-05-16",NYSE,Sarwa Trade
+2025-06-10,Net Dividend,LLY,,,0.07,,USD,"Cash DIV @ 1.5, Pos QTY: 0.062060405, Rec Date: 2025-05-16",US Market,Sarwa Trade
 2025-06-11,High-Yield Cash Sweep,,,,-0.07,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-12,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2025-05-15",NasdaqGS,Sarwa Trade
-2025-06-13,Net Dividend,GSBD,,,0.09,,USD,"Cash DIV @ 0.05, Pos QTY: 2.436460888, Rec Date: 2025-05-30",NYSE,Sarwa Trade
+2025-06-12,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2025-05-15",US Market,Sarwa Trade
 2025-06-13,High-Yield Cash Sweep,,,,-0.15,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-06-13,Net Dividend,GSBD,,,0.09,,USD,"Cash DIV @ 0.05, Pos QTY: 2.436460888, Rec Date: 2025-05-30",US Market,Sarwa Trade
 2025-06-16,High-Yield Cash Sweep,,,,-0.09,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-20,Net Dividend,IPO,,,0.05,,USD,"Cash DIV @ 0.053474, Pos QTY: 1.288475687, Rec Date: 2025-06-13",NYSEArca,Sarwa Trade
-2025-06-20,Net Dividend,IJR,,,0.07,,USD,"Cash DIV @ 0.388455, Pos QTY: 0.22721489, Rec Date: 2025-06-16",NYSEArca,Sarwa Trade
-2025-06-20,Net Dividend,USRT,,,0.05,,USD,"Cash DIV @ 0.378097, Pos QTY: 0.167590075, Rec Date: 2025-06-16",NYSEArca,Sarwa Trade
+2025-06-20,Net Dividend,USRT,,,0.05,,USD,"Cash DIV @ 0.378097, Pos QTY: 0.167590075, Rec Date: 2025-06-16",US Market,Sarwa Trade
+2025-06-20,Net Dividend,IPO,,,0.05,,USD,"Cash DIV @ 0.053474, Pos QTY: 1.288475687, Rec Date: 2025-06-13",US Market,Sarwa Trade
+2025-06-20,Net Dividend,IJR,,,0.07,,USD,"Cash DIV @ 0.388455, Pos QTY: 0.22721489, Rec Date: 2025-06-16",US Market,Sarwa Trade
 2025-06-23,High-Yield Cash Sweep,,,,-0.17,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-24,Net Dividend,VXUS,,,0.25,,USD,"Cash DIV @ 0.4851, Pos QTY: 0.716810028, Rec Date: 2025-06-20",NasdaqGM,Sarwa Trade
-2025-06-25,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.172105, Pos QTY: 1.309463788, Rec Date: 2025-06-23",NYSEArca,Sarwa Trade
-2025-06-25,Net Dividend,XLV,,,0.13,,USD,"Cash DIV @ 0.630382, Pos QTY: 0.28918907, Rec Date: 2025-06-23",NYSEArca,Sarwa Trade
+2025-06-24,Net Dividend,VXUS,,,0.25,,USD,"Cash DIV @ 0.4851, Pos QTY: 0.716810028, Rec Date: 2025-06-20",US Market,Sarwa Trade
 2025-06-25,High-Yield Cash Sweep,,,,-0.9,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-25,Net Dividend,XLK,,,0.35,,USD,"Cash DIV @ 0.397508, Pos QTY: 1.223873376, Rec Date: 2025-06-23",NYSEArca,Sarwa Trade
-2025-06-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.525, Pos QTY: 0.138582491, Rec Date: 2025-06-16",NasdaqGS,Sarwa Trade
+2025-06-25,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.172105, Pos QTY: 1.309463788, Rec Date: 2025-06-23",US Market,Sarwa Trade
+2025-06-25,Net Dividend,XLV,,,0.13,,USD,"Cash DIV @ 0.630382, Pos QTY: 0.28918907, Rec Date: 2025-06-23",US Market,Sarwa Trade
+2025-06-25,Net Dividend,XLK,,,0.35,,USD,"Cash DIV @ 0.397508, Pos QTY: 1.223873376, Rec Date: 2025-06-23",US Market,Sarwa Trade
+2025-06-26,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.525, Pos QTY: 0.138582491, Rec Date: 2025-06-16",US Market,Sarwa Trade
 2025-06-26,High-Yield Cash Sweep,,,,-0.05,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-06-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-06-26",US Market,Sarwa Trade
 2025-06-27,High-Yield Cash Sweep,,,,-0.12,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-06-27,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-06-26",Cboe US,Sarwa Trade
-2025-06-30,Net Dividend,OCSL,,,0.31,,USD,"Cash DIV @ 0.42, Pos QTY: 1.042268639, Rec Date: 2025-06-16",NasdaqGS,Sarwa Trade
-2025-06-30,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2025-06-16",NYSE,Sarwa Trade
-2025-06-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-06-16",NYSE American,Sarwa Trade
-2025-06-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-06-10",NYSE,Sarwa Trade
-2025-06-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-06-13",NYSE,Sarwa Trade
-2025-06-30,Net Dividend,VOOG,,,0.17,,USD,"Cash DIV @ 0.492, Pos QTY: 0.478496531, Rec Date: 2025-06-26",NYSEArca,Sarwa Trade
+2025-06-30,Net Dividend,VOOG,,,0.17,,USD,"Cash DIV @ 0.492, Pos QTY: 0.478496531, Rec Date: 2025-06-26",US Market,Sarwa Trade
+2025-06-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-06-10",US Market,Sarwa Trade
+2025-06-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-06-16",US Market,Sarwa Trade
+2025-06-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-06-13",US Market,Sarwa Trade
+2025-06-30,Net Dividend,OCSL,,,0.31,,USD,"Cash DIV @ 0.42, Pos QTY: 1.042268639, Rec Date: 2025-06-16",US Market,Sarwa Trade
+2025-06-30,Net Dividend,TPVG,,,0.84,,USD,"Cash DIV @ 0.3, Pos QTY: 4, Rec Date: 2025-06-16",US Market,Sarwa Trade
 2025-07-01,High-Yield Cash Sweep,,,,-2.23,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-07-02,Net Dividend,VOO,,,1.9,,USD,"Cash DIV @ 1.7447, Pos QTY: 1.552063265, Rec Date: 2025-06-30",NYSEArca,Sarwa Trade
-2025-07-03,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19524, Pos QTY: 1.688699255, Rec Date: 2025-07-01",NYSEArca,Sarwa Trade
+2025-07-02,Net Dividend,VOO,,,1.9,,USD,"Cash DIV @ 1.7447, Pos QTY: 1.552063265, Rec Date: 2025-06-30",US Market,Sarwa Trade
+2025-07-03,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19524, Pos QTY: 1.688699255, Rec Date: 2025-07-01",US Market,Sarwa Trade
 2025-07-03,High-Yield Cash Sweep,,,,-2.14,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-07-24,buy,BRK-B,0.123973114,482.04,-59.76,1.0,USD,Trade Entry,NYSE,Sarwa Trade
 2025-07-24,High-Yield Cash Sweep,,,,-271.57,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-07-24,buy,BX,0.325842696,178.0,-58.0,,USD,Trade Entry,US Market,Sarwa Trade
 2025-07-24,buy,BTC-USD,0.0001625,120639.85,-19.6,0.0,USD,buy BTC,CCC,Sarwa Crypto
-2025-07-24,buy,BX,0.325842696,178.0,-58.0,1.0,USD,Trade Entry,NYSE,Sarwa Trade
-2025-07-24,buy,VOOG,0.244498777,409.0,-100.0,1.0,USD,Trade Entry,NYSEArca,Sarwa Trade
-2025-07-24,buy,APO,0.261352499,153.05,-40.0,1.0,USD,Trade Entry,NYSE,Sarwa Trade
 2025-07-24,Net Deposit,,,,271.57,,USD,DT257241316 deposit,US Market,Sarwa Trade
+2025-07-24,buy,VOOG,0.244498777,409.0,-100.0,,USD,Trade Entry,US Market,Sarwa Trade
+2025-07-24,buy,APO,0.261352499,153.05,-40.0,,USD,Trade Entry,US Market,Sarwa Trade
+2025-07-24,buy,BRK.B,0.123973114,482.04,-59.76,,USD,Trade Entry,US Market,Sarwa Trade
 2025-07-25,High-Yield Cash Sweep,,,,281.36,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-07-28,Net Dividend,GSBD,,,0.82,,USD,"Cash DIV @ 0.48, Pos QTY: 2.436460888, Rec Date: 2025-06-30",US Market,Sarwa Trade
 2025-07-28,High-Yield Cash Sweep,,,,-0.82,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
-2025-07-28,Net Dividend,GSBD,,,0.82,,USD,"Cash DIV @ 0.48, Pos QTY: 2.436460888, Rec Date: 2025-06-30",NYSE,Sarwa Trade
-2025-07-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-07-15",NYSE American,Sarwa Trade
-2025-07-31,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-07-30",Cboe US,Sarwa Trade
-2025-07-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-07-09",NYSE,Sarwa Trade
-2025-07-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.761117, Pos QTY: 0.177676073, Rec Date: 2025-06-20",NYSEArca,Sarwa Trade
-2025-07-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-07-15",NYSE,Sarwa Trade
-2025-08-04,Net Deposit,,,,244.41,,USD,Cash deposit made to Sarwa Trade on 2025-08-04,US Market,Sarwa Trade - Interim
-2025-08-04,buy,VOO,0.4268623496,575.08,-245.48,1.0,USD,Purchase of VOO shares on 2025-08-04,NYSEArca,Sarwa Trade - Interim
-2025-08-05,Net Dividend,JPMB,,,0.24,,USD,JPMB dividends,NYSEArca,Sarwa Trade - Interim
-2025-08-09,Merger/Acquisition,LUX,-2.0,23.34,46.68,0,USD,LUX ETF close down,US Market,Sarwa Trade - Interim
-2025-08-11,buy,VOO,0.07835,586.06,-45.92,1,USD,Purhcase of VOO shares,US Market,Sarwa Trade - Interim
-2025-08-11,Net Dividend,BX,,,0.24,,USD,BX dividends,US Market,Sarwa Trade - Interim
+2025-07-31,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-07-30",US Market,Sarwa Trade
+2025-07-31,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-07-15",US Market,Sarwa Trade
+2025-07-31,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-07-15",US Market,Sarwa Trade
+2025-07-31,Net Dividend,SPY,,,0.22,,USD,"Cash DIV @ 1.761117, Pos QTY: 0.177676073, Rec Date: 2025-06-20",US Market,Sarwa Trade
+2025-07-31,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-07-09",US Market,Sarwa Trade
+2025-08-01,High-Yield Cash Sweep,,,,-1.25,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-04,High-Yield Cash Sweep,,,,-244.41,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-04,Net Deposit,,,,244.41,,USD,DT258045467 deposit,US Market,Sarwa Trade
+2025-08-04,buy,VOO,0.426862349,575.08,-245.48,,USD,Trade Entry,US Market,Sarwa Trade
+2025-08-05,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19679, Pos QTY: 1.688699255, Rec Date: 2025-08-01",US Market,Sarwa Trade
+2025-08-05,High-Yield Cash Sweep,,,,246.24,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-08,Merger/Acquisition,LUX,,,46.34,,USD,Cash Merger $23.1704975 per share,US Market,Sarwa Trade
+2025-08-08,Merger/Acquisition,LUX,-2.0,22.73,,,USD,Merger/Acquisition,US Market,Sarwa Trade
+2025-08-08,Merger/Acquisition,LUX,,,0.34,,USD,Accrued Interest $0.169425 per share,US Market,Sarwa Trade
+2025-08-11,High-Yield Cash Sweep,,,,-46.68,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-11,buy,VOO,0.078353217,586.06,-45.92,,USD,Trade Entry,US Market,Sarwa Trade
+2025-08-11,Net Dividend,BX,,,0.24,,USD,"Cash DIV @ 1.03, Pos QTY: 0.325842696, Rec Date: 2025-08-04",US Market,Sarwa Trade
+2025-08-12,High-Yield Cash Sweep,,,,46.68,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-19,buy,XLK,0.513075794,263.16,-135.02,,USD,Trade Entry,US Market,Sarwa Trade
+2025-08-19,High-Yield Cash Sweep,,,,-135.78,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-19,Net Deposit,,,,135.78,,USD,DT258199027 deposit,US Market,Sarwa Trade
+2025-08-20,High-Yield Cash Sweep,,,,136.02,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-26,Net Dividend,KKR,,,0.05,,USD,"Cash DIV @ 0.185, Pos QTY: 0.378201587, Rec Date: 2025-08-11",US Market,Sarwa Trade
+2025-08-26,High-Yield Cash Sweep,,,,-0.05,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-08-29,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-08-15",US Market,Sarwa Trade
+2025-08-29,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-08-28",US Market,Sarwa Trade
+2025-08-29,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-08-11",US Market,Sarwa Trade
+2025-08-29,Net Dividend,APO,,,0.19,,USD,"Cash DIV @ 0.51, Pos QTY: 0.534681356, Rec Date: 2025-08-18",US Market,Sarwa Trade
+2025-08-29,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-08-15",US Market,Sarwa Trade
+2025-09-02,High-Yield Cash Sweep,,,,-1.22,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-04,Net Dividend,JPMB,,,0.24,,USD,"Cash DIV @ 0.19531, Pos QTY: 1.688699255, Rec Date: 2025-09-02",US Market,Sarwa Trade
+2025-09-05,High-Yield Cash Sweep,,,,-0.24,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-10,Net Dividend,LLY,,,0.07,,USD,"Cash DIV @ 1.5, Pos QTY: 0.062060405, Rec Date: 2025-08-15",US Market,Sarwa Trade
+2025-09-10,High-Yield Cash Sweep,,,,-0.07,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-11,Net Dividend,MSFT,,,0.15,,USD,"Cash DIV @ 0.83, Pos QTY: 0.255834079, Rec Date: 2025-08-21",US Market,Sarwa Trade
+2025-09-12,High-Yield Cash Sweep,,,,-0.15,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-15,High-Yield Cash Sweep,,,,-135.78,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-15,buy,VOOG,0.31662569,431.14,-136.51,,USD,Trade Entry,US Market,Sarwa Trade
+2025-09-15,Net Deposit,,,,135.78,,USD,DT259156689 deposit,US Market,Sarwa Trade
+2025-09-15,Net Dividend,GSBD,,,0.05,,USD,"Cash DIV @ 0.03, Pos QTY: 2.436460888, Rec Date: 2025-08-29",US Market,Sarwa Trade
+2025-09-16,High-Yield Cash Sweep,,,,137.46,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-19,Net Dividend,IPO,,,0.17,,USD,"Cash DIV @ 0.175803, Pos QTY: 1.288475687, Rec Date: 2025-09-12",US Market,Sarwa Trade
+2025-09-19,Net Dividend,USRT,,,0.05,,USD,"Cash DIV @ 0.423757, Pos QTY: 0.167590075, Rec Date: 2025-09-16",US Market,Sarwa Trade
+2025-09-19,Net Dividend,IJR,,,0.07,,USD,"Cash DIV @ 0.444168, Pos QTY: 0.22721489, Rec Date: 2025-09-16",US Market,Sarwa Trade
+2025-09-22,High-Yield Cash Sweep,,,,-0.29,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-23,Net Dividend,VXUS,,,0.19,,USD,"Cash DIV @ 0.3597, Pos QTY: 0.716810028, Rec Date: 2025-09-19",US Market,Sarwa Trade
+2025-09-23,High-Yield Cash Sweep,,,,-0.19,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-24,Net Dividend,XLF,,,0.17,,USD,"Cash DIV @ 0.177993, Pos QTY: 1.309463788, Rec Date: 2025-09-22",US Market,Sarwa Trade
+2025-09-24,Net Dividend,XLK,,,0.44,,USD,"Cash DIV @ 0.357867, Pos QTY: 1.73694917, Rec Date: 2025-09-22",US Market,Sarwa Trade
+2025-09-24,Net Dividend,XLV,,,0.13,,USD,"Cash DIV @ 0.624868, Pos QTY: 0.28918907, Rec Date: 2025-09-22",US Market,Sarwa Trade
+2025-09-24,High-Yield Cash Sweep,,,,-0.74,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-25,Net Dividend,RYAAY,,,0.28,,USD,"Cash DIV @ 0.507678, Pos QTY: 0.315592808, Rec Date: 2025-09-12",US Market,Sarwa Trade
+2025-09-26,High-Yield Cash Sweep,,,,-0.53,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-26,Net Dividend,VOOG,,,0.41,,USD,"Cash DIV @ 0.5537, Pos QTY: 1.039620998, Rec Date: 2025-09-24",US Market,Sarwa Trade
+2025-09-29,High-Yield Cash Sweep,,,,-0.05,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-29,Net Dividend,META,,,0.05,,USD,"Cash DIV @ 0.525, Pos QTY: 0.138582491, Rec Date: 2025-09-22",US Market,Sarwa Trade
+2025-09-30,High-Yield Cash Sweep,,,,-2.14,,USD,High-Yield Cash Sweep,US Market,Sarwa Trade
+2025-09-30,Net Dividend,OCSL,,,0.3,,USD,"Cash DIV @ 0.4, Pos QTY: 1.042268639, Rec Date: 2025-09-15",US Market,Sarwa Trade
+2025-09-30,Net Dividend,BRW,,,0.28,,USD,"Cash DIV @ 0.085, Pos QTY: 4.707717967, Rec Date: 2025-09-10",US Market,Sarwa Trade
+2025-09-30,Net Dividend,CEFS,,,0.12,,USD,"Cash DIV @ 0.14, Pos QTY: 1.114267148, Rec Date: 2025-09-29",US Market,Sarwa Trade
+2025-09-30,Net Dividend,CLM,,,0.24,,USD,"Cash DIV @ 0.1224, Pos QTY: 2.816941083, Rec Date: 2025-09-15",US Market,Sarwa Trade
+2025-09-30,Net Dividend,GOF,,,0.39,,USD,"Cash DIV @ 0.1821, Pos QTY: 3, Rec Date: 2025-09-15",US Market,Sarwa Trade
+2025-09-30,Net Dividend,TPVG,,,0.65,,USD,"Cash DIV @ 0.23, Pos QTY: 4, Rec Date: 2025-09-16",US Market,Sarwa Trade
+2025-10-01,Net Dividend,VOO,,,2.51,,USD,,US Market,Sarwa Trade
+2025-10-02,Net Dividend,RYAAY,,,0.0,,USD,,US Market,Sarwa Trade
+2025-10-03,Net Dividend,JPMB,,,0.24,,USD,,US Market,Sarwa Trade
