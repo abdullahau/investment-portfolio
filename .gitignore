@@ -17,3 +17,6 @@ __pypackages__/
 # Environments
 .env
 .venv
+
+# Unredacted Statements
+tools/raw-data/original-statements/*
