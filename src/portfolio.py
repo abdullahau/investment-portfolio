@@ -378,9 +378,8 @@ class Portfolio:
         current_holdings = self.get_current_holdings()
         symbol_df = self.symbol_manager.get_unified_df()
 
-        # Merge with symbol metadata to get the concentration category
         merged = current_holdings.merge(symbol_df, left_index=True, right_index=True)
-        concentration = merged.groupby(by)["Market Value (USD)"].sum()
+        concentration = merged.groupby(by)[f"Market Value ({config.BASE_CURRENCY})"].sum()
 
         return (concentration / concentration.sum()) * 100
 
