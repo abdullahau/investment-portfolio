@@ -5,6 +5,10 @@ __pycache__/
 *$py.class
 *.pyc
 
+# LSP Config Files
+.codebook.toml
+.markdownlint.json
+
 # Dev Settings & Caches
 .vscode
 .ruff_cache
