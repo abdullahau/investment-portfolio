@@ -3,11 +3,7 @@
 import json
 import pandas as pd
 import numpy as np
-from pathlib import Path
-import sys
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-import config
+from src import config
 
 
 def create_master_log(json_path, crypto_path, interim_path, output_path):

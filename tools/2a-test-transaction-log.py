@@ -1,9 +1,5 @@
 import pandas as pd
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-import config
+from src import config
 
 transaction_log = pd.read_csv(config.TRANS_LOG_DIR / "us_mkt_transactions.csv")
 

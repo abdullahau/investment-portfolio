@@ -1,10 +1,6 @@
 import json
 import pandas as pd
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-import config
+from src import config
 
 
 def main():
@@ -24,7 +20,7 @@ def main():
 
     # 4. Use .map() to update the 'Exchange' column
     transaction_log["Exchange"] = (
-        transaction_log["Symbol"].map(market_mapping).fillna("US Market")
+        transaction_log["Symbol"].map(market_mapping).fillna("US Market")  # pyright: ignore
     )
 
     # 5. Write to us_mkt_transactions.csv

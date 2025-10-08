@@ -5,11 +5,8 @@ import json
 import pandas as pd
 import pdfplumber
 from collections import defaultdict
-import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-import config
+from src import config
 
 
 def extract_period_from_text(text):

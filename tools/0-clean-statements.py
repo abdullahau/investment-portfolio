@@ -1,14 +1,10 @@
 # tools/0-clean-statements.py
 
 import fitz  # PyMuPDF
-import sys
-from pathlib import Path
+from src import config
 
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-import config
-
-input_folder = Path(config.RAW_DATA_DIR) / "original-statements"
-output_folder = Path(config.RAW_DATA_DIR) / "redacted-statements"
+input_folder = config.RAW_DATA_DIR / "original-statements"
+output_folder = config.RAW_DATA_DIR / "redacted-statements"
 
 texts_to_remove = [config.ACCOUNT_NAME, config.ACCOUNT_NUM]
 
