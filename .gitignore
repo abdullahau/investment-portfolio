@@ -9,9 +9,13 @@ __pycache__/
 .vscode
 .ruff_cache
 
-
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Quarto
+.quarto/
+/.quarto/
+**/*.quarto_ipynb
 
 # IPython
 profile_default/

@@ -1,40 +1,422 @@
 ---
-title: Stock Market Vs. Real Estate Returns (2020 - 2025)
-author: Abdullah Mahmood
+title: "Stock Market Vs. Real Estate Returns (2020 - 2025)"
+author: "Abdullah Mahmood"
 date: last-modified
-format:
-    html:
-        theme: cosmo
-        highlight-style: atom-one
-        mainfont: Palatino
-        fontcolor: black
-        monobackgroundcolor: white
-        monofont: Menlo, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace
-        fontsize: 13pt
-        linestretch: 1.4
-        toc: true
-        toc-location: right
-        toc-depth: 4
-        code-fold: true
-        code-copy: true
-        cap-location: bottom
-        format-links: false
-        embed-resources: true
-        anchor-sections: true
-        code-links:
-        -   text: GitHub Repo
-            icon: github
-            href: https://github.com/abdullahau/market-simulation/
-        -   text: Quarto Markdown
-            icon: file-code
-            href: https://github.com/abdullahau/market-simulation/blob/main/
-        html-math-method:
-            method: mathjax
-            url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ---
 
-## test
+## Imports
 
 ```{python}
+import yfinance as yf
+import pandas as pd
+import numpy as np
+from scipy.optimize import newton
+import plotly.graph_objects as go
+from itables import show, options
+options.searching = False
+options.warn_on_undocumented_option=False
+```
 
+## Functions
+
+```{python}
+# Rate Periodicity Conversion
+def equivRate(rate, from_freq=1, to_freq=1):
+    return to_freq * ((1 + rate / from_freq) ** (from_freq / to_freq) - 1)
+
+
+# Present Value Function
+def pv(r, n, pmt, fv=0, beg=False):
+    c = np.full(n, pmt)
+    t = np.arange(1, n + 1)
+    d = 1.0 / np.power((1 + r), t)
+    B = np.sum(d * c)
+    tv = fv / (1 + r) ** n
+
+    return np.where(beg, (B + tv) * (1 + r), B + tv)
+
+
+# Amortizing Loan Principal Outstanding Balance
+def principal_out(P, r, N, n):
+    d1 = (1 + r) ** N - (1 + r) ** (n - 1)
+    d2 = (1 + r) ** N - 1
+    return P * d1 / d2
+```
+
+### Rate Periodicity Conversion
+
+The `equivRate` function converts an interest rate from one compounding frequency to another.
+
+$$R_{to} = n_{to} \left[ \left( 1 + \frac{R_{from}}{n_{from}} \right)^{\frac{n_{from}}{n_{to}}} - 1 \right]$$
+
+* $R_{from}$: initial rate (`rate`)
+* $n_{from}$: initial frequency (`from_freq`)
+* $n_{to}$: target frequency (`to_freq`)
+* $R_{to}$: equivalent rate
+
+### Present Value (PV) Function
+
+The `pv` function calculates the present value of an annuity and a future value, distinguishing between payments made at the beginning (`beg = True`) or end (`beg = False`) of the period.
+
+**For payments at the end of the period (`beg = False`):**
+The present value is the sum of the present values of all payments plus the present value of the future value.
+
+$$PV = \left( \sum_{t=1}^{n} \frac{PMT}{(1+r)^t} \right) + \frac{FV}{(1+r)^n}$$
+
+**For payments at the beginning of the period (`beg = True`):**
+The payments are discounted for one less period, so the total is multiplied by $(1+r)$.
+
+$$PV = \left[ \left( \sum_{t=1}^{n} \frac{PMT}{(1+r)^t} \right) + \frac{FV}{(1+r)^n} \right] \times (1+r)$$
+
+* $PMT$: periodic payment (`pmt`)
+* $n$: total number of periods (`n`)
+* $r$: periodic interest rate (`r`)
+* $FV$: future value (`fv`)
+
+### Amortizing Loan Principal Outstanding Balance
+
+The `principal_out` function calculates the remaining principal balance on an amortizing loan.
+
+$$B_n = P \times \frac{(1+r)^N - (1+r)^{n-1}}{(1+r)^N - 1}$$
+
+* $P$: initial principal balance (`P`)
+* $N$: total number of payments (`N`)
+* $n$: current payment number (`n`)
+* $r$: periodic interest rate (`r`)
+* $B_n$: outstanding balance after the $n^{th}$ payment
+
+## Inputs
+
+```{python}
+fx_rate = 1 / 3.67
+currency = "AED"
+
+start_date = pd.to_datetime("2020-01-01")
+end_date = pd.DateOffset(months=12 * 12) + start_date
+eval_end_date = pd.to_datetime("2025-07-01")
+
+# Real Estate Investment
+property_val = 510_000
+down_payment = property_val * 0.2
+loan_amount = property_val - down_payment
+
+emi = 3_500
+n_period = 12 * 12
+
+interest_rate = newton(
+    lambda r: pv(r=r, n=n_period, pmt=emi, beg=False) - loan_amount, x0=0
+)
+
+annual_rent = 36_000
+annual_rent_gwth = 0.05
+annual_appreciation = 0.05
+monthly_appreciation = equivRate(annual_appreciation, 1, 12) / 12
+
+# Closing Costs Operating Costs
+service_fee = 15 * 484
+closing_costs = 28_000  # closing costs = DLD fees + mortgage fees + commissions
+
+# Equity Market Investment
+snp500 = yf.Ticker("VOO")  # Vanguard S&P 500 ETF (VOO) (consider tax-efficient UCITs)
+snp500_hist = snp500.history(start=start_date, end=end_date)
+snp500_hist.reset_index(inplace=True)
+snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
+```
+
+### General Assumptions
+
+* **Time Horizon:** The analysis runs from **`start_date`** (**January 1, 2020**) to **`end_date`** (**January 1, 2032**, which is 12 years after the start date). However, the evaluation of returns is conducted as of **`eval_end_date`** (**July 1, 2025**).
+* **Currency Conversion:** All calculations are performed in AED as the base currency, with a fixed conversion rate of **1 USD to 3.67 AED**, as defined by **`fx_rate`**.
+
+### Real Estate Investment
+
+* **Property Details:** The initial property value is **`property_val`** (**510,000**).
+* **Financing:**
+    * **Down Payment:** A **20%** down payment is made, stored in **`down_payment`**.
+    * **Loan:** The remaining **80%** is a loan, `loan_amount`, paid off over **`n_period`** (**12 years**, or 144 months) with a fixed monthly installment (`emi`) of **3,500**.
+    * **Interest Rate:** The effective interest rate, `interest_rate`, is calculated to match the loan amount with the EMI payments over the loan's term.
+* **Income & Growth:**
+    * **Initial Annual Rent:** The property generates an initial annual rent of **`annual_rent`** (**36,000**).
+    * **Rent Growth:** This rent is assumed to grow annually by **`annual_rent_gwth`** (**5%**).
+    * **Property Appreciation:** The property value is assumed to appreciate annually by **`annual_appreciation`** (**5%**), with the monthly equivalent stored in **`monthly_appreciation`**.
+* **Initial & Operating Costs:**
+    * **Closing Costs:** A one-time expense of **`closing_costs`** (**28,000**) covers all initial fees (DLD, mortgage, commissions).
+    * **Service Fees:** A one-time fee of **`service_fee`** (**7,260**) is incurred, calculated as `15 * 484`.
+
+### Equity Market Investment
+
+* **Investment Vehicle:** The investment is a proxy for the S&P 500, specifically the **Vanguard S&P 500 ETF (VOO)**, referenced by the ticker **`snp500`**.
+* **Data Source:** The analysis uses historical data for the S&P 500 ETF from **Yahoo Finance**, stored in the **`snp500_hist`** dataframe.
+* **Returns Calculation:** The historical data for the ETF's open, high, low, close, and dividends are adjusted by the fixed foreign exchange rate, **`fx_rate`**. This implies that the returns are being evaluated in the base currency (e.g., AED) after converting the U.S. dollar-denominated prices.
+
+## Real Estate Investment
+
+### Loan Amortization Schedule
+
+```{python}
+months = np.arange(n_period + 1)
+dates = pd.date_range(start=start_date, end=end_date, freq="MS")
+emi_cf = np.insert(np.full(n_period, emi), 0, 0)
+principal_bal = principal_out(loan_amount, interest_rate, n_period, months + 1)
+interest_portion = np.roll(principal_bal, 1) * interest_rate
+principal_portion = emi_cf - interest_portion
+prop_value = property_val * (1 + monthly_appreciation) ** months
+rental_income = np.zeros(months.shape)
+rental_income[12::12] = (
+    annual_rent * (1 + annual_rent_gwth) ** (months[12::12] / 12) - service_fee
+)
+
+home_investment_schedule = pd.DataFrame(
+    {
+        "Date": dates,
+        "Month": months,
+        "Principal Balance": principal_bal,
+        "Interest Portion": interest_portion,
+        "Principal Portion": principal_portion,
+        "EMI": emi_cf,
+        "Property Value": prop_value,
+        "Equity": prop_value - principal_bal,
+        "Net Rental Income": rental_income,
+    }
+)
+
+home_investment_schedule["Cumulative Interest"] = home_investment_schedule["Interest Portion"].cumsum()
+home_investment_schedule["Principal Paid"] = home_investment_schedule["Principal Portion"].cumsum()
+
+show(home_investment_schedule)
+```
+
+### Loan Amortization Plot
+
+```{python}
+loan_amort_fig = go.Figure()
+
+loan_amort_fig.add_trace(
+    go.Scatter(
+        x=home_investment_schedule["Date"],
+        y=home_investment_schedule["Cumulative Interest"],
+        mode="lines",
+        name="Cumulative Interest",
+        line=dict(color="black", dash="dashdot", width=0.75),
+    )
+)
+
+loan_amort_fig.add_trace(
+    go.Scatter(
+        x=home_investment_schedule["Date"],
+        y=home_investment_schedule["Principal Paid"],
+        mode="lines",
+        name="Principal Paid",
+        line=dict(color="black", dash="dash", width=0.75),
+    )
+)
+
+loan_amort_fig.add_trace(
+    go.Scatter(
+        x=home_investment_schedule["Date"],
+        y=home_investment_schedule["Principal Balance"],
+        mode="lines",
+        name="Principal Balance",
+        line=dict(color="black", width=0.75),
+    )
+)
+
+loan_amort_fig.update_layout(
+    title="Loan Amortization Chart",
+    xaxis_title="Date",
+    yaxis_title=f"{currency}",
+    legend=dict(orientation="h"),
+    template="plotly_white",
+)
+
+loan_amort_fig.update_yaxes(tickformat=",")
+```
+
+### Home Equity Over Time
+
+```{python}
+home_equity_fig = go.Figure()
+
+home_equity_fig.add_trace(
+    go.Scatter(
+        x=home_investment_schedule["Date"],
+        y=home_investment_schedule["Equity"],
+        mode="lines",
+        name="Equity",
+        line=dict(color="black", width=0.75),
+    )
+)
+
+home_equity_fig.add_trace(
+    go.Scatter(
+        x=home_investment_schedule["Date"],
+        y=home_investment_schedule["Property Value"],
+        mode="lines",
+        name="Property Value",
+        line=dict(color="black", dash="dash", width=0.75),
+    )
+)
+
+home_equity_fig.add_vline(
+    x=eval_end_date,
+    line=dict(color="black", dash="dash", width=0.75),
+)
+
+
+home_equity_fig.update_layout(
+    title="Home Equity Over Time",
+    xaxis_title="Date",
+    yaxis_title=f"Home Equity ({currency})",
+    legend=dict(orientation="h"),
+    template="plotly_white",
+)
+
+
+home_equity_fig.update_yaxes(tickformat=",")
+```
+
+### Performance Metrics
+
+```{python}
+i = np.searchsorted(dates, eval_end_date)
+t = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
+print(f"Home Value - Start ({currency}) = {property_val:,.2f}")
+print(f"Home Value - Mid 2025 ({currency}) = {prop_value[i]:,.2f}")
+print(f"% Increase in Home Value = {prop_value[i] / property_val - 1:.2%}")
+print(
+    f"Property Value Appreciation (CAGR) = {(prop_value[i] / property_val) ** (1 / t) - 1:,.2%}"
+)
+print()
+
+total_investment = principal_portion[: i + 1].sum() + down_payment
+current_home_equity = prop_value[i] - principal_bal[i]
+print(f"Total Investment ({currency}) = {total_investment:,.2f}")
+print(f"Home Equity Value ({currency}) = {current_home_equity:,.2f}")
+print(f"Total Rental Income ({currency}) = {rental_income[: i + 1].sum():,.2f}")
+print(f"Interest Cost ({currency}) = {interest_portion[: i + 1].sum():,.2f}")
+
+hpr = (
+    current_home_equity
+    - total_investment
+    + rental_income[: i + 1].sum()
+    - interest_portion[: i + 1].sum()
+    - closing_costs
+) / total_investment
+print(f"Holding Period Return = {hpr:,.2%}")
+```
+
+*Note*: analysis excludes costs associated to selling/exiting of the real estate investment and the following costs incurred at the time of purchase and during the holding period:
+
+* Rent renewal costs
+* Property maintenance costs (property management fee)
+* Depreciation
+* Broker commission (purchase and rent)
+* Registration fee
+* DLD transfer fee
+* Mortgage fee
+* Ejari fee (incl. renewals)
+* Insurance fee
+
+## S&P 500 Investment
+
+### S&P 500 (ETF: VOO) Price Chart
+
+```{python}
+snp_price_chart = go.Figure()
+
+snp_price_chart.add_trace(
+    go.Scatter(
+        x=snp500_hist["Date"],
+        y=snp500_hist["Close"],
+        mode="lines",
+        line=dict(color="black", width=0.75),
+    )
+)
+
+snp_price_chart.update_layout(
+    xaxis_title="Date",
+    yaxis_title=f"Closing Price ({currency})",
+    template="plotly_white",
+)
+
+snp_price_chart.update_yaxes(tickformat=",")
+```
+
+```{python}
+# S&P 500 Value CAGR
+years = (snp500_hist["Date"].iloc[-1] - snp500_hist["Date"].iloc[0]).total_seconds() / (
+    60**2 * 24 * 365
+)
+cagr = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (1 / years) - 1
+print(f"S&P 500 CAGR = {cagr:.2%}")
+```
+
+
+```{python}
+investment_dates = np.flatnonzero(
+    np.diff(snp500_hist["Date"].dt.month, prepend=start_date.month)
+)
+monthly_investment = np.zeros(snp500_hist.shape[0])
+monthly_investment[investment_dates] = emi  # principal_portion[1:i+1]
+monthly_investment[0] = down_payment + closing_costs
+
+trading_fees = monthly_investment * 0.0025
+trading_fees = np.where(
+    trading_fees < 1, np.where(trading_fees == 0, 0, 1), trading_fees
+)
+
+investment_df = pd.DataFrame()
+investment_df["Date"] = snp500_hist["Date"]
+investment_df["Investments"] = monthly_investment
+investment_df["Delta Shares"] = investment_df["Investments"] / snp500_hist["Open"]
+investment_df["Trading Fees"] = trading_fees
+investment_df["Total Shares"] = investment_df["Delta Shares"].cumsum()
+investment_df["Portfolio Value"] = investment_df["Total Shares"] * snp500_hist["Close"]
+investment_df["Avg Price"] = (
+    investment_df["Investments"].cumsum() / investment_df["Total Shares"]
+)
+investment_df["Dividend Income"] = (
+    investment_df["Total Shares"] * snp500_hist["Dividends"]
+) * (1 - 0.3)  # Withholding Tax 30%
+
+show(investment_df)
+```
+
+```{python}
+fig = go.Figure()
+
+fig.add_trace(
+    go.Scatter(
+        x=investment_df["Date"],
+        y=investment_df["Portfolio Value"],
+        mode="lines",
+        line=dict(color="black", width=0.75),
+    )
+)
+
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title=f"Portfolio Value ({currency})",
+    template="plotly_white",
+)
+
+fig.update_yaxes(tickformat=",")
+
+fig.show()
+```
+
+```{python}
+portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
+total_invested = investment_df["Investments"].sum()
+total_dividends = investment_df["Dividend Income"].sum()
+snp500_return = (
+    portfolio_value_end + total_dividends - trading_fees.sum() - total_invested
+) / total_invested
+
+print(f"Total Investment ({currency}) = {total_invested:,.2f}")
+print(f"Portfolio Value ({currency}) = {portfolio_value_end:,.2f}")
+print(f"Dividend Income After Tax ({currency}) = {total_dividends:,.2f}")
+print(f"Total Trading Cost = {investment_df['Trading Fees'].sum()}")
+
+print(f"Holding Period Return = {snp500_return:.2%}")
 ```
