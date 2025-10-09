@@ -4,6 +4,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+.mypy_cache
+.ropeproject
 
 # LSP Config Files
 .codebook.toml

@@ -134,7 +134,7 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
 
     master_log["Price"] = np.where(
         pd.isnull(master_log["Price"]),
-        (master_log["Amount"].abs() / master_log["Quantity"].abs()).where(  # pyright: ignore
+        (master_log["Amount"].abs() / master_log["Quantity"].abs()).where(
             master_log["Quantity"] != 0
         ),
         master_log["Price"],
@@ -157,20 +157,20 @@ def create_master_log(json_path, crypto_path, interim_path, output_path):
 
     # 5. Aggregate dividend-related transactions
     types_to_combine = ["Dividends", "Div. Adj(NRA Withheld)"]
-    div_rows = master_log[master_log["Type"].isin(types_to_combine)].copy()  # pyright: ignore
-    other_rows = master_log[~master_log["Type"].isin(types_to_combine)]  # pyright: ignore
-    div_rows_sorted = div_rows.sort_values(by="Type", ascending=False)  # pyright: ignore
+    div_rows = master_log[master_log["Type"].isin(types_to_combine)].copy()
+    other_rows = master_log[~master_log["Type"].isin(types_to_combine)]
+    div_rows_sorted = div_rows.sort_values(by="Type", ascending=False)
     group_keys = ["Date", "Symbol"]
     agg_rules = {
         col: "first" for col in div_rows_sorted.columns if col not in group_keys
     }
     agg_rules["Amount"] = "sum"
     aggregated_divs = div_rows_sorted.groupby(group_keys, as_index=False).agg(agg_rules)
-    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(12)  # pyright: ignore
-    aggregated_divs["Type"] = "Net Dividend"  # pyright: ignore
+    aggregated_divs["Amount"] = aggregated_divs["Amount"].round(12)
+    aggregated_divs["Type"] = "Net Dividend"
 
     master_log = (
-        pd.concat([other_rows, aggregated_divs], ignore_index=True)  # pyright: ignore
+        pd.concat([other_rows, aggregated_divs], ignore_index=True)
         .sort_values(by="Date")
         .reset_index(drop=True)
     )

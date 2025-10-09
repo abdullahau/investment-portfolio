@@ -77,7 +77,7 @@ def process_statement(file_path):
         if not data:
             continue
 
-        df = pd.DataFrame(data, columns=header)  # pyright: ignore
+        df = pd.DataFrame(data, columns=header)
         df.replace(["-", "--", "$ --", "$--", ""], pd.NA, inplace=True)
 
         for col in df.columns:

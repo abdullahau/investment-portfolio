@@ -13,15 +13,15 @@ def fetch_data(url):
 
         if "DT" in df.columns:
             df.rename(columns={"DT": "Date"}, inplace=True)
-            df["Date"] = pd.to_datetime(df["Date"]).dt.date  # ty: ignore
+            df["Date"] = pd.to_datetime(df["Date"]).dt.date
             df = df.set_index("Date")
 
-    except requests.exceptions.RequestException as e:  # ty: ignore
+    except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
     except ValueError:
         print("Error: Could not decode JSON from the response.")
 
-    return df  # pyright: ignore
+    return df
 
 
 def main():

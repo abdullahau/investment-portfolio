@@ -57,7 +57,7 @@ def project_dates(log_dates):
     )
 
     hist_recent = yf.Ticker(BENCHMARK_INDEX).history(period="10d")
-    hist_recent.index = hist_recent.index.tz_localize(None).normalize()  # pyright: ignore
+    hist_recent.index = hist_recent.index.tz_localize(None).normalize()
 
     completed_market_days = hist_recent[hist_recent.index < today]
 

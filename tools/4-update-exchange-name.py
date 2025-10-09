@@ -20,7 +20,7 @@ def main():
 
     # 4. Use .map() to update the 'Exchange' column
     transaction_log["Exchange"] = (
-        transaction_log["Symbol"].map(market_mapping).fillna("US Market")  # pyright: ignore
+        transaction_log["Symbol"].map(market_mapping).fillna("US Market")
     )
 
     # 5. Write to us_mkt_transactions.csv
