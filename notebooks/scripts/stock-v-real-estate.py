@@ -1,3 +1,4 @@
+# %%
 # --- snippet: imports
 import yfinance as yf
 import pandas as pd
@@ -13,6 +14,7 @@ itables.options.warn_on_undocumented_option = False
 # --- endsnippet
 
 
+# %%
 # --- snippet: helper_functions
 # Rate Periodicity Conversion
 def equivRate(rate, from_freq=1, to_freq=1):
@@ -39,13 +41,15 @@ def principal_out(P, r, N, n):
 
 # --- endsnippet
 
+
+# %%
 # --- snippet: inputs
-fx_rate = 1 / 3.67
+fx_rate = 1 / 3.67  # AED/USD rate
 currency = "AED"
 
 start_date = pd.to_datetime("2020-01-01")
 end_date = pd.DateOffset(months=12 * 12) + start_date
-eval_end_date = pd.to_datetime("2025-07-01")
+eval_end_date = pd.to_datetime("2025-10-01")
 
 # Real Estate Investment
 property_val = 510_000
@@ -65,7 +69,9 @@ annual_appreciation = 0.05
 monthly_appreciation = equivRate(annual_appreciation, 1, 12) / 12
 
 # Closing Costs Operating Costs
-service_fee = 15 * 484
+unit_area = 484  # sq.ft
+service_charge = 15  # AED/sq.ft
+service_fee = service_charge * unit_area
 closing_costs = 28_000  # closing costs = DLD fees + mortgage fees + commissions
 
 # Equity Market Investment
@@ -75,7 +81,7 @@ snp500_hist.reset_index(inplace=True)
 snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
 # --- endsnippet
 
-
+# %%
 # --- snippet: loan_amort_schd
 months = np.arange(n_period + 1)
 dates = pd.date_range(start=start_date, end=end_date, freq="MS")
@@ -114,7 +120,7 @@ s = home_investment_schedule.style
 s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
 # --- endsnippet
 
-
+# %%
 # --- snippet: loan_amort_plot
 loan_amort_fig = go.Figure()
 
@@ -159,7 +165,7 @@ loan_amort_fig.update_layout(
 loan_amort_fig.update_yaxes(tickformat=",")
 # --- endsnippet
 
-
+# %%
 # --- snippet: home_equity
 home_equity_fig = go.Figure()
 
@@ -188,7 +194,6 @@ home_equity_fig.add_vline(
     line=dict(color="black", dash="dash", width=1),
 )
 
-
 home_equity_fig.update_layout(
     title="Home Equity Over Time",
     xaxis_title="Date",
@@ -197,10 +202,10 @@ home_equity_fig.update_layout(
     template="plotly_white",
 )
 
-
 home_equity_fig.update_yaxes(tickformat=",")
 # --- endsnippet
 
+# %%
 # --- snippet: property_performance_metrics
 i = np.searchsorted(dates, eval_end_date)
 t = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
@@ -229,7 +234,7 @@ hpr = (
 print(f"Holding Period Return = {hpr:,.2%}")
 # --- endsnippet
 
-
+# %%
 # --- snippet: benchmark_price_chart
 snp_price_chart = go.Figure()
 
@@ -251,6 +256,7 @@ snp_price_chart.update_layout(
 snp_price_chart.update_yaxes(tickformat=",")
 # --- endsnippet
 
+# %%
 # --- snippet: benchmark_cagr
 years = (snp500_hist["Date"].iloc[-1] - snp500_hist["Date"].iloc[0]).total_seconds() / (
     60**2 * 24 * 365
@@ -259,12 +265,15 @@ cagr = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (1 / ye
 print(f"S&P 500 CAGR = {cagr:.2%}")
 # --- endsnippet
 
+# %%
 # --- snippet: portfolio_performance
 investment_dates = np.flatnonzero(
     np.diff(snp500_hist["Date"].dt.month, prepend=start_date.month)
 )
 monthly_investment = np.zeros(snp500_hist.shape[0])
-monthly_investment[investment_dates] = emi  # principal_portion[1:i+1]
+monthly_investment[investment_dates] = (
+    emi  # can be simulated with only the principal portion (without interest): principal_portion[1:i+1]
+)
 monthly_investment[0] = down_payment + closing_costs
 
 trading_fees = monthly_investment * 0.0025
@@ -292,6 +301,7 @@ s = investment_df.style
 s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
 # --- endsnippet
 
+# %%
 # --- snippet: portfolio_performance_chart
 portfolio_performance_chart = go.Figure()
 
@@ -315,6 +325,7 @@ portfolio_performance_chart.update_yaxes(tickformat=",")
 portfolio_performance_chart.show()
 # --- endsnippet
 
+# %%
 # --- snippet: portfolio_performance_metrics
 portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
 total_invested = investment_df["Investments"].sum()

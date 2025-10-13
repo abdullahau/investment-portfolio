@@ -4,6 +4,10 @@ author: "Abdullah Mahmood"
 date: last-modified
 ---
 
+## Introduction
+
+This post simulates and compares the performance of a real estate investment against an equivalent investment in the S&P 500. Using data from January 1, 2020, to October 1, 2025, the simulation evaluates returns in AED, accounting for property appreciation, rental income, loan costs, closing costs, and maintenance for real estate, while considering stock price appreciation and dividends for the S&P 500. By simulating a parallel investment strategy—where the cash flows for the real estate investment are mirrored in the stock market—this post aims to provide a clear, data-driven comparison of the two asset classes over a specific time horizon.
+
 ### Imports
 
 ```{python insert:imports}
@@ -91,12 +95,12 @@ $$B_n = P \times \frac{(1+r)^N - (1+r)^{n-1}}{(1+r)^N - 1}$$
 ## Inputs
 
 ```{python insert:inputs}
-fx_rate = 1 / 3.67
+fx_rate = 1 / 3.67  # AED/USD rate
 currency = "AED"
 
 start_date = pd.to_datetime("2020-01-01")
 end_date = pd.DateOffset(months=12 * 12) + start_date
-eval_end_date = pd.to_datetime("2025-07-01")
+eval_end_date = pd.to_datetime("2025-10-01")
 
 # Real Estate Investment
 property_val = 510_000
@@ -116,7 +120,9 @@ annual_appreciation = 0.05
 monthly_appreciation = equivRate(annual_appreciation, 1, 12) / 12
 
 # Closing Costs Operating Costs
-service_fee = 15 * 484
+unit_area = 484  # sq.ft
+service_charge = 15  # AED/sq.ft
+service_fee = service_charge * unit_area
 closing_costs = 28_000  # closing costs = DLD fees + mortgage fees + commissions
 
 # Equity Market Investment
@@ -153,6 +159,8 @@ snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
 * **Returns Calculation:** The historical data for the ETF's open, high, low, close, and dividends are adjusted by the fixed foreign exchange rate, **`fx_rate`**. This implies that the returns are being evaluated in the base currency (e.g., AED) after converting the U.S. dollar-denominated prices.
 
 ## Real Estate Investment
+
+This section details the performance of a simulated real estate investment. It begins with a **loan amortization schedule** that tracks the property's financial journey, including the breakdown of each monthly payment into principal and interest, the remaining loan balance, and the growth of the property's value and equity over time. This schedule is visually summarized in the **Loan Amortization Chart**. Following this, the **Home Equity Over Time** chart illustrates how the investor's ownership stake in the property increases through both loan principal payments and market appreciation. Finally, the **Performance Metrics** section provides a concise summary of the investment's financial outcomes, including the total capital invested, the final equity value, and the overall holding period return as of October 1, 2025. This analysis highlights the key financial levers of real estate: leverage from the loan and asset appreciation, alongside rental income.
 
 ### Loan Amortization Schedule
 
@@ -270,7 +278,6 @@ home_equity_fig.add_vline(
     line=dict(color="black", dash="dash", width=1),
 )
 
-
 home_equity_fig.update_layout(
     title="Home Equity Over Time",
     xaxis_title="Date",
@@ -278,7 +285,6 @@ home_equity_fig.update_layout(
     legend=dict(orientation="h"),
     template="plotly_white",
 )
-
 
 home_equity_fig.update_yaxes(tickformat=",")
 ```
@@ -327,6 +333,8 @@ print(f"Holding Period Return = {hpr:,.2%}")
 
 ## S&P 500 Investment
 
+This section evaluates a hypothetical investment in the **S&P 500**, using the Vanguard S&P 500 ETF (VOO) as a benchmark. The **S&P 500 (ETF: VOO) Price Chart** provides a visual overview of the ETF's historical price movement over the analysis period. The **Portfolio Performance** table and chart then track the investment's growth by mirroring the real estate cash flows; specifically, the initial down payment and subsequent monthly mortgage payments are instead invested into the ETF. This simulation accounts for the purchase of new shares, any associated trading fees, and the reinvestment of after-tax dividends. The final **Performance Metrics** section summarizes the total capital invested, the final portfolio value, and the cumulative dividend income, providing a direct comparison of the holding period return of this liquid equity investment against the leveraged real estate investment.
+
 ### S&P 500 (ETF: VOO) Price Chart
 
 ```{python insert:benchmark_price_chart}
@@ -358,12 +366,16 @@ cagr = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (1 / ye
 print(f"S&P 500 CAGR = {cagr:.2%}")
 ```
 
+### Portfolio Simulation
+
 ```{python insert:portfolio_performance}
 investment_dates = np.flatnonzero(
     np.diff(snp500_hist["Date"].dt.month, prepend=start_date.month)
 )
 monthly_investment = np.zeros(snp500_hist.shape[0])
-monthly_investment[investment_dates] = emi  # principal_portion[1:i+1]
+monthly_investment[investment_dates] = (
+    emi  # can be simulated with only the principal portion (without interest): principal_portion[1:i+1]
+)
 monthly_investment[0] = down_payment + closing_costs
 
 trading_fees = monthly_investment * 0.0025
@@ -413,6 +425,8 @@ portfolio_performance_chart.update_yaxes(tickformat=",")
 
 portfolio_performance_chart.show()
 ```
+
+### Portfolio Metrics
 
 ```{python insert:portfolio_performance_metrics}
 portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
