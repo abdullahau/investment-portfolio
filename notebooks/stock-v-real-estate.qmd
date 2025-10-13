@@ -150,7 +150,7 @@ snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
     * **Property Appreciation:** The property value is assumed to appreciate annually by **`annual_appreciation`** (**5%**), with the monthly equivalent stored in **`monthly_appreciation`**.
 * **Initial & Operating Costs:**
     * **Closing Costs:** A one-time expense of **`closing_costs`** (**28,000**) covers all initial fees (DLD, mortgage, commissions).
-    * **Service Fees:** A one-time fee of **`service_fee`** (**7,260**) is incurred, calculated as `15 * 484`.
+    * **Service Fees:** A one-time fee of **`service_fee`** (**7,260**) is incurred, calculated as `unit_area * service_charge`.
 
 ### Equity Market Investment
 

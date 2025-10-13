@@ -3,6 +3,7 @@
 import yfinance as yf
 import pandas as pd
 import numpy as np
+import numpy.typing as npt
 from scipy.optimize import newton
 import plotly.graph_objects as go
 import itables
@@ -17,25 +18,27 @@ itables.options.warn_on_undocumented_option = False
 # %%
 # --- snippet: helper_functions
 # Rate Periodicity Conversion
-def equivRate(rate, from_freq=1, to_freq=1):
+def equivRate(rate: float, from_freq: int = 1, to_freq: int = 1) -> float:
     return to_freq * ((1 + rate / from_freq) ** (from_freq / to_freq) - 1)
 
 
 # Present Value Function
-def pv(r, n, pmt, fv=0, beg=False):
-    c = np.full(n, pmt)
-    t = np.arange(1, n + 1)
-    d = 1.0 / np.power((1 + r), t)
-    B = np.sum(d * c)
-    tv = fv / (1 + r) ** n
+def pv(r: float, n: int, pmt: float, fv: int = 0, beg: bool = False) -> float:
+    c: npt.NDArray[np.float64] = np.full(n, pmt)  # array of payments
+    t: npt.NDArray[np.int64] = np.arange(1, n + 1)  # array of periods
+    d: npt.NDArray[np.float64] = 1.0 / np.power((1 + r), t)  # discount factors
+    B: float = float(np.sum(d * c))  # present value of payments
+    tv: float = fv / (1 + r) ** n  # discounted future value
 
-    return np.where(beg, (B + tv) * (1 + r), B + tv)
+    return float(np.where(beg, (B + tv) * (1 + r), B + tv))
 
 
 # Amortizing Loan Principal Outstanding Balance
-def principal_out(P, r, N, n):
-    d1 = (1 + r) ** N - (1 + r) ** (n - 1)
-    d2 = (1 + r) ** N - 1
+def principal_out(
+    P: float, r: float, N: int, n: npt.NDArray[np.int64]
+) -> npt.NDArray[np.float64]:
+    d1: npt.NDArray[np.float64] = (1 + r) ** N - (1 + r) ** (n - 1)
+    d2: float = (1 + r) ** N - 1
     return P * d1 / d2
 
 
@@ -44,53 +47,59 @@ def principal_out(P, r, N, n):
 
 # %%
 # --- snippet: inputs
-fx_rate = 1 / 3.67  # AED/USD rate
-currency = "AED"
+fx_rate: float = 1 / 3.67  # AED/USD rate
+currency: str = "AED"
 
-start_date = pd.to_datetime("2020-01-01")
-end_date = pd.DateOffset(months=12 * 12) + start_date
-eval_end_date = pd.to_datetime("2025-10-01")
+start_date: pd.Timestamp = pd.to_datetime("2020-01-01")
+end_date: pd.Timestamp = pd.DateOffset(months=12 * 12) + start_date
+eval_end_date: pd.Timestamp = pd.to_datetime("2025-10-01")
 
 # Real Estate Investment
-property_val = 510_000
-down_payment = property_val * 0.2
-loan_amount = property_val - down_payment
+property_val: int = 510_000
+down_payment: float = property_val * 0.2
+loan_amount: float = property_val - down_payment
 
-emi = 3_500
-n_period = 12 * 12
+emi: float = 3_500.0
+n_period: int = 12 * 12
 
-interest_rate = newton(
+interest_rate: float = newton(
     lambda r: pv(r=r, n=n_period, pmt=emi, beg=False) - loan_amount, x0=0
 )
 
-annual_rent = 36_000
-annual_rent_gwth = 0.05
-annual_appreciation = 0.05
-monthly_appreciation = equivRate(annual_appreciation, 1, 12) / 12
+annual_rent: float = 36_000.0
+annual_rent_gwth: float = 0.05
+annual_appreciation: float = 0.05
+monthly_appreciation: float = equivRate(annual_appreciation, 1, 12) / 12
 
 # Closing Costs Operating Costs
-unit_area = 484  # sq.ft
-service_charge = 15  # AED/sq.ft
-service_fee = service_charge * unit_area
-closing_costs = 28_000  # closing costs = DLD fees + mortgage fees + commissions
+unit_area: float = 484.0  # sq.ft
+service_charge: float = 15.0  # AED/sq.ft
+service_fee: float = service_charge * unit_area
+closing_costs: float = (
+    28_000.0  # closing costs = DLD fees + mortgage fees + commissions
+)
 
 # Equity Market Investment
 snp500 = yf.Ticker("VOO")  # Vanguard S&P 500 ETF (VOO) (consider tax-efficient UCITs)
-snp500_hist = snp500.history(start=start_date, end=end_date)
+snp500_hist: pd.DataFrame = snp500.history(start=start_date, end=end_date)
 snp500_hist.reset_index(inplace=True)
 snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
 # --- endsnippet
 
 # %%
 # --- snippet: loan_amort_schd
-months = np.arange(n_period + 1)
-dates = pd.date_range(start=start_date, end=end_date, freq="MS")
-emi_cf = np.insert(np.full(n_period, emi), 0, 0)
-principal_bal = principal_out(loan_amount, interest_rate, n_period, months + 1)
-interest_portion = np.roll(principal_bal, 1) * interest_rate
-principal_portion = emi_cf - interest_portion
-prop_value = property_val * (1 + monthly_appreciation) ** months
-rental_income = np.zeros(months.shape)
+months: npt.NDArray[np.int64] = np.arange(n_period + 1)
+dates: pd.DatetimeIndex = pd.date_range(start=start_date, end=end_date, freq="MS")
+emi_cf: npt.NDArray[np.flaot64] = np.insert(np.full(n_period, emi), 0, 0)
+principal_bal: npt.NDArray[np.float64] = principal_out(
+    loan_amount, interest_rate, n_period, months + 1
+)
+interest_portion: npt.NDArray[np.float64] = np.roll(principal_bal, 1) * interest_rate
+principal_portion: npt.NDArray[np.float64] = emi_cf - interest_portion
+prop_value: npt.NDArray[np.float64] = (
+    property_val * (1 + monthly_appreciation) ** months
+)
+rental_income: npt.NDArray[np.float64] = np.zeros(months.shape)
 rental_income[12::12] = (
     annual_rent * (1 + annual_rent_gwth) ** (months[12::12] / 12) - service_fee
 )
@@ -116,7 +125,7 @@ home_investment_schedule["Principal Paid"] = home_investment_schedule[
 
 home_investment_schedule.set_index("Date", inplace=True)
 
-s = home_investment_schedule.style
+s: pd.io.formats.style.Styler = home_investment_schedule.style
 s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
 # --- endsnippet
 
@@ -208,7 +217,7 @@ home_equity_fig.update_yaxes(tickformat=",")
 # %%
 # --- snippet: property_performance_metrics
 i = np.searchsorted(dates, eval_end_date)
-t = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
+t: float = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
 print(f"Home Value - Start ({currency}) = {property_val:,.2f}")
 print(f"Home Value - Mid 2025 ({currency}) = {prop_value[i]:,.2f}")
 print(f"% Increase in Home Value = {prop_value[i] / property_val - 1:.2%}")
@@ -217,14 +226,14 @@ print(
 )
 print()
 
-total_investment = principal_portion[: i + 1].sum() + down_payment
-current_home_equity = prop_value[i] - principal_bal[i]
+total_investment: float = principal_portion[: i + 1].sum() + down_payment
+current_home_equity: float = prop_value[i] - principal_bal[i]
 print(f"Total Investment ({currency}) = {total_investment:,.2f}")
 print(f"Home Equity Value ({currency}) = {current_home_equity:,.2f}")
 print(f"Total Rental Income ({currency}) = {rental_income[: i + 1].sum():,.2f}")
 print(f"Interest Cost ({currency}) = {interest_portion[: i + 1].sum():,.2f}")
 
-hpr = (
+hpr: float = (
     current_home_equity
     - total_investment
     + rental_income[: i + 1].sum()
@@ -258,25 +267,27 @@ snp_price_chart.update_yaxes(tickformat=",")
 
 # %%
 # --- snippet: benchmark_cagr
-years = (snp500_hist["Date"].iloc[-1] - snp500_hist["Date"].iloc[0]).total_seconds() / (
-    60**2 * 24 * 365
-)
-cagr = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (1 / years) - 1
+years: float = (
+    snp500_hist["Date"].iloc[-1] - snp500_hist["Date"].iloc[0]
+).total_seconds() / (60**2 * 24 * 365)
+cagr: float = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (
+    1 / years
+) - 1
 print(f"S&P 500 CAGR = {cagr:.2%}")
 # --- endsnippet
 
 # %%
 # --- snippet: portfolio_performance
-investment_dates = np.flatnonzero(
+investment_dates: npt.NDArray[np.int64] = np.flatnonzero(
     np.diff(snp500_hist["Date"].dt.month, prepend=start_date.month)
 )
-monthly_investment = np.zeros(snp500_hist.shape[0])
+monthly_investment: npt.NDArray[np.float64] = np.zeros(snp500_hist.shape[0])
 monthly_investment[investment_dates] = (
     emi  # can be simulated with only the principal portion (without interest): principal_portion[1:i+1]
 )
 monthly_investment[0] = down_payment + closing_costs
 
-trading_fees = monthly_investment * 0.0025
+trading_fees: npt.NDArray[np.float64] = monthly_investment * 0.0025
 trading_fees = np.where(
     trading_fees < 1, np.where(trading_fees == 0, 0, 1), trading_fees
 )
@@ -297,7 +308,7 @@ investment_df["Dividend Income"] = (
 
 investment_df.set_index("Date", inplace=True)
 
-s = investment_df.style
+s: pd.io.formats.style.Styler = investment_df.style
 s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
 # --- endsnippet
 
@@ -328,9 +339,9 @@ portfolio_performance_chart.show()
 # %%
 # --- snippet: portfolio_performance_metrics
 portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
-total_invested = investment_df["Investments"].sum()
-total_dividends = investment_df["Dividend Income"].sum()
-snp500_return = (
+total_invested: float = investment_df["Investments"].sum()
+total_dividends: float = investment_df["Dividend Income"].sum()
+snp500_return: float = (
     portfolio_value_end + total_dividends - trading_fees.sum() - total_invested
 ) / total_invested
 
