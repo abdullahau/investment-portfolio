@@ -1,4 +1,4 @@
-# start snippet imports
+# --- snippet: imports
 import yfinance as yf
 import pandas as pd
 import numpy as np
@@ -10,11 +10,10 @@ itables.init_notebook_mode()
 itables.options.allow_html = True
 # itables.options.searching = False
 itables.options.warn_on_undocumented_option = False
+# --- endsnippet
 
-# end snippet imports
 
-
-# start snippet helper_functions
+# --- snippet: helper_functions
 # Rate Periodicity Conversion
 def equivRate(rate, from_freq=1, to_freq=1):
     return to_freq * ((1 + rate / from_freq) ** (from_freq / to_freq) - 1)
@@ -38,9 +37,9 @@ def principal_out(P, r, N, n):
     return P * d1 / d2
 
 
-# end snippet helper_functions
+# --- endsnippet
 
-# start snippet inputs
+# --- snippet: inputs
 fx_rate = 1 / 3.67
 currency = "AED"
 
@@ -74,11 +73,10 @@ snp500 = yf.Ticker("VOO")  # Vanguard S&P 500 ETF (VOO) (consider tax-efficient 
 snp500_hist = snp500.history(start=start_date, end=end_date)
 snp500_hist.reset_index(inplace=True)
 snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
+# --- endsnippet
 
-# end snippet inputs
 
-
-# start snippet loan_amort_schd
+# --- snippet: loan_amort_schd
 months = np.arange(n_period + 1)
 dates = pd.date_range(start=start_date, end=end_date, freq="MS")
 emi_cf = np.insert(np.full(n_period, emi), 0, 0)
@@ -114,40 +112,39 @@ home_investment_schedule.set_index("Date", inplace=True)
 
 s = home_investment_schedule.style
 s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
+# --- endsnippet
 
-# end snippet loan_amort_schd
 
-
-# start snippet loan_amort_plot
+# --- snippet: loan_amort_plot
 loan_amort_fig = go.Figure()
 
 loan_amort_fig.add_trace(
     go.Scatter(
-        x=home_investment_schedule["Date"],
+        x=home_investment_schedule.index,
         y=home_investment_schedule["Cumulative Interest"],
         mode="lines",
         name="Cumulative Interest",
-        line=dict(color="black", dash="dashdot", width=0.75),
+        line=dict(color="black", dash="dashdot", width=1),
     )
 )
 
 loan_amort_fig.add_trace(
     go.Scatter(
-        x=home_investment_schedule["Date"],
+        x=home_investment_schedule.index,
         y=home_investment_schedule["Principal Paid"],
         mode="lines",
         name="Principal Paid",
-        line=dict(color="black", dash="dash", width=0.75),
+        line=dict(color="black", dash="dash", width=1),
     )
 )
 
 loan_amort_fig.add_trace(
     go.Scatter(
-        x=home_investment_schedule["Date"],
+        x=home_investment_schedule.index,
         y=home_investment_schedule["Principal Balance"],
         mode="lines",
         name="Principal Balance",
-        line=dict(color="black", width=0.75),
+        line=dict(color="black", width=1),
     )
 )
 
@@ -160,36 +157,35 @@ loan_amort_fig.update_layout(
 )
 
 loan_amort_fig.update_yaxes(tickformat=",")
+# --- endsnippet
 
-# end snippet loan_amort_plot
 
-
-# start snippet home_equity
+# --- snippet: home_equity
 home_equity_fig = go.Figure()
 
 home_equity_fig.add_trace(
     go.Scatter(
-        x=home_investment_schedule["Date"],
+        x=home_investment_schedule.index,
         y=home_investment_schedule["Equity"],
         mode="lines",
         name="Equity",
-        line=dict(color="black", width=0.75),
+        line=dict(color="black", width=1),
     )
 )
 
 home_equity_fig.add_trace(
     go.Scatter(
-        x=home_investment_schedule["Date"],
+        x=home_investment_schedule.index,
         y=home_investment_schedule["Property Value"],
         mode="lines",
         name="Property Value",
-        line=dict(color="black", dash="dash", width=0.75),
+        line=dict(color="black", dash="dash", width=1),
     )
 )
 
 home_equity_fig.add_vline(
     x=eval_end_date,
-    line=dict(color="black", dash="dash", width=0.75),
+    line=dict(color="black", dash="dash", width=1),
 )
 
 
@@ -203,9 +199,9 @@ home_equity_fig.update_layout(
 
 
 home_equity_fig.update_yaxes(tickformat=",")
-# end snippet home_equity
+# --- endsnippet
 
-# start snippet property_performance_metrics
+# --- snippet: property_performance_metrics
 i = np.searchsorted(dates, eval_end_date)
 t = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
 print(f"Home Value - Start ({currency}) = {property_val:,.2f}")
@@ -231,10 +227,10 @@ hpr = (
     - closing_costs
 ) / total_investment
 print(f"Holding Period Return = {hpr:,.2%}")
-# end snippet property_performance_metrics
+# --- endsnippet
 
 
-# start snippet benchmark_price_chart
+# --- snippet: benchmark_price_chart
 snp_price_chart = go.Figure()
 
 snp_price_chart.add_trace(
@@ -253,17 +249,17 @@ snp_price_chart.update_layout(
 )
 
 snp_price_chart.update_yaxes(tickformat=",")
-# end snippet benchmark_price_chart
+# --- endsnippet
 
-# start snippet benchmark_cagr
+# --- snippet: benchmark_cagr
 years = (snp500_hist["Date"].iloc[-1] - snp500_hist["Date"].iloc[0]).total_seconds() / (
     60**2 * 24 * 365
 )
 cagr = (snp500_hist["Close"].iloc[-1] / snp500_hist["Close"].iloc[0]) ** (1 / years) - 1
 print(f"S&P 500 CAGR = {cagr:.2%}")
-# end snippet benchmark_cagr
+# --- endsnippet
 
-# start snippet portfolio_performance
+# --- snippet: portfolio_performance
 investment_dates = np.flatnonzero(
     np.diff(snp500_hist["Date"].dt.month, prepend=start_date.month)
 )
@@ -277,7 +273,7 @@ trading_fees = np.where(
 )
 
 investment_df = pd.DataFrame()
-investment_df["Date"] = snp500_hist["Date"].index
+investment_df["Date"] = snp500_hist["Date"]
 investment_df["Investments"] = monthly_investment
 investment_df["Delta Shares"] = investment_df["Investments"] / snp500_hist["Open"]
 investment_df["Trading Fees"] = trading_fees
@@ -292,17 +288,16 @@ investment_df["Dividend Income"] = (
 
 investment_df.set_index("Date", inplace=True)
 
-s = investment_df.style.format("{:,.2f}").format_index(
-    formatter=lambda x: x.strftime("%Y-%m-%d")
-)
-# end snippet portfolio_performance
+s = investment_df.style
+s.format("{:,.2f}").format_index(formatter=lambda x: x.strftime("%Y-%m-%d"))
+# --- endsnippet
 
-# start snippet portfolio_performance_chart
+# --- snippet: portfolio_performance_chart
 portfolio_performance_chart = go.Figure()
 
 portfolio_performance_chart.add_trace(
     go.Scatter(
-        x=investment_df["Date"],
+        x=investment_df.index,
         y=investment_df["Portfolio Value"],
         mode="lines",
         line=dict(color="black", width=1),
@@ -318,9 +313,9 @@ portfolio_performance_chart.update_layout(
 portfolio_performance_chart.update_yaxes(tickformat=",")
 
 portfolio_performance_chart.show()
-# end snippet portfolio_performance_chart
+# --- endsnippet
 
-# start snippet portfolio_performance_metrics
+# --- snippet: portfolio_performance_metrics
 portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
 total_invested = investment_df["Investments"].sum()
 total_dividends = investment_df["Dividend Income"].sum()
@@ -334,4 +329,4 @@ print(f"Dividend Income After Tax ({currency}) = {total_dividends:,.2f}")
 print(f"Total Trading Cost = {investment_df['Trading Fees'].sum()}")
 
 print(f"Holding Period Return = {snp500_return:.2%}")
-# end snippet portfolio_performance_metrics
+# --- endsnippet
