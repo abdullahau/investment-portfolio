@@ -4,6 +4,8 @@ project:
   render:
     - notebooks/stock-v-real-estate.qmd
 
+jupyter: investment-portfolio
+
 format:
   html:
     theme: cosmo

@@ -7,10 +7,6 @@ __pycache__/
 .mypy_cache
 .ropeproject
 
-# LSP Config Files
-.codebook.toml
-.markdownlint.json
-
 # Dev Settings & Caches
 .vscode
 .ruff_cache

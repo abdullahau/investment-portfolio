@@ -6,11 +6,13 @@ import numpy as np
 import numpy.typing as npt
 from scipy.optimize import newton
 import plotly.graph_objects as go
+import plotly.offline as pyo
 import itables
 
+pyo.init_notebook_mode()
 itables.init_notebook_mode()
 itables.options.allow_html = True
-# itables.options.searching = False
+itables.options.searching = False
 itables.options.warn_on_undocumented_option = False
 # --- endsnippet
 
@@ -80,7 +82,10 @@ closing_costs: float = (
 )
 
 # Equity Market Investment
-snp500 = yf.Ticker("VOO")  # Vanguard S&P 500 ETF (VOO) (consider tax-efficient UCITs)
+snp500: yf.ticker.Ticker = yf.Ticker(
+    "VOO"
+)  # Vanguard S&P 500 ETF (VOO) (consider tax-efficient UCITs)
+withholding_tax: float = 0.3
 snp500_hist: pd.DataFrame = snp500.history(start=start_date, end=end_date)
 snp500_hist.reset_index(inplace=True)
 snp500_hist[["Open", "High", "Low", "Close", "Dividends"]] /= fx_rate
@@ -216,7 +221,7 @@ home_equity_fig.update_yaxes(tickformat=",")
 
 # %%
 # --- snippet: property_performance_metrics
-i = np.searchsorted(dates, eval_end_date)
+i: int = np.searchsorted(dates, eval_end_date)
 t: float = (eval_end_date - start_date).total_seconds() / (60**2 * 24 * 365)
 print(f"Home Value - Start ({currency}) = {property_val:,.2f}")
 print(f"Home Value - Mid 2025 ({currency}) = {prop_value[i]:,.2f}")
@@ -304,7 +309,7 @@ investment_df["Avg Price"] = (
 )
 investment_df["Dividend Income"] = (
     investment_df["Total Shares"] * snp500_hist["Dividends"]
-) * (1 - 0.3)  # Withholding Tax 30%
+) * (1 - withholding_tax)
 
 investment_df.set_index("Date", inplace=True)
 
@@ -338,7 +343,7 @@ portfolio_performance_chart.show()
 
 # %%
 # --- snippet: portfolio_performance_metrics
-portfolio_value_end = investment_df["Portfolio Value"].to_numpy()[-1]
+portfolio_value_end: float = investment_df["Portfolio Value"].to_numpy()[-1]
 total_invested: float = investment_df["Investments"].sum()
 total_dividends: float = investment_df["Dividend Income"].sum()
 snp500_return: float = (
